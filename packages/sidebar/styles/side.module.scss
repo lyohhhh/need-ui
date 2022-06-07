@@ -1,0 +1,10 @@
+.translate-active {
+	@apply transition-transform
+  duration-300
+  delay-150
+  ease-in-out;
+}
+.translate-to,
+.translate-enter {
+	@apply -translate-x-full;
+}

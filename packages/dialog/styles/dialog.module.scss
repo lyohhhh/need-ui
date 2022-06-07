@@ -1,0 +1,11 @@
+.fade-active {
+	@apply transition-all
+  duration-150
+  ease-linear 
+  -translate-y-0;
+}
+.fade-to,
+.fade-enter {
+	@apply opacity-0 
+  -translate-y-12;
+}

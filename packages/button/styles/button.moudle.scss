@@ -1,0 +1,136 @@
+.button {
+	@apply text-center
+  px-4 
+  py-1.5 
+  ml-4 
+  border 
+  rounded
+  text-sm
+  shadow-none
+  select-none
+  outline-none
+  transition-all;
+
+	&:focus-visible {
+		@apply outline-themetextcolor-400 opacity-80;
+	}
+	&.button--xs {
+		@apply text-xs;
+	}
+	&.button--base {
+		@apply text-base;
+	}
+	&.button--lg {
+		@apply text-lg;
+	}
+	&.button--xl {
+		@apply text-xl;
+	}
+
+	&.is-circle {
+		@apply rounded-full;
+	}
+
+	&:first-child {
+		margin-left: 0;
+	}
+	&.button--default {
+		@apply cursor-pointer
+    border-themebgcolor-300 
+    text-themebgcolor-700
+    dark:bg-themebgcolor-800 
+    dark:border-themebgcolor-500
+    dark:text-themebgcolor-300
+    bg-white;
+		&:hover {
+			@apply border-themetextcolor-500
+        border-opacity-30
+        bg-themetextcolor-200
+        text-themetextcolor-500
+        button--light__bg
+        dark:border-themebgcolor-500
+        dark:text-themebgcolor-300
+        dark:button--dark__bg
+        shadow-none;
+		}
+
+		&:active {
+			@apply border-themetextcolor-500 
+      border-opacity-100 
+    shadow-themetextcolor-300;
+		}
+
+		&.is-disabled {
+			@apply cursor-not-allowed
+      border-themebgcolor-300 
+      text-themebgcolor-700
+      shadow-none
+      bg-white
+      opacity-70;
+		}
+	}
+
+	&.button--primary {
+		@apply bg-themetextcolor-500 
+    border-themetextcolor-500 
+    text-gray-100
+    dark:bg-themetextcolor-800
+    dark:border-themetextcolor-800
+    dark:text-gray-300;
+
+		&:hover {
+			@apply opacity-80 border-opacity-80;
+		}
+		&:active {
+			@apply bg-themetextcolor-600;
+		}
+		&.is-disabled {
+			@apply cursor-not-allowed
+      text-gray-100
+      bg-themetextcolor-500
+      opacity-70
+      border-opacity-70;
+		}
+		&.is-loading {
+			@apply border-themetextcolor-200 
+			border-opacity-30;
+
+			&:active {
+				@apply bg-themetextcolor-500;
+			}
+			&:hover {
+				@apply opacity-70 border-opacity-70;
+			}
+		}
+	}
+
+	&.is-loading {
+		@apply relative 
+    overflow-hidden
+    cursor-not-allowed  
+		opacity-70;
+
+		i {
+			@apply ml-1 
+      text-sm 
+      inline-block
+      animate-spin;
+		}
+
+		&:active {
+			@apply pointer-events-none;
+		}
+		&::after {
+			@apply absolute 
+      -top-1 
+      -left-1 
+      -right-1 
+      -bottom-1 
+      z-10
+      bg-black
+      bg-opacity-25;
+			content: '';
+			background-color: hsla(0, 0%, 100%, 0.35);
+		}
+	}
+}

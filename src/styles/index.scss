@@ -1,0 +1,25 @@
+* {
+	/*
+   *  重置滚动条样式
+   */
+	&::-webkit-scrollbar,
+	&::-webkit-scrollbar-track {
+		@apply bg-transparent rounded-lg;
+	}
+	&::-webkit-scrollbar-thumb {
+		@apply bg-gray-300 border border-gray-300;
+		border-width: 1px;
+	}
+	&::-webkit-scrollbar {
+		display: none;
+		width: 6px;
+		height: 8px;
+	}
+}
+.scroll-wrapper {
+	&:hover {
+		.scroll-bar__thumb {
+			@apply opacity-100;
+		}
+	}
+}

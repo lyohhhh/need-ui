@@ -1,0 +1,36 @@
+.group {
+	.side-tips {
+		position: relative;
+		@apply pr-4;
+
+		&::after {
+			content: '';
+			position: absolute;
+			border-left-width: 4px;
+			border-right-width: 4px;
+			border-top-width: 6px;
+
+			@apply border-themebgcolor-400
+              w-0
+              h-0
+              right-1
+              top-1/2
+              -translate-y-1/2
+              border-l-transparent
+              border-r-transparent
+              duration-300;
+		}
+	}
+}
+
+.group-hover {
+	&:hover .side-tips::after {
+		@apply rotate-180;
+	}
+}
+
+.group-click {
+	.side-tips::after {
+		@apply rotate-180;
+	}
+}

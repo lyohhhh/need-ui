@@ -1,0 +1,14 @@
+/* 隐藏 */
+.fase-leave-to {
+	opacity: 0;
+}
+.fase-leave-active {
+	transition: opacity 3s;
+}
+/* 显示 */
+.fase-enter {
+	opacity: 0;
+}
+.fase-enter-active {
+	transition: opacity 3s;
+}

@@ -1,0 +1,8 @@
+.image-wrapper {
+	min-width: 100px;
+	height: 48px;
+	@media (min-width: theme('screens.md')) {
+		min-width: 175px;
+		height: 84px;
+	}
+}

@@ -1,0 +1,45 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@layer utilities {
+	.box {
+		display: -webkit-box;
+	}
+	.ov-more {
+		@apply box;
+		@apply overflow-hidden;
+		@apply overflow-ellipsis;
+		@apply overflow-clip;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+	}
+	.ov-2 {
+		@apply ov-more;
+		-webkit-line-clamp: 2;
+	}
+	.ov-3 {
+		@apply ov-more;
+		-webkit-line-clamp: 3;
+	}
+	.ov-4 {
+		@apply ov-more;
+		-webkit-line-clamp: 4;
+	}
+	.ov-5 {
+		@apply ov-more;
+		-webkit-line-clamp: 5;
+	}
+
+	.button--light__bg {
+		background: #ecf5ff;
+	}
+	.button--dark__bg {
+		background: #2e3946;
+	}
+}
+
+@layer base {
+}

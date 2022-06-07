@@ -1,0 +1,27 @@
+.is-required {
+	&::before {
+		content: '*';
+		@apply left-0 text-themeerrorcolor-500 mr-0.5;
+	}
+}
+
+.is-error {
+	input[data-type='input'] {
+		@apply border-themeerrorcolor-500;
+
+		&:hover,
+		&:focus {
+			@apply border-themeerrorcolor-500;
+		}
+	}
+}
+
+.fade-active {
+	@apply transition-opacity
+  duration-300
+  ease-linear;
+}
+.fade-to,
+.fade-enter {
+	@apply opacity-0;
+}
