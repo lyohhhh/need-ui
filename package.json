@@ -24,7 +24,6 @@
 		"rollup-plugin-commonjs": "^10.1.0",
 		"rollup-plugin-postcss": "^4.0.2",
 		"rollup-plugin-typescript2": "^0.32.1",
-		"rollup-plugin-vue": "^6.0.0",
 		"vue": "^3.2.25",
 		"vue-router": "4"
 	},

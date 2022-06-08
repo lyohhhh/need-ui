@@ -1,7 +1,6 @@
 import { name } from '../package.json';
 import typescript from 'rollup-plugin-typescript2';
 import babel from '@rollup/plugin-babel';
-import vuePlugin from 'rollup-plugin-vue';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import postcss from 'rollup-plugin-postcss';
 import postcssImport from 'postcss-import';
@@ -33,7 +32,6 @@ export default {
 			extract: 'css/lui.css',
 			plugins: [postcssImport(), tailwindcss()],
 		}),
-		vuePlugin(),
 		babel({ babelHelpers: 'bundled', extensions: ['.ts', '.js', '.tsx'] }),
 		commonjs({
 			include: ['node_modules/**', 'node_modules/**/*'],
