@@ -1,5 +1,4 @@
 import { defineComponent, PropType, reactive } from 'vue';
-import { go } from '@shared/index';
 import side from '@shared/css/side.module.scss';
 
 const Navbar = defineComponent({
@@ -53,7 +52,7 @@ function createTree(this: InstanceType<typeof Navbar>, tree: Tree[]): JSX.Elemen
 						class={['py-4 px-2 cursor-pointer relative group group-hover md:px-4', side['group']]}
 						onMouseover={this.slideShow.bind(this, index)}
 						onMouseout={this.slideHide.bind(this, index)}
-						onClick={e => go(e, item.url as string)}
+						// onClick={e => go(e, item.url as string)}
 					>
 						<span
 							class={[
@@ -72,7 +71,7 @@ function createTree(this: InstanceType<typeof Navbar>, tree: Tree[]): JSX.Elemen
 							>
 								{item.children.map(c => (
 									<li
-										onClick={e => go(e, c.url as string)}
+										// onClick={e => go(e, c.url as string)}
 										class='whitespace-nowrap px-4 text-sm py-1.5 hover:text-themetextcolor-500 dark:hover:text-themetextcolor-300'
 									>
 										{c.name}
