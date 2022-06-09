@@ -12,6 +12,14 @@
 	"license": "MIT",
 	"main": "dist/need-ui.cjs.js",
 	"module": "dist/need-ui.esm.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/lyohhhh/need-ui"
+	},
+	"files": [
+		"dist",
+		"README.md"
+	],
 	"scripts": {
 		"lint": "eslint --fix --ext .js,vue,.ts,.tsx src/",
 		"prettier": "prettier --config .prettierrc --write ./**/**/*.{js,css,vue,ts,tsx,scss}",
