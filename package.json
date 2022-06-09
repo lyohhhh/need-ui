@@ -3,6 +3,7 @@
 	"private": true,
 	"version": "0.0.1",
 	"author": "lyohhhh <lyohhhh@163.com>",
+	"description": "自有自建库",
 	"license": "MIT",
 	"main": "dist/lui.cjs.js",
 	"module": "dist/lui.esm.js",
