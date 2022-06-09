@@ -1,12 +1,17 @@
 {
-	"name": "lui",
-	"private": true,
-	"version": "0.0.1",
+	"name": "need-ui",
+	"private": false,
+	"version": "0.0.2",
 	"author": "lyohhhh <lyohhhh@163.com>",
-	"description": "自有自建库",
+	"description": "Vue3 + TS component library for my blog",
+	"keywords": [
+		"vue3",
+		"typescript",
+		"component"
+	],
 	"license": "MIT",
-	"main": "dist/lui.cjs.js",
-	"module": "dist/lui.esm.js",
+	"main": "dist/need-ui.cjs.js",
+	"module": "dist/need-ui.esm.js",
 	"scripts": {
 		"lint": "eslint --fix --ext .js,vue,.ts,.tsx src/",
 		"prettier": "prettier --config .prettierrc --write ./**/**/*.{js,css,vue,ts,tsx,scss}",
@@ -16,6 +21,7 @@
 		"build:clean": "rimraf ./dist"
 	},
 	"dependencies": {
+		"@rollup/plugin-babel": "^5.3.1",
 		"@rollup/plugin-node-resolve": "^13.3.0",
 		"async-validator": "^4.0.7",
 		"mitt": "^3.0.0",
