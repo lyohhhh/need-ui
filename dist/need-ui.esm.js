@@ -1,6 +1,3 @@
-import '@/styles/icon/index.css';
-import side from '@shared/css/side.module.scss';
-
 /**
  * Make a map and return a function for checking if a key
  * is in that map.
@@ -6186,6 +6183,8 @@ var Masker = defineComponent({
   }
 
 });
+
+var side = {"group":"side-module_group__wp3Ue","side-tips":"side-module_side-tips__QTZF7","group-hover":"side-module_group-hover__x6rhj","group-click":"side-module_group-click__D3-i1"};
 
 const Navbar = defineComponent({
   name: 'navbar',

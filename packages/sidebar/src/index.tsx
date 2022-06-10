@@ -1,8 +1,8 @@
 import { defineComponent, PropType, ref, Teleport, Transition } from 'vue';
 
-import { Masker } from '@/components';
+import { Masker } from '../../components';
 import sideAnimate from '../styles/side.module.scss';
-import side from '@shared/css/side.module.scss';
+import side from '../../[shared]/css/side.module.scss';
 
 const Sidebar = defineComponent({
 	name: 'Sidebar',

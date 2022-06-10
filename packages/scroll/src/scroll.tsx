@@ -1,6 +1,6 @@
-import { stopDefault } from '@/[shared]/mouse';
-import { useExpose } from '@/hooks/useExpose';
-import { throttle } from '@/utils';
+import { stopDefault } from '../../[shared]/mouse';
+import { useExpose } from '../../hooks/useExpose';
+import { throttle } from '../../utils';
 import { defineComponent, nextTick, onMounted, reactive, ref, renderSlot, toRefs } from 'vue';
 import scrollStyles from '../styles/scroll.module.scss';
 export default defineComponent({

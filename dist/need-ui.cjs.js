@@ -1,12 +1,5 @@
 'use strict';
 
-require('@/styles/icon/index.css');
-var side = require('@shared/css/side.module.scss');
-
-function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
-
-var side__default = /*#__PURE__*/_interopDefaultLegacy(side);
-
 /**
  * Make a map and return a function for checking if a key
  * is in that map.
@@ -6193,6 +6186,8 @@ var Masker = defineComponent({
 
 });
 
+var side = {"group":"side-module_group__wp3Ue","side-tips":"side-module_side-tips__QTZF7","group-hover":"side-module_group-hover__x6rhj","group-click":"side-module_group-click__D3-i1"};
+
 const Navbar = defineComponent({
   name: 'navbar',
   props: {
@@ -6239,11 +6234,11 @@ function createTree(tree) {
   if (!tree.length) return null;
   return createVNode(Fragment, null, [tree.map((item, index) => {
     return createVNode("li", {
-      "class": ['py-4 px-2 cursor-pointer relative group group-hover md:px-4', side__default["default"]['group']],
+      "class": ['py-4 px-2 cursor-pointer relative group group-hover md:px-4', side['group']],
       "onMouseover": this.slideShow.bind(this, index),
       "onMouseout": this.slideHide.bind(this, index)
     }, [createVNode("span", {
-      "class": ['text-sm inline-block border-themetextcolor-500 cursor-pointer box-border group-hover:border-b-2 dark:border-themetextcolor-300', item.children ? side__default["default"]['side-tips'] : null]
+      "class": ['text-sm inline-block border-themetextcolor-500 cursor-pointer box-border group-hover:border-b-2 dark:border-themetextcolor-300', item.children ? side['side-tips'] : null]
     }, [item.name]), item.children ? createVNode("ul", {
       "class": ['flex-col absolute top-3/4 mt-2 py-2 rounded-md bg-white left-1/2 -translate-x-1/2 border-gray-200 border dark:bg-themebgcolor-900 dark:border-themebgcolor-500', this.slideBooleanList[index] ? 'block' : 'hidden']
     }, [item.children.map(c => createVNode("li", {
@@ -6317,10 +6312,10 @@ const Sidebar = defineComponent({
 const renderCategory = function () {
   const props = this.$props;
   return createVNode(Fragment, null, [props.category.map((item, index) => createVNode("li", {
-    "class": ['py-2 relative group', side__default["default"]['group'], this.activedIndex == index && side__default["default"]['group-click']],
+    "class": ['py-2 relative group', side['group'], this.activedIndex == index && side['group-click']],
     "onClick": this.collapseSideByIndex.bind(this, index)
   }, [createVNode("span", {
-    "class": ['inline-block border-themetextcolor-300 border-opacity-0 border-b-2 py-2 text-sm', item.children ? side__default["default"]['side-tips'] : null, this.activedIndex == index && ' border-opacity-100']
+    "class": ['inline-block border-themetextcolor-300 border-opacity-0 border-b-2 py-2 text-sm', item.children ? side['side-tips'] : null, this.activedIndex == index && ' border-opacity-100']
   }, [item.name]), item.children ? createVNode("ul", {
     "class": ['h-0 overflow-hidden max-h-0 transition-all duration-300 ', this.activedIndex == index && 'bg-themebgcolor-100 py-4 dark:bg-themebgcolor-800 h-auto max-h-48']
   }, [item.children.map(c => createVNode("li", {

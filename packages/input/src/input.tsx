@@ -1,4 +1,4 @@
-import { IconFont } from '@/components';
+import { IconFont } from '../../components';
 import {
 	computed,
 	defineComponent,
@@ -9,7 +9,7 @@ import {
 	Transition,
 } from 'vue';
 import props from './props';
-import { debounce } from '@/utils';
+import { debounce } from '../../utils';
 import inputStyles from '../styles/input.module.scss';
 inputStyles;
 export default defineComponent({

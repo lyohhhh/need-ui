@@ -10,8 +10,8 @@ export default defineConfig({
 	base: './',
 	resolve: {
 		alias: {
-			'@': resolve('./packages'),
-			'@shared': resolve('./packages/[shared]'),
+			// '@': resolve('./packages'),
+			// '@shared': resolve('./packages/[shared]'),
 		},
 		extensions: ['.js', '.tsx', '.vue', '.json', '.ts'],
 	},

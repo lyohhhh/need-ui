@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue';
-import '@/styles/icon/index.css';
+import '../styles/icon.css';
 
 export default defineComponent({
 	name: 'IconFont',

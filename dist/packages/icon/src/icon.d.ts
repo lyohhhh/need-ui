@@ -1,4 +1,4 @@
-import '@/styles/icon/index.css';
+import '../styles/icon.css';
 declare const _default: import("vue").DefineComponent<{
     icon: {
         type: StringConstructor;

@@ -1,4 +1,4 @@
-import { Masker, Button } from '@/components';
+import { Masker, Button } from '../../components';
 import { defineComponent, renderSlot, Teleport, Transition } from 'vue';
 
 import dialogAnimate from '../styles/dialog.module.scss';

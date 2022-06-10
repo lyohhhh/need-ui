@@ -20,6 +20,9 @@ declare const Form: import("vue").DefineComponent<{
         type: StringConstructor;
     };
     labelSuffix: {
+        /**
+         * 对每个 item 进行效验
+         */
         type: StringConstructor;
     };
     disabled: {
@@ -47,6 +50,9 @@ declare const Form: import("vue").DefineComponent<{
         type: StringConstructor;
     };
     labelSuffix: {
+        /**
+         * 对每个 item 进行效验
+         */
         type: StringConstructor;
     };
     disabled: {
