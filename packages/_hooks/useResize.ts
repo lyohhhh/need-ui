@@ -1,5 +1,5 @@
 import { ref } from 'vue';
-import { throttle } from '../utils';
+import { throttle } from '../_utils';
 
 const MOBILE = 480;
 

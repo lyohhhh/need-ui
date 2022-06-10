@@ -1,4 +1,4 @@
-import * as Components from '@/components';
+import * as Components from '../../components';
 
 declare module 'vue' {
 	export interface GlobalComponents {

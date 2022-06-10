@@ -3,7 +3,7 @@ import props from './form-props';
 import { Validate, FormItem, key } from './shared';
 import { emitter } from '../../[shared]/emitter';
 import formStyle from '../styles/form.module.scss';
-import { useExpose } from '../../hooks/useExpose';
+import { useExpose } from '../../_hooks/useExpose';
 
 const Form = defineComponent({
 	name: 'Form',

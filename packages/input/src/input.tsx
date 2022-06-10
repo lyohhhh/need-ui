@@ -9,7 +9,7 @@ import {
 	Transition,
 } from 'vue';
 import props from './props';
-import { debounce } from '../../utils';
+import { debounce } from '../../_utils';
 import inputStyles from '../styles/input.module.scss';
 inputStyles;
 export default defineComponent({

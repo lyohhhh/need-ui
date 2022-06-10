@@ -15,7 +15,7 @@ import { FormItem as FormItemType, key } from './shared';
 import Schema from 'async-validator';
 import { Events, emitter as emitBus } from '../../[shared]/emitter';
 import mitt from 'mitt';
-import { useExpose } from '../../hooks/useExpose';
+import { useExpose } from '../../_hooks/useExpose';
 
 const FormItem = defineComponent({
 	name: 'FormItem',

@@ -1,4 +1,4 @@
-import { useResize } from '../../hooks/useResize';
+import { useResize } from '../../_hooks/useResize';
 import { defineComponent, PropType, renderSlot } from 'vue';
 
 const isMobile = useResize();
