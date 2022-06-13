@@ -21,7 +21,7 @@ export default {
 		file: file('esm'),
 		format: 'es',
 		global: {
-			vue: 'Vue',
+			vue: 'vue',
 		},
 	},
 	plugins: [
@@ -34,7 +34,8 @@ export default {
 		}),
 		babel({ babelHelpers: 'bundled', extensions: ['.ts', '.js', '.tsx'] }),
 		commonjs({
-			include: ['node_modules/**', 'node_modules/**/*'],
+			include: ['node_modules/**'],
 		}),
 	],
+	external: ['vue'],
 };

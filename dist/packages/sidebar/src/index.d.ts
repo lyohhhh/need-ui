@@ -1,4 +1,10 @@
 import { PropType } from 'vue';
+interface Tree {
+    id: string;
+    name: string;
+    url: null | string;
+    children?: Tree[];
+}
 declare const Sidebar: import("vue").DefineComponent<{
     category: {
         type: PropType<Tree[]>;
