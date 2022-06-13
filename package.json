@@ -1,7 +1,7 @@
 {
 	"name": "need-ui",
 	"private": false,
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"author": "lyohhhh <lyohhhh@163.com>",
 	"description": "Vue3 + TS component library for my blog",
 	"keywords": [
@@ -16,15 +16,16 @@
 		"type": "git",
 		"url": "https://github.com/lyohhhh/need-ui"
 	},
-	"typings": "dist/types/need-ui.d.ts",
+	"typings": "dist/src/index.d.ts",
 	"files": [
 		"dist",
 		"README.md"
 	],
 	"scripts": {
+		"dev": "vite",
 		"lint": "eslint --fix --ext .js,vue,.ts,.tsx src/",
 		"prettier": "prettier --config .prettierrc --write ./**/**/*.{js,css,vue,ts,tsx,scss}",
-		"build": "npm run build:clean && npm run build:esm && npm run build:cjs && build:dts",
+		"build": "npm run build:clean && npm run build:esm && npm run build:cjs",
 		"build:esm": "rollup  --config build/rollup.esm.config.js",
 		"build:cjs": "rollup  --config build/rollup.cjs.config.js",
 		"build:clean": "rimraf ./dist",

@@ -8609,9 +8609,9 @@ function register({
   };
 }
 
-var install = register({
+register({
   prefix: '',
   components: Object.keys(components).map(key => components[key])
 });
 
-export { install as default };
+export { Button, dialog as Dialog, footer as Footer, Form, FormItem, IconFont, input as Input, index as List, loading as LoadingMore, Masker, Navbar, aside as RAside, scroll as Scroll, Sidebar, Skeleton };

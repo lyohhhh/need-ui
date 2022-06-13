@@ -1,5 +1,7 @@
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * Make a map and return a function for checking if a key
  * is in that map.
@@ -8611,9 +8613,23 @@ function register({
   };
 }
 
-var install = register({
+register({
   prefix: '',
   components: Object.keys(components).map(key => components[key])
 });
 
-module.exports = install;
+exports.Button = Button;
+exports.Dialog = dialog;
+exports.Footer = footer;
+exports.Form = Form;
+exports.FormItem = FormItem;
+exports.IconFont = IconFont;
+exports.Input = input;
+exports.List = index;
+exports.LoadingMore = loading;
+exports.Masker = Masker;
+exports.Navbar = Navbar;
+exports.RAside = aside;
+exports.Scroll = scroll;
+exports.Sidebar = Sidebar;
+exports.Skeleton = Skeleton;

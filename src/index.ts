@@ -1,3 +1,3 @@
-import '../src/styles/index.css';
-import '../src/styles/index.scss';
-export { default } from '../packages/install';
+import './styles/index.css';
+import './styles/index.scss';
+export * from '../packages';
