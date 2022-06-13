@@ -1,11 +1,17 @@
 import { defineComponent, PropType, reactive } from 'vue';
 import side from '../../[shared]/css/side.module.scss';
+interface Tree {
+	id: string;
+	name: string;
+	url: null | string;
+	children?: Tree[];
+}
 
 const Navbar = defineComponent({
 	name: 'navbar',
 	props: {
 		category: {
-			type: [] as PropType<Tree[]>,
+			type: [] as PropType<any[] extends Tree[] ? Tree[] : any[]>,
 			required: true,
 		},
 	},

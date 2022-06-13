@@ -3,7 +3,12 @@ import { defineComponent, PropType, ref, Teleport, Transition } from 'vue';
 import { Masker } from '../../components';
 import sideAnimate from '../styles/side.module.scss';
 import side from '../../[shared]/css/side.module.scss';
-
+interface Tree {
+	id: string;
+	name: string;
+	url: null | string;
+	children?: Tree[];
+}
 const Sidebar = defineComponent({
 	name: 'Sidebar',
 	props: {
