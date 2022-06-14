@@ -1,7 +1,7 @@
 {
 	"name": "need-ui",
 	"private": false,
-	"version": "0.0.15",
+	"version": "0.0.16",
 	"author": "lyohhhh <lyohhhh@163.com>",
 	"description": "Vue3 + TS component library for my blog",
 	"keywords": [
