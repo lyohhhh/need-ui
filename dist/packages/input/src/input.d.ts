@@ -71,11 +71,11 @@ declare const _default: import("vue").DefineComponent<{
 }>> & {
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {
-    type: string;
-    disabled: boolean;
     placeholder: string;
     clearable: boolean;
+    disabled: boolean;
     value: string;
+    type: string;
     error: boolean;
     errorPlaceholder: string;
 }>;
