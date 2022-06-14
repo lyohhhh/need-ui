@@ -1,1 +1,1 @@
-export { default as RAside } from './src/aside';
+export { default as Aside } from './src/aside';

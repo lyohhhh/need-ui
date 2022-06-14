@@ -1,1 +1,1 @@
-export { default as LoadingMore } from './src/loading';
+export { default as Loading } from './src/loading';

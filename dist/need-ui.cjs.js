@@ -5,7 +5,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 var vue = require('vue');
 
 var aside = vue.defineComponent({
-  name: 'RAside',
+  name: 'Aside',
 
   setup() {
     const loading = vue.ref(true);
@@ -347,7 +347,7 @@ class ScrollObserver {
 }
 
 var loading = vue.defineComponent({
-  name: 'LoadingMore',
+  name: 'Loading',
   props: props$2,
 
   setup(props, {
@@ -389,7 +389,7 @@ var loading = vue.defineComponent({
 var maskAnimate = {"fade-active":"mask-module_fade-active__B-CtN","fade-to":"mask-module_fade-to__PWjKp","fade-enter":"mask-module_fade-enter__yEDWT"};
 
 var Masker = vue.defineComponent({
-  name: 'mask',
+  name: 'Masker',
   props: {
     show: {
       type: Boolean
@@ -449,7 +449,7 @@ var Masker = vue.defineComponent({
 var side = {"group":"side-module_group__wp3Ue","side-tips":"side-module_side-tips__QTZF7","group-hover":"side-module_group-hover__x6rhj","group-click":"side-module_group-click__D3-i1"};
 
 const Navbar = vue.defineComponent({
-  name: 'navbar',
+  name: 'Navbar',
   props: {
     category: {
       type: [],
@@ -2827,12 +2827,12 @@ var scroll = vue.defineComponent({
 
 var components = /*#__PURE__*/Object.freeze({
 	__proto__: null,
-	RAside: aside,
+	Aside: aside,
 	Button: Button,
 	Dialog: dialog,
 	IconFont: IconFont,
 	List: index,
-	LoadingMore: loading,
+	Loading: loading,
 	Masker: Masker,
 	Navbar: Navbar,
 	Sidebar: Sidebar,
@@ -2876,6 +2876,7 @@ var install = register({
   components: Object.keys(components).map(key => components[key])
 });
 
+exports.Aside = aside;
 exports.Button = Button;
 exports.Dialog = dialog;
 exports.Footer = footer;
@@ -2884,10 +2885,9 @@ exports.FormItem = FormItem;
 exports.IconFont = IconFont;
 exports.Input = input;
 exports.List = index;
-exports.LoadingMore = loading;
+exports.Loading = loading;
 exports.Masker = Masker;
 exports.Navbar = Navbar;
-exports.RAside = aside;
 exports.Scroll = scroll;
 exports.Sidebar = Sidebar;
 exports.Skeleton = Skeleton;

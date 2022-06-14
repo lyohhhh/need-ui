@@ -3,7 +3,7 @@ import { defineComponent, ref } from 'vue';
 import { Skeleton } from '../../components';
 
 export default defineComponent({
-	name: 'RAside',
+	name: 'Aside',
 	setup() {
 		const loading = ref<boolean>(true);
 

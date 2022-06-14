@@ -8,7 +8,7 @@ interface Tree {
 }
 
 const Navbar = defineComponent({
-	name: 'navbar',
+	name: 'Navbar',
 	props: {
 		category: {
 			type: [] as PropType<any[] extends Tree[] ? Tree[] : any[]>,

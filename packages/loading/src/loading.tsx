@@ -3,7 +3,7 @@ import props from './props';
 import { ScrollObserver } from './observer';
 
 export default defineComponent({
-	name: 'LoadingMore',
+	name: 'Loading',
 	props,
 	setup(props, { emit }) {
 		const obs = ref<HTMLElement>();

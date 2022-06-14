@@ -1,7 +1,7 @@
 import { defineComponent, ref, createVNode, createTextVNode, computed, renderSlot, Teleport, Transition, Fragment, onMounted, withDirectives, vShow, reactive, inject, vModelDynamic, getCurrentInstance, provide, toRefs, mergeProps, nextTick } from 'vue';
 
 var aside = defineComponent({
-  name: 'RAside',
+  name: 'Aside',
 
   setup() {
     const loading = ref(true);
@@ -343,7 +343,7 @@ class ScrollObserver {
 }
 
 var loading = defineComponent({
-  name: 'LoadingMore',
+  name: 'Loading',
   props: props$2,
 
   setup(props, {
@@ -385,7 +385,7 @@ var loading = defineComponent({
 var maskAnimate = {"fade-active":"mask-module_fade-active__B-CtN","fade-to":"mask-module_fade-to__PWjKp","fade-enter":"mask-module_fade-enter__yEDWT"};
 
 var Masker = defineComponent({
-  name: 'mask',
+  name: 'Masker',
   props: {
     show: {
       type: Boolean
@@ -445,7 +445,7 @@ var Masker = defineComponent({
 var side = {"group":"side-module_group__wp3Ue","side-tips":"side-module_side-tips__QTZF7","group-hover":"side-module_group-hover__x6rhj","group-click":"side-module_group-click__D3-i1"};
 
 const Navbar = defineComponent({
-  name: 'navbar',
+  name: 'Navbar',
   props: {
     category: {
       type: [],
@@ -2823,12 +2823,12 @@ var scroll = defineComponent({
 
 var components = /*#__PURE__*/Object.freeze({
 	__proto__: null,
-	RAside: aside,
+	Aside: aside,
 	Button: Button,
 	Dialog: dialog,
 	IconFont: IconFont,
 	List: index,
-	LoadingMore: loading,
+	Loading: loading,
 	Masker: Masker,
 	Navbar: Navbar,
 	Sidebar: Sidebar,
@@ -2872,4 +2872,4 @@ var install = register({
   components: Object.keys(components).map(key => components[key])
 });
 
-export { Button, dialog as Dialog, footer as Footer, Form, FormItem, IconFont, input as Input, index as List, loading as LoadingMore, Masker, Navbar, aside as RAside, scroll as Scroll, Sidebar, Skeleton, install as default };
+export { aside as Aside, Button, dialog as Dialog, footer as Footer, Form, FormItem, IconFont, input as Input, index as List, loading as Loading, Masker, Navbar, scroll as Scroll, Sidebar, Skeleton, install as default };
