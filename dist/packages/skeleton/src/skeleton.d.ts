@@ -58,12 +58,12 @@ declare const _default: import("vue").DefineComponent<{
         default: boolean;
     };
 }>>, {
+    loading: boolean;
+    title: boolean;
     rows: number;
     rowWidth: string | number | (string | number)[];
     items: number;
-    title: boolean;
     image: boolean;
-    loading: boolean;
     time: boolean;
 }>;
 export default _default;

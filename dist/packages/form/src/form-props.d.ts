@@ -15,7 +15,7 @@ declare const _default: {
         default: boolean;
     };
     label: {
-        type: PropType<"left" | "right" | "top">;
+        type: PropType<"top" | "left" | "right">;
         default: string;
     };
     labelWidth: {

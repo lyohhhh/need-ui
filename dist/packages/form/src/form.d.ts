@@ -13,7 +13,7 @@ declare const Form: import("vue").DefineComponent<{
         default: boolean;
     };
     label: {
-        type: import("vue").PropType<"left" | "right" | "top">;
+        type: import("vue").PropType<"top" | "left" | "right">;
         default: string;
     };
     labelWidth: {
@@ -43,7 +43,7 @@ declare const Form: import("vue").DefineComponent<{
         default: boolean;
     };
     label: {
-        type: import("vue").PropType<"left" | "right" | "top">;
+        type: import("vue").PropType<"top" | "left" | "right">;
         default: string;
     };
     labelWidth: {
@@ -59,8 +59,8 @@ declare const Form: import("vue").DefineComponent<{
         type: BooleanConstructor;
     };
 }>>, {
-    inline: boolean;
-    label: "left" | "right" | "top";
     disabled: boolean;
+    inline: boolean;
+    label: "top" | "left" | "right";
 }>;
 export default Form;

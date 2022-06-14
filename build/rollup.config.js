@@ -29,7 +29,7 @@ export default {
 		typescript({ tsconfigOverride: overrides, lib: ['es5', 'es6', 'dom'], target: 'es5' }),
 		postcss({
 			extensions: ['.css', '.scss'],
-			extract: 'css/lui.css',
+			extract: 'css/need-ui.css',
 			plugins: [postcssImport(), tailwindcss()],
 		}),
 		babel({ babelHelpers: 'bundled', extensions: ['.ts', '.js', '.tsx'] }),
@@ -37,5 +37,4 @@ export default {
 			include: ['node_modules/**'],
 		}),
 	],
-	external: ['vue'],
 };
