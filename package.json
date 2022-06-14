@@ -1,7 +1,7 @@
 {
 	"name": "need-ui",
 	"private": false,
-	"version": "0.0.16",
+	"version": "0.0.17",
 	"author": "lyohhhh <lyohhhh@163.com>",
 	"description": "Vue3 + TS component library for my blog",
 	"keywords": [
@@ -30,7 +30,8 @@
 		"build:cjs": "rollup  --config build/rollup.cjs.config.js",
 		"build:clean": "rimraf ./dist",
 		"build:dts": "api-extractor run --local --verbose",
-		"component:dts": "esbuild scripts/components-types.js --bundle --platform=node | node"
+		"component:dts": "esbuild scripts/components-types.js --bundle --platform=node | node",
+		"release": "npm run build && npm publish"
 	},
 	"dependencies": {
 		"async-validator": "^4.0.7",
