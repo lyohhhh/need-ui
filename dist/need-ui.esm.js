@@ -2868,7 +2868,7 @@ function register({
 }
 
 var install = register({
-  prefix: '',
+  prefix: 'L',
   components: Object.keys(components).map(key => components[key])
 });
 
