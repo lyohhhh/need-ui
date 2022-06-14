@@ -21,26 +21,5 @@
 	"dtsRollup": {
 		"enabled": true,
 		"untrimmedFilePath": "<projectFolder>/dist/src/index.d.ts"
-	},
-
-	"tsdocMetadata": {},
-
-	"messages": {
-		"compilerMessageReporting": {
-			"default": {
-				"logLevel": "warning"
-			}
-		},
-
-		"extractorMessageReporting": {
-			"default": {
-				"logLevel": "warning"
-			}
-		},
-		"tsdocMessageReporting": {
-			"default": {
-				"logLevel": "warning"
-			}
-		}
 	}
 }

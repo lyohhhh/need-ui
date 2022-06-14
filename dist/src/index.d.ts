@@ -1,4 +1,5 @@
 import { AllowedComponentProps } from 'vue';
+import { App } from 'vue';
 import { ComponentCustomProps } from 'vue';
 import { ComponentOptionsMixin } from 'vue';
 import { ComputedRef } from 'vue';
@@ -97,6 +98,12 @@ export declare const Button: DefineComponent<
 		loading: boolean;
 	}
 >;
+
+declare const _default: {
+	prefix: string;
+	install: (app: App<any>) => void;
+};
+export default _default;
 
 export declare const Dialog: DefineComponent<
 	{
@@ -744,7 +751,7 @@ export declare const Scroll: DefineComponent<
 export declare const Sidebar: DefineComponent<
 	{
 		category: {
-			type: PropType<Tree[]>;
+			type: PropType<Tree_2[]>;
 			required: true;
 		};
 		modelValue: {
@@ -767,7 +774,7 @@ export declare const Sidebar: DefineComponent<
 	Readonly<
 		ExtractPropTypes<{
 			category: {
-				type: PropType<Tree[]>;
+				type: PropType<Tree_2[]>;
 				required: true;
 			};
 			modelValue: {
@@ -862,5 +869,19 @@ export declare const Skeleton: DefineComponent<
 		time: boolean;
 	}
 >;
+
+declare interface Tree {
+	id: string;
+	name: string;
+	url: null | string;
+	children?: Tree[];
+}
+
+declare interface Tree_2 {
+	id: string;
+	name: string;
+	url: null | string;
+	children?: Tree_2[];
+}
 
 export {};
