@@ -2,7 +2,7 @@ import { defineComponent } from 'vue';
 import '../styles/icon.css';
 
 export default defineComponent({
-	name: 'IconFont',
+	name: 'Icon',
 	props: {
 		icon: {
 			type: String,

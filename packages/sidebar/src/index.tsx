@@ -1,6 +1,6 @@
 import { defineComponent, PropType, ref, Teleport, Transition } from 'vue';
 
-import { Masker } from '../../components';
+import { LMasker } from '../../components';
 import sideAnimate from '../styles/side.module.scss';
 import side from '../../[shared]/css/side.module.scss';
 interface Tree {
@@ -60,7 +60,7 @@ const Sidebar = defineComponent({
 					</aside>
 				</Transition>
 
-				<Masker show={props.modelValue} onChange={this.changeCollapse}></Masker>
+				<LMasker show={props.modelValue} onChange={this.changeCollapse}></LMasker>
 			</Teleport>
 		);
 	},

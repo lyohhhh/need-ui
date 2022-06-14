@@ -1,8 +1,22 @@
 import path from 'path';
 import fs from 'fs-extra';
 import process from 'process';
-import * as globalComponents from '../packages/components';
-
+const globalComponents = [
+	'LButton',
+	'LAside',
+	'LDialog',
+	'LFooter',
+	'LForm',
+	'LFormItem',
+	'LIcon',
+	'LInput',
+	'LList',
+	'LLoading',
+	'LMasker',
+	'LNavbar',
+	'LSidebar',
+	'LSkeleton',
+];
 const ROOT = process.cwd();
 
 const excludeComponents = [];
@@ -22,8 +36,8 @@ function parseComponentsDeclaration(code) {
 
 async function generateComponentsType() {
 	const components = {};
-	Object.keys(globalComponents).forEach(key => {
-		const entry = `typeof import('neet-ui')['${key}']`;
+	globalComponents.forEach(key => {
+		const entry = `typeof import('need-ui')['${key}']`;
 		if (!excludeComponents.includes(key)) {
 			components[key] = entry;
 		}
@@ -46,17 +60,18 @@ async function generateComponentsType() {
 			}
 			return `${name}: ${v}`;
 		});
-	const code = `// auto register component types
-                declare module 'vue' {
-                  export interface GlobalComponents {
-                    ${lines.join('\n    ')}
-                    [key: string]: any
-                  }
-                }
-                export {}
-                `;
+	const code = `
+// auto register component types
+declare module 'vue' {
+  export interface GlobalComponents {
+    ${lines.join('\n    ')}
+    [key: string]: any
+  }
+}
+export {}
+`;
 	if (code !== originalContent) {
-		await fs.writeFile(path.resolve(ROOT, 'component.d.ts'), code, 'utf-8');
+		await fs.writeFile(path.resolve(`${ROOT}/dist`, 'component.d.ts'), code, 'utf-8');
 	}
 }
 generateComponentsType();

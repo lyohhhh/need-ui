@@ -1,4 +1,4 @@
-import { IconFont } from '../../components';
+import { LIcon } from '../../components';
 import { computed, defineComponent, PropType, renderSlot } from 'vue';
 import ButtonStyles from '../styles/button.moudle.scss';
 // console.log(ButtonStyles);
@@ -67,7 +67,7 @@ export default defineComponent({
 				<span>
 					{renderSlot(this.$slots, 'default')}
 					{/* 判断是否是loading */}
-					{props.loading && <IconFont icon='loading'></IconFont>}
+					{props.loading && <LIcon icon='loading'></LIcon>}
 				</span>
 			</button>
 		);

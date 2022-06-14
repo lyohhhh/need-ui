@@ -1,4 +1,4 @@
-import { Masker, Button } from '../../components';
+import { LMasker, LButton } from '../../components';
 import { defineComponent, renderSlot, Teleport, Transition } from 'vue';
 
 import dialogAnimate from '../styles/dialog.module.scss';
@@ -92,22 +92,22 @@ export default defineComponent({
 									) : (
 										<>
 											{this.showCancel && (
-												<Button
+												<LButton
 													loading={this.cancelLoading}
 													disabled={this.cancelDisabled}
 													onClick={this.emitCancel}
 												>
 													取消
-												</Button>
+												</LButton>
 											)}
-											<Button
+											<LButton
 												loading={this.confirmLoading}
 												disabled={this.confirmDisabled}
 												onClick={this.emitConfirm}
 												type='primary'
 											>
 												确定
-											</Button>
+											</LButton>
 										</>
 									)}
 								</div>
@@ -115,12 +115,12 @@ export default defineComponent({
 						</div>
 					) : null}
 				</Transition>
-				<Masker
+				<LMasker
 					show={this.modelValue}
 					onChange={() => {
 						this.closeOnModal ? this.hideDialog : null;
 					}}
-				></Masker>
+				></LMasker>
 			</Teleport>
 		);
 	},

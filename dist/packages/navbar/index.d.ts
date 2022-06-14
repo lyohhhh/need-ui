@@ -1,1 +1,1 @@
-export { default as Navbar } from './src/index';
+export { default as LNavbar } from './src/index';

@@ -11,7 +11,7 @@ var aside = vue.defineComponent({
     const loading = vue.ref(true);
     return () => vue.createVNode("div", {
       "class": 'aside p-2 shadow-lg flex-1 w-3/12 ml-10 bg-white rounded-md box-border sticky h-128 top-8 dark:bg-themebgcolor-900 dark:shadow-themebgcolor-700 hidden lg:block'
-    }, [vue.createVNode(Skeleton, {
+    }, [vue.createVNode(LSkeleton, {
       "loading": loading.value,
       "items": 3,
       "title": false,
@@ -23,7 +23,7 @@ var aside = vue.defineComponent({
 
 });
 
-var Button = vue.defineComponent({
+var LButton = vue.defineComponent({
   name: 'Button',
   props: {
     size: {
@@ -92,7 +92,7 @@ var Button = vue.defineComponent({
     return vue.createVNode("button", {
       "class": ['button', this.buttonClass],
       "onClick": this.emitClick
-    }, [vue.createVNode("span", null, [vue.renderSlot(this.$slots, 'default'), props.loading && vue.createVNode(IconFont, {
+    }, [vue.createVNode("span", null, [vue.renderSlot(this.$slots, 'default'), props.loading && vue.createVNode(LIcon, {
       "icon": 'loading'
     }, null)])]);
   }
@@ -194,13 +194,13 @@ var dialog = vue.defineComponent({
           "class": 'dialog-footer p-4'
         }, [vue.createVNode("div", {
           "class": ['flex items-center', this.center ? 'justify-center' : 'justify-end']
-        }, [this.$slots.footer ? vue.renderSlot(this.$slots, 'footer') : vue.createVNode(vue.Fragment, null, [this.showCancel && vue.createVNode(Button, {
+        }, [this.$slots.footer ? vue.renderSlot(this.$slots, 'footer') : vue.createVNode(vue.Fragment, null, [this.showCancel && vue.createVNode(LButton, {
           "loading": this.cancelLoading,
           "disabled": this.cancelDisabled,
           "onClick": this.emitCancel
         }, {
           default: () => [vue.createTextVNode("\u53D6\u6D88")]
-        }), vue.createVNode(Button, {
+        }), vue.createVNode(LButton, {
           "loading": this.confirmLoading,
           "disabled": this.confirmDisabled,
           "onClick": this.emitConfirm,
@@ -208,7 +208,7 @@ var dialog = vue.defineComponent({
         }, {
           default: () => [vue.createTextVNode("\u786E\u5B9A")]
         })])])])]) : null]
-      }), vue.createVNode(Masker, {
+      }), vue.createVNode(LMasker, {
         "show": this.modelValue,
         "onChange": () => {
           this.closeOnModal ? this.hideDialog : null;
@@ -219,8 +219,8 @@ var dialog = vue.defineComponent({
 
 });
 
-var IconFont = vue.defineComponent({
-  name: 'IconFont',
+var LIcon = vue.defineComponent({
+  name: 'Icon',
   props: {
     icon: {
       type: String,
@@ -388,7 +388,7 @@ var loading = vue.defineComponent({
 
 var maskAnimate = {"fade-active":"mask-module_fade-active__B-CtN","fade-to":"mask-module_fade-to__PWjKp","fade-enter":"mask-module_fade-enter__yEDWT"};
 
-var Masker = vue.defineComponent({
+var LMasker = vue.defineComponent({
   name: 'Masker',
   props: {
     show: {
@@ -560,7 +560,7 @@ const Sidebar = vue.defineComponent({
         }, [vue.createVNode("h1", {
           "class": 'text-2xl mb-8'
         }, [vue.createTextVNode("Title")]), vue.createVNode("ul", null, [renderCategory.call(this)])])]), [[vue.vShow, props.modelValue]])]
-      }), vue.createVNode(Masker, {
+      }), vue.createVNode(LMasker, {
         "show": props.modelValue,
         "onChange": this.changeCollapse
       }, null)]
@@ -626,7 +626,7 @@ const isMobileHandle = () => {
 };
 
 const isMobile = useResize();
-var Skeleton = vue.defineComponent({
+var LSkeleton = vue.defineComponent({
   name: 'Skeleton',
   props: {
     rows: {
@@ -789,7 +789,7 @@ var input = vue.defineComponent({
       }, [vue.renderSlot(slots, 'prefix')]);
       if (props.prefixIcon) return vue.createVNode("span", {
         "class": ['input--prefix__icon', prefixClass]
-      }, [vue.createVNode(IconFont, {
+      }, [vue.createVNode(LIcon, {
         "icon": props.prefixIcon
       }, null)]);
       return null;
@@ -803,7 +803,7 @@ var input = vue.defineComponent({
         "enterActiveClass": inputStyles['fade-active'],
         "leaveActiveClass": inputStyles['fade-active']
       }, {
-        default: () => [isShow.value ? vue.createVNode(IconFont, {
+        default: () => [isShow.value ? vue.createVNode(LIcon, {
           "onClick": () => {
             emit('update:modelValue', '');
             triggerFormItemValidate();
@@ -817,7 +817,7 @@ var input = vue.defineComponent({
       }, [vue.renderSlot(slots, 'suffix')]);
       if (props.suffixIcon) return vue.createVNode("span", {
         "class": 'input--suffix__icon'
-      }, [vue.createVNode(IconFont, {
+      }, [vue.createVNode(LIcon, {
         "icon": props.suffixIcon
       }, null)]);
       return null;
@@ -2827,21 +2827,21 @@ var scroll = vue.defineComponent({
 
 var components = /*#__PURE__*/Object.freeze({
 	__proto__: null,
-	Aside: aside,
-	Button: Button,
-	Dialog: dialog,
-	IconFont: IconFont,
-	List: index,
-	Loading: loading,
-	Masker: Masker,
-	Navbar: Navbar,
-	Sidebar: Sidebar,
-	Skeleton: Skeleton,
-	Input: input,
-	Form: Form,
-	FormItem: FormItem,
-	Footer: footer,
-	Scroll: scroll
+	LAside: aside,
+	LButton: LButton,
+	LDialog: dialog,
+	LIcon: LIcon,
+	LList: index,
+	LLoading: loading,
+	LMasker: LMasker,
+	LNavbar: Navbar,
+	LSidebar: Sidebar,
+	LSkeleton: LSkeleton,
+	LInput: input,
+	LForm: Form,
+	LFormItem: FormItem,
+	LFooter: footer,
+	LScroll: scroll
 });
 
 function register({
@@ -2876,19 +2876,19 @@ var install = register({
   components: Object.keys(components).map(key => components[key])
 });
 
-exports.Aside = aside;
-exports.Button = Button;
-exports.Dialog = dialog;
-exports.Footer = footer;
-exports.Form = Form;
-exports.FormItem = FormItem;
-exports.IconFont = IconFont;
-exports.Input = input;
-exports.List = index;
-exports.Loading = loading;
-exports.Masker = Masker;
-exports.Navbar = Navbar;
-exports.Scroll = scroll;
-exports.Sidebar = Sidebar;
-exports.Skeleton = Skeleton;
+exports.LAside = aside;
+exports.LButton = LButton;
+exports.LDialog = dialog;
+exports.LFooter = footer;
+exports.LForm = Form;
+exports.LFormItem = FormItem;
+exports.LIcon = LIcon;
+exports.LInput = input;
+exports.LList = index;
+exports.LLoading = loading;
+exports.LMasker = LMasker;
+exports.LNavbar = Navbar;
+exports.LScroll = scroll;
+exports.LSidebar = Sidebar;
+exports.LSkeleton = LSkeleton;
 exports["default"] = install;

@@ -7,7 +7,7 @@ var aside = defineComponent({
     const loading = ref(true);
     return () => createVNode("div", {
       "class": 'aside p-2 shadow-lg flex-1 w-3/12 ml-10 bg-white rounded-md box-border sticky h-128 top-8 dark:bg-themebgcolor-900 dark:shadow-themebgcolor-700 hidden lg:block'
-    }, [createVNode(Skeleton, {
+    }, [createVNode(LSkeleton, {
       "loading": loading.value,
       "items": 3,
       "title": false,
@@ -19,7 +19,7 @@ var aside = defineComponent({
 
 });
 
-var Button = defineComponent({
+var LButton = defineComponent({
   name: 'Button',
   props: {
     size: {
@@ -88,7 +88,7 @@ var Button = defineComponent({
     return createVNode("button", {
       "class": ['button', this.buttonClass],
       "onClick": this.emitClick
-    }, [createVNode("span", null, [renderSlot(this.$slots, 'default'), props.loading && createVNode(IconFont, {
+    }, [createVNode("span", null, [renderSlot(this.$slots, 'default'), props.loading && createVNode(LIcon, {
       "icon": 'loading'
     }, null)])]);
   }
@@ -190,13 +190,13 @@ var dialog = defineComponent({
           "class": 'dialog-footer p-4'
         }, [createVNode("div", {
           "class": ['flex items-center', this.center ? 'justify-center' : 'justify-end']
-        }, [this.$slots.footer ? renderSlot(this.$slots, 'footer') : createVNode(Fragment, null, [this.showCancel && createVNode(Button, {
+        }, [this.$slots.footer ? renderSlot(this.$slots, 'footer') : createVNode(Fragment, null, [this.showCancel && createVNode(LButton, {
           "loading": this.cancelLoading,
           "disabled": this.cancelDisabled,
           "onClick": this.emitCancel
         }, {
           default: () => [createTextVNode("\u53D6\u6D88")]
-        }), createVNode(Button, {
+        }), createVNode(LButton, {
           "loading": this.confirmLoading,
           "disabled": this.confirmDisabled,
           "onClick": this.emitConfirm,
@@ -204,7 +204,7 @@ var dialog = defineComponent({
         }, {
           default: () => [createTextVNode("\u786E\u5B9A")]
         })])])])]) : null]
-      }), createVNode(Masker, {
+      }), createVNode(LMasker, {
         "show": this.modelValue,
         "onChange": () => {
           this.closeOnModal ? this.hideDialog : null;
@@ -215,8 +215,8 @@ var dialog = defineComponent({
 
 });
 
-var IconFont = defineComponent({
-  name: 'IconFont',
+var LIcon = defineComponent({
+  name: 'Icon',
   props: {
     icon: {
       type: String,
@@ -384,7 +384,7 @@ var loading = defineComponent({
 
 var maskAnimate = {"fade-active":"mask-module_fade-active__B-CtN","fade-to":"mask-module_fade-to__PWjKp","fade-enter":"mask-module_fade-enter__yEDWT"};
 
-var Masker = defineComponent({
+var LMasker = defineComponent({
   name: 'Masker',
   props: {
     show: {
@@ -556,7 +556,7 @@ const Sidebar = defineComponent({
         }, [createVNode("h1", {
           "class": 'text-2xl mb-8'
         }, [createTextVNode("Title")]), createVNode("ul", null, [renderCategory.call(this)])])]), [[vShow, props.modelValue]])]
-      }), createVNode(Masker, {
+      }), createVNode(LMasker, {
         "show": props.modelValue,
         "onChange": this.changeCollapse
       }, null)]
@@ -622,7 +622,7 @@ const isMobileHandle = () => {
 };
 
 const isMobile = useResize();
-var Skeleton = defineComponent({
+var LSkeleton = defineComponent({
   name: 'Skeleton',
   props: {
     rows: {
@@ -785,7 +785,7 @@ var input = defineComponent({
       }, [renderSlot(slots, 'prefix')]);
       if (props.prefixIcon) return createVNode("span", {
         "class": ['input--prefix__icon', prefixClass]
-      }, [createVNode(IconFont, {
+      }, [createVNode(LIcon, {
         "icon": props.prefixIcon
       }, null)]);
       return null;
@@ -799,7 +799,7 @@ var input = defineComponent({
         "enterActiveClass": inputStyles['fade-active'],
         "leaveActiveClass": inputStyles['fade-active']
       }, {
-        default: () => [isShow.value ? createVNode(IconFont, {
+        default: () => [isShow.value ? createVNode(LIcon, {
           "onClick": () => {
             emit('update:modelValue', '');
             triggerFormItemValidate();
@@ -813,7 +813,7 @@ var input = defineComponent({
       }, [renderSlot(slots, 'suffix')]);
       if (props.suffixIcon) return createVNode("span", {
         "class": 'input--suffix__icon'
-      }, [createVNode(IconFont, {
+      }, [createVNode(LIcon, {
         "icon": props.suffixIcon
       }, null)]);
       return null;
@@ -2823,21 +2823,21 @@ var scroll = defineComponent({
 
 var components = /*#__PURE__*/Object.freeze({
 	__proto__: null,
-	Aside: aside,
-	Button: Button,
-	Dialog: dialog,
-	IconFont: IconFont,
-	List: index,
-	Loading: loading,
-	Masker: Masker,
-	Navbar: Navbar,
-	Sidebar: Sidebar,
-	Skeleton: Skeleton,
-	Input: input,
-	Form: Form,
-	FormItem: FormItem,
-	Footer: footer,
-	Scroll: scroll
+	LAside: aside,
+	LButton: LButton,
+	LDialog: dialog,
+	LIcon: LIcon,
+	LList: index,
+	LLoading: loading,
+	LMasker: LMasker,
+	LNavbar: Navbar,
+	LSidebar: Sidebar,
+	LSkeleton: LSkeleton,
+	LInput: input,
+	LForm: Form,
+	LFormItem: FormItem,
+	LFooter: footer,
+	LScroll: scroll
 });
 
 function register({
@@ -2872,4 +2872,4 @@ var install = register({
   components: Object.keys(components).map(key => components[key])
 });
 
-export { aside as Aside, Button, dialog as Dialog, footer as Footer, Form, FormItem, IconFont, input as Input, index as List, loading as Loading, Masker, Navbar, scroll as Scroll, Sidebar, Skeleton, install as default };
+export { aside as LAside, LButton, dialog as LDialog, footer as LFooter, Form as LForm, FormItem as LFormItem, LIcon, input as LInput, index as LList, loading as LLoading, LMasker, Navbar as LNavbar, scroll as LScroll, Sidebar as LSidebar, LSkeleton, install as default };

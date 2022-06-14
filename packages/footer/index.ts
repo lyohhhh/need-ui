@@ -1,1 +1,1 @@
-export { default as Footer } from './src/footer';
+export { default as LFooter } from './src/footer';

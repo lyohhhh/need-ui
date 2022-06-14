@@ -1,4 +1,4 @@
-import { IconFont } from '../../components';
+import { LIcon } from '../../components';
 import {
 	computed,
 	defineComponent,
@@ -39,7 +39,7 @@ export default defineComponent({
 			if (props.prefixIcon)
 				return (
 					<span class={['input--prefix__icon', prefixClass]}>
-						<IconFont icon={props.prefixIcon}></IconFont>
+						<LIcon icon={props.prefixIcon}></LIcon>
 					</span>
 				);
 			return null;
@@ -56,14 +56,14 @@ export default defineComponent({
 						leaveActiveClass={inputStyles['fade-active']}
 					>
 						{isShow.value ? (
-							<IconFont
+							<LIcon
 								onClick={() => {
 									emit('update:modelValue', '');
 									triggerFormItemValidate();
 								}}
 								icon='roundclose'
 								class='absolute flex z-10 text-gray-300 right-0 top-0 h-full w-8  justify-center items-center cursor-pointer hover:text-gray-400 group-active:flex  dark:text-gray-400 dark:hover:text-gray-300'
-							></IconFont>
+							></LIcon>
 						) : null}
 					</Transition>
 				);
@@ -76,7 +76,7 @@ export default defineComponent({
 			if (props.suffixIcon)
 				return (
 					<span class='input--suffix__icon'>
-						<IconFont icon={props.suffixIcon}></IconFont>
+						<LIcon icon={props.suffixIcon}></LIcon>
 					</span>
 				);
 			return null;

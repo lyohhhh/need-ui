@@ -1,1 +1,1 @@
-export { default as Sidebar } from './src/index';
+export { default as LSidebar } from './src/index';
