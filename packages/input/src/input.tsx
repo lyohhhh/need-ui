@@ -56,14 +56,18 @@ export default defineComponent({
 						leaveActiveClass={inputStyles['fade-active']}
 					>
 						{isShow.value ? (
-							<LIcon
+							<div
+								class='input--suffix__wrap absolute flex z-10 right-0 top-0 h-full w-8 justify-center items-center cursor-pointer '
 								onClick={() => {
 									emit('update:modelValue', '');
 									triggerFormItemValidate();
 								}}
-								icon='roundclose'
-								class='absolute flex z-10 text-gray-300 right-0 top-0 h-full w-8  justify-center items-center cursor-pointer hover:text-gray-400 group-active:flex  dark:text-gray-400 dark:hover:text-gray-300'
-							></LIcon>
+							>
+								<LIcon
+									icon='roundclose'
+									class='text-gray-300 input--suffix__icon hover:text-gray-400 group-active:flex  dark:text-gray-400 dark:hover:text-gray-300'
+								></LIcon>
+							</div>
 						) : null}
 					</Transition>
 				);
