@@ -3,12 +3,26 @@ import { useExpose } from '../../_hooks/useExpose';
 import { throttle } from '../../_utils';
 import { defineComponent, nextTick, onMounted, reactive, ref, renderSlot, toRefs } from 'vue';
 import scrollStyles from '../styles/scroll.module.scss';
+
+type ScrollType<T = any> = {
+	wrap?: T;
+	main?: T;
+	barSlot?: T;
+	barThumb?: T;
+	wrapHeight: number;
+	mainHeight: number;
+	barThumbHeight: string;
+	scrollY: string;
+	maxScrollY: number;
+	startY: number;
+};
+
 export default defineComponent({
 	name: 'Scroll',
 	props: {
 		height: {
 			type: String,
-			default: '100%',
+			default: '100vh',
 		},
 		slotColor: {
 			type: String,
@@ -24,18 +38,7 @@ export default defineComponent({
 		// 是否移动
 		// 及 是否可以复制内容
 		const isMove = ref<boolean>(false);
-		const scroll = reactive<{
-			wrap: undefined | HTMLElement;
-			main: undefined | HTMLElement;
-			barSlot: undefined | HTMLElement;
-			barThumb: undefined | HTMLElement;
-			wrapHeight: number;
-			mainHeight: number;
-			barThumbHeight: string;
-			scrollY: string;
-			maxScrollY: number;
-			startY: number;
-		}>({
+		const scroll = reactive<ScrollType>({
 			wrap: undefined,
 			main: undefined,
 			barSlot: undefined,
@@ -335,15 +338,13 @@ export default defineComponent({
 		});
 
 		return {
-			// ...toRefs(scroll),
+			...toRefs(scroll),
 			scrollEvent,
 			scrollToBySlot,
 			setMoveStatus,
 			moveByMouse,
 			setStartY,
 			isMove,
-			barThumbHeight: scroll.barThumbHeight,
-			scrollY: scroll.scrollY,
 		};
 	},
 	render() {
