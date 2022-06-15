@@ -2436,7 +2436,7 @@ var scroll = vue.defineComponent({
   props: {
     height: {
       type: String,
-      default: '100%'
+      default: '100vh'
     },
     slotColor: {
       type: String,
@@ -2784,16 +2784,13 @@ var scroll = vue.defineComponent({
       scrollTo,
       getScroll
     });
-    return {
-      // ...toRefs(scroll),
+    return { ...vue.toRefs(scroll),
       scrollEvent,
       scrollToBySlot,
       setMoveStatus,
       moveByMouse,
       setStartY,
-      isMove,
-      barThumbHeight: scroll.barThumbHeight,
-      scrollY: scroll.scrollY
+      isMove
     };
   },
 

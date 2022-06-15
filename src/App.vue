@@ -1,9 +1,11 @@
 <template>
-	<l-input v-model="input"></l-input>
+	<LScroll>
+		<div style="height: 10000px"></div>
+	</LScroll>
 </template>
 
 <script setup lang="ts">
-import { LInput } from '../packages/input';
+import { LInput, LScroll } from '../packages/components';
 import { ref } from 'vue';
 
 const input = ref('');

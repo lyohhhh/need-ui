@@ -519,8 +519,16 @@ setMoveStatus: (move: boolean) => void;
 moveByMouse: (this: any, ...args: any[]) => void;
 setStartY: (e: MouseEvent) => void;
 isMove: Ref<boolean>;
-barThumbHeight: string;
-scrollY: string;
+wrap?: Ref<any> | undefined;
+main?: Ref<any> | undefined;
+barSlot?: Ref<any> | undefined;
+barThumb?: Ref<any> | undefined;
+wrapHeight: Ref<number>;
+mainHeight: Ref<number>;
+barThumbHeight: Ref<string>;
+scrollY: Ref<string>;
+maxScrollY: Ref<number>;
+startY: Ref<number>;
 }, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, Record<string, any>, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<    {
 height: {
 type: StringConstructor;

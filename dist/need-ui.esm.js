@@ -2432,7 +2432,7 @@ var scroll = defineComponent({
   props: {
     height: {
       type: String,
-      default: '100%'
+      default: '100vh'
     },
     slotColor: {
       type: String,
@@ -2780,16 +2780,13 @@ var scroll = defineComponent({
       scrollTo,
       getScroll
     });
-    return {
-      // ...toRefs(scroll),
+    return { ...toRefs(scroll),
       scrollEvent,
       scrollToBySlot,
       setMoveStatus,
       moveByMouse,
       setStartY,
-      isMove,
-      barThumbHeight: scroll.barThumbHeight,
-      scrollY: scroll.scrollY
+      isMove
     };
   },
 
