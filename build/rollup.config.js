@@ -6,6 +6,7 @@ import postcss from 'rollup-plugin-postcss';
 import postcssImport from 'postcss-import';
 import commonjs from 'rollup-plugin-commonjs';
 import tailwindcss from 'tailwindcss';
+import { terser } from 'rollup-plugin-terser';
 
 const overrides = {
 	compilerOptions: { declaration: true },
@@ -36,6 +37,7 @@ export default {
 		commonjs({
 			include: ['node_modules/**'],
 		}),
+		terser(),
 	],
 	external: ['vue'],
 };
