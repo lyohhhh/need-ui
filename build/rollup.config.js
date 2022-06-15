@@ -2,12 +2,12 @@ import { name } from '../package.json';
 import typescript from 'rollup-plugin-typescript2';
 import babel from '@rollup/plugin-babel';
 import nodeResolve from '@rollup/plugin-node-resolve';
-import postcss from 'rollup-plugin-postcss';
-import postcssImport from 'postcss-import';
 import commonjs from 'rollup-plugin-commonjs';
-import tailwindcss from 'tailwindcss';
 import { terser } from 'rollup-plugin-terser';
-
+import postcss from 'rollup-plugin-postcss';
+import cssnano from 'cssnano';
+import postcssImport from 'postcss-import';
+import tailwindcss from 'tailwindcss';
 // typescript 配置
 const overrides = {
 	compilerOptions: { declaration: true }, // 是否生成 声明文件
@@ -43,7 +43,8 @@ export default {
 			extract: 'css/need-ui.css',
 			// 插件 css 引入
 			// tailwind
-			plugins: [postcssImport(), tailwindcss()],
+			// 压缩 css 代码
+			plugins: [postcssImport(), tailwindcss(), cssnano()],
 		}),
 		// 使用 babel
 		babel({
@@ -51,7 +52,7 @@ export default {
 			// 转换的文件拓展名
 			extensions: ['.ts', '.js', '.tsx'],
 		}),
-		// 只压缩自己项目的代码
+		// 支持 commonjs 只压缩自己项目的代码
 		commonjs({
 			include: ['node_modules/**'],
 		}),
