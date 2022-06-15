@@ -335,13 +335,15 @@ export default defineComponent({
 		});
 
 		return {
-			...toRefs(scroll),
+			// ...toRefs(scroll),
 			scrollEvent,
 			scrollToBySlot,
 			setMoveStatus,
 			moveByMouse,
 			setStartY,
 			isMove,
+			barThumbHeight: scroll.barThumbHeight,
+			scrollY: scroll.scrollY,
 		};
 	},
 	render() {
