@@ -803,14 +803,16 @@ var input = vue.defineComponent({
         "enterActiveClass": inputStyles['fade-active'],
         "leaveActiveClass": inputStyles['fade-active']
       }, {
-        default: () => [isShow.value ? vue.createVNode(LIcon, {
+        default: () => [isShow.value ? vue.createVNode("div", {
+          "class": 'input--suffix__wrap absolute flex z-10 right-0 top-0 h-full w-8 justify-center items-center cursor-pointer ',
           "onClick": () => {
             emit('update:modelValue', '');
             triggerFormItemValidate();
-          },
+          }
+        }, [vue.createVNode(LIcon, {
           "icon": 'roundclose',
-          "class": 'absolute flex z-10 text-gray-300 right-0 top-0 h-full w-8  justify-center items-center cursor-pointer hover:text-gray-400 group-active:flex  dark:text-gray-400 dark:hover:text-gray-300'
-        }, null) : null]
+          "class": 'text-gray-300 input--suffix__icon hover:text-gray-400 group-active:flex  dark:text-gray-400 dark:hover:text-gray-300'
+        }, null)]) : null]
       });
       if (slots.suffix) return vue.createVNode("span", {
         "class": 'input--suffix bottom-0 right-0.5 top-0 absolute w-8 flex justify-center items-center text-gray-400'
@@ -2782,13 +2784,16 @@ var scroll = vue.defineComponent({
       scrollTo,
       getScroll
     });
-    return { ...vue.toRefs(scroll),
+    return {
+      // ...toRefs(scroll),
       scrollEvent,
       scrollToBySlot,
       setMoveStatus,
       moveByMouse,
       setStartY,
-      isMove
+      isMove,
+      barThumbHeight: scroll.barThumbHeight,
+      scrollY: scroll.scrollY
     };
   },
 

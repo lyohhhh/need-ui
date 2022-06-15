@@ -18,16 +18,8 @@ declare const _default: import("vue").DefineComponent<{
     moveByMouse: (this: any, ...args: any[]) => void;
     setStartY: (e: MouseEvent) => void;
     isMove: import("vue").Ref<boolean>;
-    wrap: import("vue").Ref<HTMLElement | undefined>;
-    main: import("vue").Ref<HTMLElement | undefined>;
-    barSlot: import("vue").Ref<HTMLElement | undefined>;
-    barThumb: import("vue").Ref<HTMLElement | undefined>;
-    wrapHeight: import("vue").Ref<number>;
-    mainHeight: import("vue").Ref<number>;
-    barThumbHeight: import("vue").Ref<string>;
-    scrollY: import("vue").Ref<string>;
-    maxScrollY: import("vue").Ref<number>;
-    startY: import("vue").Ref<number>;
+    barThumbHeight: string;
+    scrollY: string;
 }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, Record<string, any>, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     height: {
         type: StringConstructor;

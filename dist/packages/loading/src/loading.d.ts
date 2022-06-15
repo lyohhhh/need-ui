@@ -25,9 +25,9 @@ declare const _default: import("vue").DefineComponent<{
     };
     readonly onLoad: FunctionConstructor;
 }>>, {
-    loading: boolean;
-    finished: boolean;
-    finishedText: string;
-    loadingText: string;
+    readonly loading: boolean;
+    readonly finished: boolean;
+    readonly finishedText: string;
+    readonly loadingText: string;
 }>;
 export default _default;
