@@ -15,7 +15,8 @@
 		"resolveJsonModule": true,
 		"esModuleInterop": true,
 		"suppressImplicitAnyIndexErrors": true,
-		"lib": ["esnext", "dom"]
+		"lib": ["esnext", "dom"],
+		"types": ["vitest/globals"]
 	},
 	"include": ["./**/*.ts", "./**/*.d.ts", "./**/*.tsx", "./**/*.vue"],
 	"references": [{ "path": "./tsconfig.node.json" }]
