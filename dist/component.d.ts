@@ -16,6 +16,7 @@ declare module 'vue' {
     LNavbar: typeof import('need-ui')['LNavbar']
     LSidebar: typeof import('need-ui')['LSidebar']
     LSkeleton: typeof import('need-ui')['LSkeleton']
+    LScroll: typeof import('need-ui')['LScroll']
     [key: string]: any
   }
 }
