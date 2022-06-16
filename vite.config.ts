@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite';
+import { defineConfig, UserConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { resolve } from 'path';
 import vueJsx from '@vitejs/plugin-vue-jsx';
@@ -31,4 +31,13 @@ export default defineConfig({
 			},
 		},
 	},
-});
+	test: {
+		include: ['**/*.spec.{ts,tsx}'],
+		exclude: ['**/node_modules/**', '**/dist/**'],
+		environment: 'jsdom',
+		globals: true,
+		transformMode: {
+			web: [/.[tj]sx$/],
+		},
+	},
+} as UserConfig);
