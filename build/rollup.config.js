@@ -11,7 +11,7 @@ import tailwindcss from 'tailwindcss';
 // typescript 配置
 const overrides = {
 	compilerOptions: { declaration: true }, // 是否生成 声明文件
-	exclude: ['node_modules', 'vite.config.ts'],
+	exclude: ['node_modules', 'vite.config.ts', '**/__test__/*'],
 };
 
 // 文件名称
