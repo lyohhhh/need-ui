@@ -1,4 +1,4 @@
-import { defineConfig, UserConfig } from 'vite';
+import { defineConfig, type UserConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { resolve } from 'path';
 import vueJsx from '@vitejs/plugin-vue-jsx';
