@@ -5,14 +5,11 @@
   border 
   rounded
   text-sm
+	ml-4
   shadow-none
   select-none
   outline-none
   transition-all;
-
-	&:not(:fisrt-child) {
-		@apply ml-4;
-	}
 
 	&:focus-visible {
 		@apply outline-themetextcolor-400 opacity-80;
