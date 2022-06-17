@@ -81,4 +81,15 @@ describe('button component', () => {
 			inst.unmount();
 		});
 	});
+
+	it('button `slot`', () => {
+		const inst = mount(LButton, {
+			slots: {
+				default: `test`,
+			},
+		});
+
+		expect(inst.find('span').element.textContent).toBe('test');
+		inst.unmount();
+	});
 });
