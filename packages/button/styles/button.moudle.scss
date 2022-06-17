@@ -104,6 +104,108 @@
 		}
 	}
 
+	&.button--danger {
+		@apply bg-red-500 
+    border-red-500 
+    text-gray-100
+    dark:bg-red-800
+    dark:border-red-800
+    dark:text-gray-300;
+
+		&:hover {
+			@apply opacity-80 border-opacity-80;
+		}
+		&:active {
+			@apply bg-red-600;
+		}
+		&.is-disabled {
+			@apply cursor-not-allowed
+      text-gray-100
+      bg-red-500
+      opacity-70
+      border-opacity-70;
+		}
+		&.is-loading {
+			@apply border-red-200 
+			border-opacity-30;
+
+			&:active {
+				@apply bg-red-500;
+			}
+			&:hover {
+				@apply opacity-70 border-opacity-70;
+			}
+		}
+	}
+
+	&.button--success {
+		@apply bg-green-500 
+    border-green-500 
+    text-gray-100
+    dark:bg-green-800
+    dark:border-green-800
+    dark:text-gray-300;
+
+		&:hover {
+			@apply opacity-80 border-opacity-80;
+		}
+		&:active {
+			@apply bg-green-600;
+		}
+		&.is-disabled {
+			@apply cursor-not-allowed
+      text-gray-100
+      bg-green-500
+      opacity-70
+      border-opacity-70;
+		}
+		&.is-loading {
+			@apply border-green-200 
+			border-opacity-30;
+
+			&:active {
+				@apply bg-green-500;
+			}
+			&:hover {
+				@apply opacity-70 border-opacity-70;
+			}
+		}
+	}
+
+	&.button--warning {
+		@apply bg-yellow-500 
+    border-yellow-500 
+    text-gray-100
+    dark:bg-yellow-800
+    dark:border-yellow-800
+    dark:text-gray-300;
+
+		&:hover {
+			@apply opacity-80 border-opacity-80;
+		}
+		&:active {
+			@apply bg-yellow-600;
+		}
+		&.is-disabled {
+			@apply cursor-not-allowed
+      text-gray-100
+      bg-yellow-500
+      opacity-70
+      border-opacity-70;
+		}
+		&.is-loading {
+			@apply border-yellow-200 
+			border-opacity-30;
+
+			&:active {
+				@apply bg-yellow-500;
+			}
+			&:hover {
+				@apply opacity-70 border-opacity-70;
+			}
+		}
+	}
+
 	&.is-loading {
 		@apply relative 
     overflow-hidden
