@@ -69,7 +69,7 @@ describe('button component', () => {
 		});
 	});
 
-	it.todo('button type', () => {
+	it('button type', () => {
 		(['success', 'default', 'warning', 'primary', 'danger'] as const).forEach(type => {
 			const inst = mount(LButton, {
 				props: {
