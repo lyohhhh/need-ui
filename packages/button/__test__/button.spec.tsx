@@ -68,5 +68,16 @@ describe('button component', () => {
 		});
 	});
 
-	it.todo('button type', () => {});
+	it.todo('button type', () => {
+		(['success', 'default', 'warning', 'primary', 'danger'] as const).forEach(type => {
+			const inst = mount(LButton, {
+				props: {
+					type,
+				},
+			});
+
+			expect(inst.find('.button').classes()).toContain(`button--${type}`);
+			inst.unmount();
+		});
+	});
 });
