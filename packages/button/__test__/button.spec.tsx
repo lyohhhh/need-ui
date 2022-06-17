@@ -1,6 +1,7 @@
 import { LButton } from '..';
 import { mount } from '@vue/test-utils';
 import { vi } from 'vitest';
+
 describe('button component', () => {
 	it('button mount', () => {
 		mount(LButton);
@@ -53,6 +54,19 @@ describe('button component', () => {
 
 		inst.unmount();
 	});
-	it.todo('button size', () => {});
+
+	it('button size', () => {
+		(['xs', 'sm', 'base', 'lg', 'xl'] as const).forEach(size => {
+			const inst = mount(LButton, {
+				props: {
+					size,
+				},
+			});
+
+			expect(inst.find('.button').classes()).toContain(`button--${size}`);
+			inst.unmount();
+		});
+	});
+
 	it.todo('button type', () => {});
 });
