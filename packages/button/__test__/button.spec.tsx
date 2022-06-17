@@ -16,6 +16,8 @@ describe('button component', () => {
 		await inst.trigger('click');
 
 		expect(clickFn).toHaveBeenCalled();
+
+		inst.unmount();
 	});
 
 	it('button loading', async () => {
@@ -31,9 +33,26 @@ describe('button component', () => {
 
 		expect(clickFn).not.toHaveBeenCalled();
 		expect(inst.find('.button').classes()).toContain('is-loading');
+
+		inst.unmount();
 	});
 
-	it.todo('button disabled', () => {});
+	it('button disabled', async () => {
+		const clickFn = vi.fn(() => 1);
+		const inst = mount(LButton, {
+			props: {
+				onClick: clickFn,
+				disabled: true,
+			},
+		});
+
+		await inst.trigger('click');
+
+		expect(clickFn).not.toHaveBeenCalled();
+		expect(inst.find('.button').classes()).toContain('is-disabled');
+
+		inst.unmount();
+	});
 	it.todo('button size', () => {});
 	it.todo('button type', () => {});
 });
