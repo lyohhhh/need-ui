@@ -33,7 +33,7 @@
 		"build:clean": "rimraf ./dist",
 		"build:dts": "api-extractor run --local --verbose",
 		"component:dts": "esbuild scripts/components-types.js --bundle --platform=node | node",
-		"release": "npm run build && npm publish"
+		"release": "npm publish"
 	},
 	"dependencies": {
 		"async-validator": "^4.0.7",
@@ -53,6 +53,7 @@
 		"@vitejs/plugin-vue-jsx": "^1.3.7",
 		"@vue/test-utils": "^2.0.1",
 		"autoprefixer": "^10.4.2",
+		"c8": "^7.11.3",
 		"cssnano": "^5.1.11",
 		"eslint": "^8.9.0",
 		"husky": "^7.0.4",
