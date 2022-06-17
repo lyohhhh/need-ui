@@ -34,6 +34,7 @@ describe('button component', () => {
 
 		expect(clickFn).not.toHaveBeenCalled();
 		expect(inst.find('.button').classes()).toContain('is-loading');
+		expect(inst.find('i').classes()).toContain('icon-loading');
 
 		inst.unmount();
 	});
