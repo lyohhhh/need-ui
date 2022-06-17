@@ -17,7 +17,22 @@ describe('button component', () => {
 
 		expect(clickFn).toHaveBeenCalled();
 	});
-	it.todo('button loading', () => {});
+
+	it('button loading', async () => {
+		const clickFn = vi.fn(() => 1);
+		const inst = mount(LButton, {
+			props: {
+				onClick: clickFn,
+				loading: true,
+			},
+		});
+
+		await inst.trigger('click');
+
+		expect(clickFn).not.toHaveBeenCalled();
+		expect(inst.find('.button').classes()).toContain('is-loading');
+	});
+
 	it.todo('button disabled', () => {});
 	it.todo('button size', () => {});
 	it.todo('button type', () => {});
