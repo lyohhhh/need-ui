@@ -2,52 +2,12 @@ import { LMasker, LButton } from '../../components';
 import { defineComponent, renderSlot, Teleport, Transition } from 'vue';
 
 import dialogAnimate from '../styles/dialog.module.scss';
+import { dialogEmits, dialogProps } from './dialogContent';
 
 export default defineComponent({
 	name: 'Dialog',
-	props: {
-		title: {
-			type: String,
-			default: '提示',
-		},
-		showCancel: {
-			type: Boolean,
-			default: true,
-		},
-		closeOnModal: {
-			type: Boolean,
-			default: false,
-		},
-		top: {
-			type: String,
-			default: '10vh',
-		},
-		cancelLoading: {
-			type: Boolean,
-			default: false,
-		},
-		confirmLoading: {
-			type: Boolean,
-			default: false,
-		},
-		cancelDisabled: {
-			type: Boolean,
-			default: false,
-		},
-		confirmDisabled: {
-			type: Boolean,
-			default: false,
-		},
-		modelValue: {
-			type: Boolean,
-			default: false,
-		},
-		center: {
-			type: Boolean,
-			default: false,
-		},
-	},
-	emits: ['confirm', 'cancel', 'update:modelValue'],
+	props: dialogProps,
+	emits: dialogEmits,
 	setup(props, { emit }) {
 		const hideDialog = () => {
 			emit('update:modelValue', false);
