@@ -7,16 +7,18 @@ describe('dialog', () => {
 		mount(LDialog);
 	});
 
-	it.todo('dialog fn', async () => {
+	it('dialog fn', async () => {
 		const cancelFn = vi.fn(() => 'cancel');
 		const confirmFn = vi.fn(() => 'confirm');
 		const inst = mount(LDialog, {
 			props: {
+				modelValue: true,
 				onCancel: cancelFn,
 				onConfirm: confirmFn,
-				modelValue: true,
 			},
 		});
-		await nextTick();
+		await nextTick(() => {
+			console.log(inst.html());
+		});
 	});
 });
