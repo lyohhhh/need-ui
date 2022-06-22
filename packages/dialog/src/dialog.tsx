@@ -3,7 +3,6 @@ import { defineComponent, renderSlot, Teleport, Transition } from 'vue';
 
 import dialogAnimate from '../styles/dialog.module.scss';
 import { dialogEmits, dialogProps } from './dialogContent';
-import { useDialog } from './useDialog';
 
 export default defineComponent({
 	name: 'Dialog',
