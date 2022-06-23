@@ -14,5 +14,7 @@ describe('footer', () => {
 		});
 
 		expect(inst.find('.footer').text()).toEqual('测试');
+
+		inst.unmount();
 	});
 });
