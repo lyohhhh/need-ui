@@ -20,4 +20,14 @@ describe('dialog', () => {
 		});
 		await nextTick(() => {});
 	});
+
+	it.todo('dialog slot `title`', () => {
+		const inst = mount(LDialog, {
+			slots: {
+				title: '测试',
+			},
+		});
+		expect(inst.find('.dialog-title')).toEqual(null);
+		// expect(inst.find('.dialog-title')).toEqual('测试');
+	});
 });
