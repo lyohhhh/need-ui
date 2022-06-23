@@ -1,5 +1,5 @@
-import { mount } from '@vue/test-utils';
-import { nextTick } from 'vue';
+import { mount, shallowMount } from '@vue/test-utils';
+import { nextTick, ref } from 'vue';
 import { LDialog } from '..';
 
 describe('dialog', () => {
@@ -7,18 +7,17 @@ describe('dialog', () => {
 		mount(LDialog);
 	});
 
-	it('dialog fn', async () => {
+	it.skip('dialog fn', async () => {
 		const cancelFn = vi.fn(() => 'cancel');
 		const confirmFn = vi.fn(() => 'confirm');
+		const isShow = ref<boolean>(false);
 		const inst = mount(LDialog, {
 			props: {
-				modelValue: true,
+				modelValue: isShow.value as boolean,
 				onCancel: cancelFn,
 				onConfirm: confirmFn,
 			},
 		});
-		await nextTick(() => {
-			console.log(inst.html());
-		});
+		await nextTick(() => {});
 	});
 });
