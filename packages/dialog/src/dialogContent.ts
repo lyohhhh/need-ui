@@ -40,4 +40,3 @@ export const dialogProps = {
 		default: false,
 	},
 };
-export const dialogEmits = ['confirm', 'cancel', 'update:modelValue'];
