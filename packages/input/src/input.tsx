@@ -162,7 +162,7 @@ export default defineComponent({
 					]}
 					data-type='input'
 					type={props.type}
-					placeholder={props.placeholder}
+					placeholder={props.error ? props.errorPlaceholder : props.placeholder}
 					value={props.modelValue}
 					v-model={props.modelValue}
 					onInput={emitInput}

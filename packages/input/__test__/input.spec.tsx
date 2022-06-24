@@ -60,4 +60,24 @@ describe('input', () => {
 
 		expect(wrapper.find(`.${inputStyles['input__error']}`).exists()).toBe(true);
 	});
+
+	it('input `placeholder` props', () => {
+		let wrapper = mount(LInput, {
+			props: {
+				placeholder: 'test',
+			},
+		});
+		expect(wrapper.find('.input__inner').attributes().placeholder).toEqual('test');
+
+		wrapper = mount(LInput, {
+			props: {
+				error: true,
+				errorPlaceholder: 'errortest',
+			},
+		});
+
+		expect(wrapper.find('.input__inner').attributes().placeholder).toEqual('errortest');
+
+		wrapper.unmount();
+	});
 });
