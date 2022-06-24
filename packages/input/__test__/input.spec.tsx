@@ -59,6 +59,8 @@ describe('input', () => {
 		});
 
 		expect(wrapper.find(`.${inputStyles['input__error']}`).exists()).toBe(true);
+
+		wrapper.unmount();
 	});
 
 	it('input `placeholder` props', () => {
