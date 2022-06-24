@@ -18,5 +18,12 @@ describe('icon', () => {
 
 		inst.trigger('click');
 		expect(clickFunc).toHaveBeenCalled();
+		inst.unmount();
+	});
+
+	it('icon name is required', () => {
+		console.warn = vi.fn();
+		mount(LIcon, {});
+		expect(console.warn).toHaveBeenCalled();
 	});
 });
