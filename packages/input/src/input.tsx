@@ -57,7 +57,7 @@ export default defineComponent({
 					>
 						{isShow.value ? (
 							<div
-								class='input--suffix__wrap absolute flex z-10 right-0 top-0 h-full w-8 justify-center items-center cursor-pointer '
+								class='input--suffix__wrap input-clear absolute flex z-10 right-0 top-0 h-full w-8 justify-center items-center cursor-pointer '
 								onClick={() => {
 									emit('update:modelValue', '');
 									triggerFormItemValidate();
@@ -156,6 +156,7 @@ export default defineComponent({
 					class={[
 						`input__inner outline-none bg-white block w-full rounded border px-4 py-2 text-sm hover:border-gray-400 focus:border-themetextcolor-500 placeholder-gray-300 transition-all text-gray-600 dark:bg-themebgcolor-800 dark:border-themebgcolor-600 caret-themebgcolor-400 dark:text-gray-400 dark:hover:border-themebgcolor-500 dark:focus:border-themetextcolor-600 dark:placeholder-gray-400`,
 						props.error && inputStyles['input__error'],
+						props.disabled && `input--disabled`,
 						(props.prefixIcon || slots.prefix) && 'pl-8',
 						(props.clearable || props.suffixIcon || slots.suffix) && 'pr-8',
 					]}
