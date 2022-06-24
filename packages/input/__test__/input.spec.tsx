@@ -37,4 +37,16 @@ describe('input', () => {
 		expect(wrapper.find('.input--clear').exists()).toBe(false);
 		wrapper.unmount();
 	});
+
+	it('input `type` props', () => {
+		['text', 'password', 'email'].forEach(type => {
+			const wrapper = mount(LInput, {
+				props: {
+					type,
+				},
+			});
+			expect(wrapper.find('.input__inner').attributes().type).toEqual(type);
+			wrapper.unmount();
+		});
+	});
 });
