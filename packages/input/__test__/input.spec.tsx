@@ -1,5 +1,6 @@
 import { mount } from '@vue/test-utils';
 import { LInput } from '..';
+import inputStyles from '../styles/input.module.scss';
 
 describe('input', () => {
 	it('input mount', () => {
@@ -48,5 +49,15 @@ describe('input', () => {
 			expect(wrapper.find('.input__inner').attributes().type).toEqual(type);
 			wrapper.unmount();
 		});
+	});
+
+	it('input `error` props', () => {
+		const wrapper = mount(LInput, {
+			props: {
+				error: true,
+			},
+		});
+
+		expect(wrapper.find(`.${inputStyles['input__error']}`).exists()).toBe(true);
 	});
 });
