@@ -4,7 +4,11 @@ import { vi } from 'vitest';
 
 describe('icon', () => {
 	it('icon mount', () => {
-		mount(LIcon);
+		mount(LIcon, {
+			props: {
+				icon: 'dark',
+			},
+		});
 	});
 
 	it('icon click ', () => {
