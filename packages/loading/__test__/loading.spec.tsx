@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils';
 import { LLoading } from '..';
 
 describe('loading', () => {
-	it.todo('loading mount', () => {
+	it('loading mount', () => {
 		mount(LLoading);
 	});
 });

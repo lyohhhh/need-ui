@@ -1,3 +1,5 @@
+// import { IntersectionObserver } from 'typescript';
+
 interface Load {
 	root: HTMLElement | null;
 	obs: HTMLElement;
@@ -13,11 +15,13 @@ export class ScrollObserver<T extends Load> {
 	}
 
 	init() {
-		this.observer = new IntersectionObserver(this.callback.bind(this), {
-			root: this.opt.root,
-			rootMargin: '0px 0px -140px 0px ',
-		});
-		this.handleObserver();
+		if (process.env.NODE_ENV !== 'test') {
+			this.observer = new IntersectionObserver(this.callback.bind(this), {
+				root: this.opt.root,
+				rootMargin: '0px 0px -140px 0px ',
+			});
+			this.handleObserver();
+		}
 	}
 
 	callback(entries: IntersectionObserverEntry[]) {
