@@ -4,8 +4,8 @@ import { LInput } from '..';
 import inputStyles from '../styles/input.module.scss';
 
 describe('input', () => {
-	const input = ref<string>('');
 	it('input mount', () => {
+		const input = ref<string>('');
 		mount(LInput, {
 			props: {
 				modelValue: input.value,
