@@ -4,8 +4,13 @@ import { LInput } from '..';
 import inputStyles from '../styles/input.module.scss';
 
 describe('input', () => {
+	const input = ref<string>('');
 	it('input mount', () => {
-		mount(LInput);
+		mount(LInput, {
+			props: {
+				modelValue: input.value,
+			},
+		});
 	});
 
 	it('input `disabled` props', async () => {
