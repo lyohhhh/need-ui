@@ -1,17 +1,18 @@
 import { LIcon } from '../../components';
 import { computed, defineComponent, PropType, renderSlot } from 'vue';
 import ButtonStyles from '../styles/button.moudle.scss';
+import type { Type, Size } from '@/[shared]';
 // console.log(ButtonStyles);
 ButtonStyles;
 export default defineComponent({
 	name: 'Button',
 	props: {
 		size: {
-			type: String as PropType<'xs' | 'sm' | 'base' | 'lg' | 'xl'>,
+			type: String as PropType<Size>,
 			default: 'sm',
 		},
 		type: {
-			type: String as PropType<'success' | 'default' | 'warning' | 'primary' | 'danger'>,
+			type: String as PropType<Type>,
 			default: 'default',
 		},
 		plain: {
