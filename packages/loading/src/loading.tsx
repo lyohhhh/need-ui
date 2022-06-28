@@ -35,7 +35,7 @@ export default defineComponent({
 
 				<div
 					ref='obs'
-					class='leading-loose text-center text-sm py-4 text-gray-600 dark:text-gray-500'
+					class='l-loading leading-loose text-center text-sm py-4 text-gray-600 dark:text-gray-500'
 				>
 					{props.finished ? props.finishedText : props.loadingText}
 				</div>

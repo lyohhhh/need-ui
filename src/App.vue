@@ -8,17 +8,19 @@
 			<LButton type="success" size="xs">SUCCESS</LButton>
 			<LLink> click me ! </LLink>
 		</div>
-		<LDialog v-model="isShow"></LDialog>
+		<LDialog v-model="isShow">
+			<LInput v-model="input"></LInput>
+		</LDialog>
 	</LScroll>
 </template>
 
 <script setup lang="ts">
-import { LButton, LScroll, LDialog, LLink } from '../packages/components';
+import { LButton, LScroll, LDialog, LLink, LInput } from '../packages/components';
 import { ref } from 'vue';
 
 const input = ref('');
 
-const isShow = ref<Boolean>(false);
+const isShow = ref<Boolean>(true);
 </script>
 
 <style></style>

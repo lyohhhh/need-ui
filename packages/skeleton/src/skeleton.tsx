@@ -40,7 +40,7 @@ export default defineComponent({
 
 		const renderTitle = () => {
 			return props.title ? (
-				<div class='skeletion-item bg-gray-100 h-4 mb-4 md:h-6 md:mb-6 dark:bg-themebgcolor-500'></div>
+				<div class='l-skeletion--item bg-gray-100 h-4 mb-4 md:h-6 md:mb-6 dark:bg-themebgcolor-500'></div>
 			) : null;
 		};
 
@@ -49,7 +49,7 @@ export default defineComponent({
 				.fill(1)
 				.map((r, index) => (
 					<div
-						class='skeletion-item bg-gray-100 h-3 mb-4 md:h-4 md:mb-4 dark:bg-themebgcolor-500'
+						class='l-skeletion--item bg-gray-100 h-3 mb-4 md:h-4 md:mb-4 dark:bg-themebgcolor-500'
 						style={{ width: getPropsWidth(props.rowWidth, index) }}
 					></div>
 				));
@@ -57,7 +57,7 @@ export default defineComponent({
 
 		const renderImage = () => {
 			return props.image ? (
-				<div class='skeleton-image__wrapper'>
+				<div class='l-skeleton--image__wrapper'>
 					<div class='skeleton-image w-24 ml-4 h-10 bg-gray-100 md:w-44 md:h-20 md:ml-6 dark:bg-themebgcolor-500'></div>
 				</div>
 			) : null;
@@ -65,7 +65,7 @@ export default defineComponent({
 
 		const renderTime = () => {
 			return props.time ? (
-				<div class='skeletion-item bg-gray-100 h-2 w-28 mt-1 md:h-3 md:mt-2 dark:bg-themebgcolor-500'></div>
+				<div class='l-skeletion--item bg-gray-100 h-2 w-28 mt-1 md:h-3 md:mt-2 dark:bg-themebgcolor-500'></div>
 			) : null;
 		};
 
@@ -73,10 +73,10 @@ export default defineComponent({
 			<>
 				{props.loading
 					? new Array(props.items).fill(1).map(() => (
-							<div class='skeleton p-4 animate-pulse'>
+							<div class='l-skeleton p-4 animate-pulse'>
 								{renderTitle()}
-								<div class='skeleton-content flex'>
-									<div class='skeleton-main flex-1'>{renderContent()}</div>
+								<div class='l-skeleton--content flex'>
+									<div class='l-skeleton--main flex-1'>{renderContent()}</div>
 									{renderImage()}
 								</div>
 								{renderTime()}

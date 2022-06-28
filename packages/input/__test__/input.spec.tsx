@@ -20,12 +20,12 @@ describe('input', () => {
 				modelValue: input.value,
 			},
 		});
-		expect(wrapper.find('.input--disabled').exists()).toBe(false);
+		expect(wrapper.find('.l-input--disabled').exists()).toBe(false);
 
 		await wrapper.setProps({
 			disabled: true,
 		});
-		expect(wrapper.find('.input--disabled').exists()).toBe(true);
+		expect(wrapper.find('.l-input--disabled').exists()).toBe(true);
 
 		wrapper.unmount();
 	});
@@ -37,7 +37,7 @@ describe('input', () => {
 				modelValue: input.value,
 			},
 		});
-		expect(wrapper.find('.input--clear').exists()).toBe(false);
+		expect(wrapper.find('.l-input--clear').exists()).toBe(false);
 
 		wrapper.unmount();
 		wrapper = mount(LInput, {
@@ -47,7 +47,7 @@ describe('input', () => {
 			},
 		});
 
-		expect(wrapper.find('.input--clear').exists()).toBe(false);
+		expect(wrapper.find('.l-input--clear').exists()).toBe(false);
 		wrapper.unmount();
 	});
 
@@ -60,7 +60,7 @@ describe('input', () => {
 					modelValue: input.value,
 				},
 			});
-			expect(wrapper.find('.input__inner').attributes().type).toEqual(type);
+			expect(wrapper.find('.l-input__inner').attributes().type).toEqual(type);
 			wrapper.unmount();
 		});
 	});
@@ -74,7 +74,7 @@ describe('input', () => {
 			},
 		});
 
-		expect(wrapper.find(`.${inputStyles['input__error']}`).exists()).toBe(true);
+		expect(wrapper.find(`.${inputStyles['l-input__error']}`).exists()).toBe(true);
 
 		wrapper.unmount();
 	});
@@ -87,7 +87,7 @@ describe('input', () => {
 				modelValue: input.value,
 			},
 		});
-		expect(wrapper.find('.input__inner').attributes().placeholder).toEqual('test');
+		expect(wrapper.find('.l-input__inner').attributes().placeholder).toEqual('test');
 
 		wrapper = mount(LInput, {
 			props: {
@@ -97,7 +97,7 @@ describe('input', () => {
 			},
 		});
 
-		expect(wrapper.find('.input__inner').attributes().placeholder).toEqual('errortest');
+		expect(wrapper.find('.l-input__inner').attributes().placeholder).toEqual('errortest');
 
 		wrapper.unmount();
 	});

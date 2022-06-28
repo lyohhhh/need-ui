@@ -13,7 +13,7 @@ describe('footer', () => {
 			},
 		});
 
-		expect(inst.find('.footer').text()).toEqual('测试');
+		expect(inst.find('.l-footer').text()).toEqual('测试');
 
 		inst.unmount();
 	});

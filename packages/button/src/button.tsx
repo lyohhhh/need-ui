@@ -64,7 +64,7 @@ export default defineComponent({
 	render() {
 		const props = this.$props;
 		return (
-			<button class={['button', this.buttonClass]} onClick={this.emitClick}>
+			<button class={['l-button', this.buttonClass]} onClick={this.emitClick}>
 				<span>
 					{renderSlot(this.$slots, 'default')}
 					{/* 判断是否是loading */}

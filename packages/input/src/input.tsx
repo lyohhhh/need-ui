@@ -35,10 +35,10 @@ export default defineComponent({
 			const prefixClass =
 				'bottom-0 left-0.5 top-0 absolute w-8 flex justify-center items-center text-gray-400';
 			if (slots.prefix)
-				return <span class={['input--prefix', prefixClass]}>{renderSlot(slots, 'prefix')}</span>;
+				return <span class={['l-input--prefix', prefixClass]}>{renderSlot(slots, 'prefix')}</span>;
 			if (props.prefixIcon)
 				return (
-					<span class={['input--prefix__icon', prefixClass]}>
+					<span class={['l-input--prefix__icon', prefixClass]}>
 						<LIcon icon={props.prefixIcon}></LIcon>
 					</span>
 				);
@@ -57,7 +57,7 @@ export default defineComponent({
 					>
 						{isShow.value ? (
 							<div
-								class='input--suffix__wrap input-clear absolute flex z-10 right-0 top-0 h-full w-8 justify-center items-center cursor-pointer '
+								class='l-input--suffix__wrap input-clear absolute flex z-10 right-0 top-0 h-full w-8 justify-center items-center cursor-pointer '
 								onClick={() => {
 									emit('update:modelValue', '');
 									triggerFormItemValidate();
@@ -65,7 +65,7 @@ export default defineComponent({
 							>
 								<LIcon
 									icon='roundclose'
-									class='text-gray-300 input--suffix__icon hover:text-gray-400 group-active:flex  dark:text-gray-400 dark:hover:text-gray-300'
+									class='l-input--suffix__icon text-gray-300  hover:text-gray-400 group-active:flex  dark:text-gray-400 dark:hover:text-gray-300'
 								></LIcon>
 							</div>
 						) : null}
@@ -73,13 +73,13 @@ export default defineComponent({
 				);
 			if (slots.suffix)
 				return (
-					<span class='input--suffix bottom-0 right-0.5 top-0 absolute w-8 flex justify-center items-center text-gray-400'>
+					<span class='l-input--suffix bottom-0 right-0.5 top-0 absolute w-8 flex justify-center items-center text-gray-400'>
 						{renderSlot(slots, 'suffix')}
 					</span>
 				);
 			if (props.suffixIcon)
 				return (
-					<span class='input--suffix__icon'>
+					<span class='l-input--suffix__icon'>
 						<LIcon icon={props.suffixIcon}></LIcon>
 					</span>
 				);
@@ -146,7 +146,7 @@ export default defineComponent({
 
 		return () => (
 			<div
-				class={['input group relative', props.disabled && inputStyles['is-disabled']]}
+				class={['l-input group relative', props.disabled && inputStyles['is-disabled']]}
 				onMouseover={wrapperHover}
 				onMouseout={wrapperLeave}
 				onMousedown={wrapperDown}
@@ -154,9 +154,9 @@ export default defineComponent({
 				{renderPrefixIcon()}
 				<input
 					class={[
-						`input__inner outline-none bg-white block w-full rounded border px-4 py-2 text-sm hover:border-gray-400 focus:border-themetextcolor-500 placeholder-gray-300 transition-all text-gray-600 dark:bg-themebgcolor-800 dark:border-themebgcolor-600 caret-themebgcolor-400 dark:text-gray-400 dark:hover:border-themebgcolor-500 dark:focus:border-themetextcolor-600 dark:placeholder-gray-400`,
-						props.error && inputStyles['input__error'],
-						props.disabled && `input--disabled`,
+						`l-input__inner outline-none bg-white block w-full rounded border px-4 py-2 text-sm hover:border-gray-400 focus:border-themetextcolor-500 placeholder-gray-300 transition-all text-gray-600 dark:bg-themebgcolor-800 dark:border-themebgcolor-600 caret-themebgcolor-400 dark:text-gray-400 dark:hover:border-themebgcolor-500 dark:focus:border-themetextcolor-600 dark:placeholder-gray-400`,
+						props.error && inputStyles['l-input__error'],
+						props.disabled && `l-input--disabled`,
 						(props.prefixIcon || slots.prefix) && 'pl-8',
 						(props.clearable || props.suffixIcon || slots.suffix) && 'pr-8',
 					]}

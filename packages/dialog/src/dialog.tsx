@@ -36,16 +36,16 @@ export default defineComponent({
 				>
 					{this.modelValue ? (
 						<div
-							class='dialog fixed bg-white rounded-md w-72 left-1/2 -translate-x-2/4 z-30 md:w-6/12 lg:w-4/12 dark:bg-themebgcolor-800'
+							class='l-dialog fixed bg-white rounded-md w-72 left-1/2 -translate-x-2/4 z-30 md:w-6/12 lg:w-4/12 dark:bg-themebgcolor-800'
 							style={{ top: this.top }}
 						>
-							<div class='dialog-title text-center p-4 text-lg font-semibold dark:text-themebgcolor-300'>
+							<div class='l-dialog__title text-center p-4 text-lg font-semibold dark:text-themebgcolor-300'>
 								{this.$slots.title ? renderSlot(this.$slots, 'title') : '提示'}
 							</div>
-							<div class='dialog-content px-4'>
+							<div class='l-dialog__content px-4'>
 								{this.$slots.default ? renderSlot(this.$slots, 'default') : 'content'}
 							</div>
-							<div class='dialog-footer p-4'>
+							<div class='l-dialog__footer p-4'>
 								<div class={['flex items-center', this.center ? 'justify-center' : 'justify-end']}>
 									{this.$slots.footer ? (
 										renderSlot(this.$slots, 'footer')

@@ -33,7 +33,7 @@ describe('button component', () => {
 		await inst.trigger('click');
 
 		expect(clickFn).not.toHaveBeenCalled();
-		expect(inst.find('.button').classes()).toContain('is-loading');
+		expect(inst.find('.l-button').classes()).toContain('is-loading');
 		expect(inst.find('i').classes()).toContain('icon-loading');
 
 		inst.unmount();
@@ -51,7 +51,7 @@ describe('button component', () => {
 		await inst.trigger('click');
 
 		expect(clickFn).not.toHaveBeenCalled();
-		expect(inst.find('.button').classes()).toContain('is-disabled');
+		expect(inst.find('.l-button').classes()).toContain('is-disabled');
 
 		inst.unmount();
 	});
@@ -64,7 +64,7 @@ describe('button component', () => {
 				},
 			});
 
-			expect(inst.find('.button').classes()).toContain(`button--${size}`);
+			expect(inst.find('.l-button').classes()).toContain(`button--${size}`);
 			inst.unmount();
 		});
 	});
@@ -77,7 +77,7 @@ describe('button component', () => {
 				},
 			});
 
-			expect(inst.find('.button').classes()).toContain(`button--${type}`);
+			expect(inst.find('.l-button').classes()).toContain(`button--${type}`);
 			inst.unmount();
 		});
 	});

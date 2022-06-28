@@ -45,7 +45,7 @@ const Form = defineComponent({
 		});
 
 		return () => (
-			<form class={['form', props.inline && formStyle['form__inline']]}>
+			<form class={['l-form', props.inline && formStyle['form__inline']]}>
 				{renderSlot(slots, 'default')}
 			</form>
 		);

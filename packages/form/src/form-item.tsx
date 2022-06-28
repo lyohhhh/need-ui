@@ -108,18 +108,18 @@ const FormItem = defineComponent({
 
 		return () => (
 			<>
-				<div class={['form-item mb-6 flex', isError.value && itemStyles['is-error']]}>
+				<div class={['l-form-item mb-6 flex', isError.value && itemStyles['is-error']]}>
 					<label
 						{...renderLabelAttr()}
 						class={[
-							'form-item__label flex text-gray-500 text-sm mb-1 justify-end items-center pr-3 dark:text-gray-300',
+							'l-form-item__label flex text-gray-500 text-sm mb-1 justify-end items-center pr-3 dark:text-gray-300',
 							(props.required || isRequired) && itemStyles['is-required'],
 						]}
 						style={{ width: props.labelWidth || '60px' }}
 					>
 						{props.label}
 					</label>
-					<div class='form-item__inner flex-1 relative transition-all duration-300'>
+					<div class='l-form-item__inner flex-1 relative transition-all duration-300'>
 						{renderSlot(slots, 'default')}
 
 						<Transition
@@ -129,7 +129,7 @@ const FormItem = defineComponent({
 							leaveActiveClass={itemStyles['fade-active']}
 						>
 							{isError.value ? (
-								<span class='form-item__error absolute text-xs pt-0.5 text-themeerrorcolor-400'>
+								<span class='l-form-item__error absolute text-xs pt-0.5 text-themeerrorcolor-400'>
 									{error.value}
 								</span>
 							) : null}

@@ -351,25 +351,25 @@ export default defineComponent({
 		const props = this.$props;
 		return (
 			<>
-				<div class={['scroll-wrapper relative', this.isMove && 'select-none']}>
+				<div class={['l-scroll--wrapper relative', this.isMove && 'select-none']}>
 					<div
-						class={['scroll-main w-full overflow-auto', props.class]}
+						class={['l-scroll--main w-full overflow-auto', props.class]}
 						ref='wrap'
 						style={{ height: props.height }}
 						onScroll={this.scrollEvent}
 					>
-						<div class='scroll-main__view' ref='main'>
+						<div class='l-scroll--main__view' ref='main'>
 							{renderSlot(this.$slots, 'default')}
 						</div>
 					</div>
 					<div
-						class='scroll-bar is-vertical absolute right-0.5 top-1 bottom-1 text-right'
+						class='l-scroll--bar is-vertical absolute right-0.5 top-1 bottom-1 text-right'
 						ref='barSlot'
 						onClick={this.scrollToBySlot}
 					>
 						<div
 							class={[
-								'scroll-bar__thumb rounded-md w-2 bg-gray-300 active:bg-gray-400 hover:bg-gray-400 inline-block cursor-pointer opacity-0 group-hover:opacity-100 dark:bg-gray-800 dark:active:bg-gray-900 dark:hover:bg-gray-900',
+								'l-scroll--bar__thumb rounded-md w-2 bg-gray-300 active:bg-gray-400 hover:bg-gray-400 inline-block cursor-pointer opacity-0 group-hover:opacity-100 dark:bg-gray-800 dark:active:bg-gray-900 dark:hover:bg-gray-900',
 								scrollStyles['transition'],
 							]}
 							ref='barThumb'
