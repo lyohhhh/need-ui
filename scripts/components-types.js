@@ -17,6 +17,7 @@ const globalComponents = [
 	'LSidebar',
 	'LSkeleton',
 	'LScroll',
+	'LLink',
 ];
 const ROOT = process.cwd();
 

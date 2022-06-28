@@ -12,3 +12,4 @@ export * from './input';
 export * from './form';
 export * from './footer';
 export * from './scroll';
+export * from './link';
