@@ -3,7 +3,7 @@ import fs from 'fs-extra';
 import process from 'process';
 const globalComponents = [
 	'LButton',
-	'LAside',
+	// 'LAside',
 	'LDialog',
 	'LFooter',
 	'LForm',
@@ -13,8 +13,8 @@ const globalComponents = [
 	'LList',
 	'LLoading',
 	'LMasker',
-	'LNavbar',
-	'LSidebar',
+	// 'LNavbar',
+	// 'LSidebar',
 	'LSkeleton',
 	'LScroll',
 	'LLink',
