@@ -31,10 +31,8 @@ export default defineComponent({
 		return () => (
 			<>
 				<a href={props.href} class={['l-link', cls.value]}>
-					<span class='l-link--inner'>
-						{props.icon ? <LIcon icon={props.icon}></LIcon> : null}
-						{renderSlot(slots, 'default')}
-					</span>
+					{props.icon ? <LIcon icon={props.icon}></LIcon> : null}
+					<span class='l-link--inner'>{renderSlot(slots, 'default')}</span>
 				</a>
 			</>
 		);
