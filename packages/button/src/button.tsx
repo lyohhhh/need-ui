@@ -1,6 +1,6 @@
 import { LIcon } from '../../components';
 import { computed, defineComponent, PropType, renderSlot } from 'vue';
-import ButtonStyles from '../styles/button.moudle.scss';
+import ButtonStyles from '../styles/button.module.scss';
 import type { Type, Size } from '@/[shared]';
 // console.log(ButtonStyles);
 ButtonStyles;
