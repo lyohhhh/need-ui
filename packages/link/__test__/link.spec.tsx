@@ -1,5 +1,4 @@
 import { mount } from '@vue/test-utils';
-import { type ComponentInternalInstance, getCurrentInstance, ref, nextTick } from 'vue';
 import { LLink } from '..';
 
 describe('link', () => {
