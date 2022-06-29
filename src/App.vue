@@ -26,8 +26,8 @@ import { ref } from 'vue';
 
 const input = ref('');
 
-const isShow = ref<Boolean>(false);
-const isDisabled = ref<Boolean>(false);
+const isShow = ref<boolean>(false);
+const isDisabled = ref<boolean>(false);
 </script>
 
 <style></style>
