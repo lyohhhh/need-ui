@@ -1,8 +1,7 @@
 import type { Type } from '@/[shared]';
 import { LIcon } from '../../components';
 import { computed, defineComponent, PropType, renderSlot } from 'vue';
-import linkStyle from '../styles/link.scss';
-linkStyle;
+import '../styles/link.scss';
 export default defineComponent({
 	props: {
 		type: {

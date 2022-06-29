@@ -1,8 +1,8 @@
 import { LIcon } from '../../components';
 import { computed, defineComponent, PropType, renderSlot } from 'vue';
-import ButtonStyles from '../styles/button.scss';
+import '../styles/button.scss';
 import type { Type, Size } from '@/[shared]';
-ButtonStyles;
+
 export default defineComponent({
 	name: 'Button',
 	props: {
