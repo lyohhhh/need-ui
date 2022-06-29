@@ -45,4 +45,13 @@ describe('link', () => {
 		expect(wrapper.find('.l-link').classes()).toContain(`is-underline`);
 		wrapper.unmount();
 	});
+
+	it(`link 'icon' props`, async () => {
+		const wrapper = mount(LLink, {
+			props: {
+				icon: 'dark',
+			},
+		});
+		expect(wrapper.find('.l-icon').exists()).toBe(true);
+	});
 });
