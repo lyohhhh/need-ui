@@ -1,11 +1,12 @@
 import { PropType } from 'vue';
+import type { Type, Size } from '@/[shared]';
 declare const _default: import("vue").DefineComponent<{
     size: {
-        type: PropType<"xs" | "sm" | "base" | "lg" | "xl">;
+        type: PropType<Size>;
         default: string;
     };
     type: {
-        type: PropType<"success" | "default" | "warning" | "primary" | "danger">;
+        type: PropType<Type>;
         default: string;
     };
     plain: {
@@ -33,11 +34,11 @@ declare const _default: import("vue").DefineComponent<{
     emitClick: (...args: any[]) => void;
 }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "click"[], "click", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     size: {
-        type: PropType<"xs" | "sm" | "base" | "lg" | "xl">;
+        type: PropType<Size>;
         default: string;
     };
     type: {
-        type: PropType<"success" | "default" | "warning" | "primary" | "danger">;
+        type: PropType<Type>;
         default: string;
     };
     plain: {
@@ -63,8 +64,8 @@ declare const _default: import("vue").DefineComponent<{
 }>> & {
     onClick?: ((...args: any[]) => any) | undefined;
 }, {
-    size: "xs" | "sm" | "base" | "lg" | "xl";
-    type: "success" | "default" | "warning" | "primary" | "danger";
+    size: Size;
+    type: Type;
     plain: boolean;
     round: boolean;
     circle: boolean;
