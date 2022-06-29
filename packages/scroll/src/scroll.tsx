@@ -351,7 +351,7 @@ export default defineComponent({
 		const props = this.$props;
 		return (
 			<>
-				<div class={['l-scroll--wrapper relative', this.isMove && 'select-none']}>
+				<div class={['l-scroll--wrapper group relative', this.isMove && 'select-none']}>
 					<div
 						class={['l-scroll--main w-full overflow-auto', props.class]}
 						ref='wrap'
