@@ -1,0 +1,15 @@
+
+.husky
+node_modules
+*.md
+*.sh
+.vscode
+dist
+/public
+.husky
+.eslintrc.js
+prettier.config.js
+postcss.config.js
+tailwind.config.js
+stylelint.config.js
+src/assets
