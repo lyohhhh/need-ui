@@ -46,21 +46,4 @@ describe('link', () => {
 		expect(wrapper.find('.l-link').classes()).toContain(`is-underline`);
 		wrapper.unmount();
 	});
-
-	it(`link 'href' props`, () => {
-		const wrapper = mount(LLink, {
-			props: {
-				disabled: false,
-				underline: true,
-				href: 'http://www.baidu.com',
-			},
-		});
-		Object.defineProperty(window, 'location', {
-			value: {
-				href: 'http://www.baidu.com',
-			},
-		});
-		wrapper.find('.l-link').trigger('click');
-		expect(window.location.href).toEqual('http://www.baidu.com');
-	});
 });
