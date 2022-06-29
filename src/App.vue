@@ -5,13 +5,13 @@
 			<l-button type="default" size="lg">RESET</l-button>
 			<l-button type="danger" size="base">DANGER</l-button>
 			<l-button type="warning" size="sm">WARNING</l-button>
-			<l-button type="success" size="xs">SUCCESS</l-button>
+			<l-button type="success" size="xs" @click="isDisabled = !isDisabled">SUCCESS</l-button>
 			<l-link type="primary">主要链接</l-link>
 			<l-link type="danger">危险链接</l-link>
 			<l-link type="warning">警告链接</l-link>
 			<l-link type="default">默认链接</l-link>
 			<l-link type="success">成功链接</l-link>
-			<l-link type="success" disabled>成功链接</l-link>
+			<l-link type="success" :disabled="isDisabled">成功链接</l-link>
 			<l-link type="success" :underline="false" href="http://www.baidu.com">成功链接</l-link>
 		</div>
 		<l-dialog v-model="isShow">
@@ -27,6 +27,7 @@ import { ref } from 'vue';
 const input = ref('');
 
 const isShow = ref<Boolean>(false);
+const isDisabled = ref<Boolean>(false);
 </script>
 
 <style></style>
