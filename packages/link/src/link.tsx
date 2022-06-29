@@ -1,7 +1,8 @@
 import type { Type } from '@/[shared]';
 import { LIcon } from '../../components';
 import { computed, defineComponent, PropType, renderSlot } from 'vue';
-
+import linkStyle from '../styles/link.scss';
+linkStyle;
 export default defineComponent({
 	props: {
 		type: {
@@ -14,7 +15,7 @@ export default defineComponent({
 		},
 		disabled: {
 			type: Boolean,
-			default: true,
+			default: false,
 		},
 		href: String,
 		icon: String,
@@ -30,7 +31,7 @@ export default defineComponent({
 		});
 		return () => (
 			<>
-				<a href={props.href} class={cls.value}>
+				<a href={props.href} class={['l-link', cls.value]}>
 					<span class='l-link--inner'>
 						{props.icon ? <LIcon icon={props.icon}></LIcon> : null}
 						{renderSlot(slots, 'default')}

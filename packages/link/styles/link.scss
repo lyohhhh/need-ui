@@ -1,0 +1,30 @@
+.l-link {
+	@apply text-gray-700 cursor-pointer mx-1 text-sm;
+
+	&.l-link--default:hover {
+		@apply text-themetextcolor-400;
+	}
+	&.l-link--primary {
+		@apply text-themetextcolor-400;
+	}
+	&.l-link--danger {
+		@apply text-red-500;
+	}
+	&.l-link--success {
+		@apply text-green-500;
+	}
+	&.l-link--warning {
+		@apply text-yellow-500;
+	}
+
+	&.is-underline:hover {
+		@apply underline;
+	}
+
+	&.is-disabled {
+		@apply opacity-50 cursor-not-allowed;
+		&:hover {
+			@apply no-underline;
+		}
+	}
+}
