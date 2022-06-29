@@ -13,3 +13,4 @@ export * from './form';
 export * from './footer';
 export * from './scroll';
 export * from './link';
+export * from './radio';

@@ -18,6 +18,7 @@ const globalComponents = [
 	'LSkeleton',
 	'LScroll',
 	'LLink',
+	'LRadio',
 ];
 const ROOT = process.cwd();
 
