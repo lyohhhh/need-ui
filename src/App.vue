@@ -13,6 +13,17 @@
 			<l-link type="success">成功链接</l-link>
 			<l-link type="success" :disabled="isDisabled">成功链接</l-link>
 			<l-link type="success" :underline="false" href="http://www.baidu.com">成功链接</l-link>
+
+			<br />
+
+			<div class="px-4 py-4">
+				<l-radio-group v-model="radio">
+					<l-radio label="1">选项1</l-radio>
+					<l-radio label="2">选项2</l-radio>
+					<l-radio label="3">选项3</l-radio>
+					<l-radio label="4">选项4</l-radio>
+				</l-radio-group>
+			</div>
 		</div>
 		<l-dialog v-model="isShow">
 			<l-input v-model="input"></l-input>
@@ -21,13 +32,30 @@
 </template>
 
 <script setup lang="ts">
-import { LButton, LScroll, LDialog, LLink, LInput } from '../packages/components';
-import { ref } from 'vue';
+import {
+	LButton,
+	LScroll,
+	LDialog,
+	LLink,
+	LInput,
+	LRadio,
+	LRadioGroup,
+} from '../packages/components';
+import { ref, watch } from 'vue';
 
 const input = ref('');
 
 const isShow = ref<boolean>(false);
 const isDisabled = ref<boolean>(false);
+
+const radio = ref<string>('');
+
+watch(
+	() => radio,
+	val => {
+		console.log(val);
+	}
+);
 </script>
 
 <style></style>
