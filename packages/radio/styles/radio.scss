@@ -1,0 +1,16 @@
+.l-radio[area-checked='true'] {
+	.l-radio__inner {
+		@apply border-themetextcolor-400 transition-colors;
+	}
+	.l-radio__inner::after {
+		content: '';
+		@apply absolute left-0 right-0 top-0 bottom-0 border-4 rounded-full border-themetextcolor-400;
+	}
+
+	.l-radio__label {
+		@apply text-themetextcolor-400 transition-colors;
+	}
+}
+.l-radio:last-child {
+	@apply mr-0;
+}

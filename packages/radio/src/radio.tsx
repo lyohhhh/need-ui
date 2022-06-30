@@ -1,6 +1,7 @@
 import { computed, defineComponent, inject, Ref, renderSlot } from 'vue';
 import { ProvideRadioKey } from './radio-group';
 import { radioProps } from './radio-props';
+import '../styles/radio.scss';
 
 export default defineComponent({
 	name: 'Radio',
@@ -12,8 +13,6 @@ export default defineComponent({
 		const radioChange = (e: MouseEvent) => {
 			emit('change', props.label);
 			emit('update:modelValue', props.label);
-			console.log(11);
-
 			if (injectValue !== undefined && props.label) {
 				injectValue.value = props.label;
 			}
@@ -22,7 +21,8 @@ export default defineComponent({
 		};
 
 		const isCheckedClass = computed<string | null>(() => {
-			return props.label === props.modelValue ? 'is-checked' : null;
+			const model = props.modelValue ? props.modelValue : injectValue ? injectValue.value : '';
+			return props.label === model ? 'is-checked' : null;
 		});
 
 		return () => (
@@ -30,11 +30,12 @@ export default defineComponent({
 				<label
 					class={['l-radio', isCheckedClass.value, 'inline-flex items-center mr-6 leading-none']}
 					onClick={radioChange}
+					area-checked={!!isCheckedClass.value}
 				>
 					<span
 						class={['l-radio__input relative inline-flex items-center mr-2', isCheckedClass.value]}
 					>
-						<span class='l-radio__inner inline-block w-3.5 h-3.5 rounded-full border'></span>
+						<span class='l-radio__inner relative inline-block w-3.5 h-3.5 rounded-full border'></span>
 						<input
 							aria-hidden='true'
 							type='radio'

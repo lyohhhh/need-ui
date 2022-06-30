@@ -50,12 +50,9 @@ const isDisabled = ref<boolean>(false);
 
 const radio = ref<string>('');
 
-watch(
-	() => radio,
-	val => {
-		console.log(val);
-	}
-);
+watch(radio, val => {
+	console.log(val);
+});
 </script>
 
 <style></style>
