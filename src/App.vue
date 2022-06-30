@@ -17,12 +17,17 @@
 			<br />
 
 			<div class="px-4 py-4">
-				<l-radio-group v-model="radio">
+				<l-radio-group v-model="radio" @change="radioChange">
 					<l-radio label="1">选项1</l-radio>
 					<l-radio label="2">选项2</l-radio>
 					<l-radio label="3">选项3</l-radio>
 					<l-radio label="4">选项4</l-radio>
 				</l-radio-group>
+
+				<l-radio label="1" v-model="radio">选项1</l-radio>
+				<l-radio label="2" v-model="radio">选项2</l-radio>
+				<l-radio label="3" v-model="radio">选项3</l-radio>
+				<l-radio label="4" v-model="radio">选项4</l-radio>
 			</div>
 		</div>
 		<l-dialog v-model="isShow">
@@ -50,7 +55,14 @@ const isDisabled = ref<boolean>(false);
 
 const radio = ref<string>('');
 
+const radioChange = (val: string) => {
+	console.log('change func ');
+
+	console.log(val);
+};
+
 watch(radio, val => {
+	console.log('watch func ');
 	console.log(val);
 });
 </script>
