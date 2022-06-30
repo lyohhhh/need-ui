@@ -19,6 +19,7 @@ const globalComponents = [
 	'LScroll',
 	'LLink',
 	'LRadio',
+	'LRadioGroup',
 ];
 const ROOT = process.cwd();
 
