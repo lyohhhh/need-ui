@@ -11,7 +11,7 @@ import {
 } from 'vue';
 import { default as FormItemProp } from './form-item-props';
 import itemStyles from '../styles/formItem.module.scss';
-import { FormItem as FormItemType, key } from './shared';
+import { FormItem as FormItemType, key } from '../../[shared]';
 import Schema from 'async-validator';
 import { Events, emitter as emitBus } from '../../[shared]/emitter';
 import mitt from 'mitt';

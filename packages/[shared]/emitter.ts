@@ -1,5 +1,5 @@
 import mitt from 'mitt';
-import { FormItem } from '../form/src/shared';
+import { FormItem } from '.';
 
 export type Events = {
 	validate?: boolean;
