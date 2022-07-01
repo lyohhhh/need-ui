@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils';
 import { LRadio } from '..';
 
 describe('radio', () => {
-	it.todo('radio mount', () => {
+	it('radio mount', () => {
 		mount(LRadio);
 	});
 });
