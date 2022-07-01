@@ -14,7 +14,6 @@ export default defineComponent({
 
 		const radioChange = (e: MouseEvent) => {
 			if (props.disabled || groupDisabled) return;
-
 			emit('change', props.label);
 			emit('update:modelValue', props.label);
 			if (injectValue !== undefined && props.label) {

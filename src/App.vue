@@ -24,6 +24,11 @@
 					<l-radio label="4">选项4</l-radio>
 				</l-radio-group>
 			</div>
+			<!-- 
+			<l-radio v-model="radio" label="1">选项1</l-radio>
+			<l-radio v-model="radio" label="2">选项2</l-radio>
+			<l-radio v-model="radio" label="3">选项3</l-radio>
+			<l-radio v-model="radio" label="4">选项4</l-radio> -->
 		</div>
 		<l-dialog v-model="isShow">
 			<l-input v-model="input"></l-input>
