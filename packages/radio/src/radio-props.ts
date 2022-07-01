@@ -5,7 +5,7 @@ export const radioProps = {
 	},
 	modelValue: {
 		type: [String, Number],
-		required: true,
+		required: false,
 	},
 	name: String,
 	border: Boolean,
