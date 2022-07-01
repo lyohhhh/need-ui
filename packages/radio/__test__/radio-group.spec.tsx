@@ -18,4 +18,35 @@ describe('radio-group', () => {
 		expect(group.find('.l-radio').exists()).toBe(true);
 		group.unmount();
 	});
+
+	it(`radio 'change' func`, async () => {
+		const changeFn = vi.fn();
+		const checked = ref<string>('');
+
+		const group = mount(LRadioGroup, {
+			slots: {
+				default: (
+					<>
+						{['1', '2', '3'].map(label => {
+							return <LRadio label={label}></LRadio>;
+						})}
+					</>
+				),
+			},
+			props: {
+				modelValue: checked as any,
+				onChange: changeFn,
+			},
+		});
+
+		expect(changeFn).not.toBeCalled();
+
+		await group.find('.l-radio').trigger('click');
+		expect(changeFn).toBeCalled();
+		expect(checked.value).toEqual('1');
+
+		await group.findAllComponents(LRadio)[2].find('.l-radio').trigger('click');
+		expect(changeFn).toBeCalledTimes(2);
+		expect(checked.value).toEqual('3');
+	});
 });
