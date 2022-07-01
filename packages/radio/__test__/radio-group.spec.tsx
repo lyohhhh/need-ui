@@ -49,4 +49,21 @@ describe('radio-group', () => {
 		expect(changeFn).toBeCalledTimes(2);
 		expect(checked.value).toEqual('3');
 	});
+
+	it(`group 'disabled' props`, () => {
+		const group = mount(LRadioGroup, {
+			props: {
+				disabled: true,
+			},
+			slots: {
+				default: (
+					<>
+						<LRadio label='1'></LRadio>
+					</>
+				),
+			},
+		});
+
+		expect(group.find('.is-disabled').exists()).toBe(true);
+	});
 });
