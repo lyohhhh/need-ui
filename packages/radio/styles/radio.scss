@@ -1,4 +1,5 @@
-.l-radio[area-checked='true'] {
+.l-radio[area-checked='true'],
+.l-radio + .is-checked {
 	.l-radio__inner {
 		@apply border-themetextcolor-400 transition-colors;
 	}
