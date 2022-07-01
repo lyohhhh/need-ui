@@ -1,15 +1,35 @@
-.l-radio[area-checked='true'],
-.l-radio + .is-checked {
-	.l-radio__inner {
-		@apply border-themetextcolor-400 transition-colors;
+.l-radio {
+	&.is-border {
+		@apply border border-gray-200;
 	}
-	.l-radio__inner::after {
-		content: '';
-		@apply absolute left-0 right-0 top-0 bottom-0 border-4 rounded-full border-themetextcolor-400;
-	}
+	&.is-checked {
+		@apply border-themetextcolor-400;
+		.l-radio__inner {
+			@apply border-themetextcolor-400 transition-colors;
+		}
+		.l-radio__inner::after {
+			content: '';
+			@apply absolute left-0 right-0 top-0 bottom-0 border-4 rounded-full border-themetextcolor-400 bg-white;
+		}
 
-	.l-radio__label {
-		@apply text-themetextcolor-400 transition-colors;
+		.l-radio__label {
+			@apply text-themetextcolor-400 transition-colors;
+		}
+	}
+	&.is-disabled {
+		@apply cursor-not-allowed;
+		.l-radio__label {
+			@apply text-gray-400 transition-colors;
+		}
+		.l-radio__inner::after {
+			@apply border-gray-100 bg-gray-400;
+		}
+		.l-radio__inner {
+			@apply border-gray-300;
+		}
+		&.is-border {
+			@apply border border-gray-200;
+		}
 	}
 }
 .l-radio:last-child {

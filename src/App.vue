@@ -18,9 +18,9 @@
 
 			<div class="px-4 py-4">
 				<l-radio-group v-model="radio" @change="radioChange">
-					<l-radio label="1">选项1</l-radio>
-					<l-radio label="2">选项2</l-radio>
-					<l-radio label="3">选项3</l-radio>
+					<l-radio label="1" border>选项1</l-radio>
+					<l-radio label="2" disabled border>选项2</l-radio>
+					<l-radio label="3" border>选项3</l-radio>
 					<l-radio label="4">选项4</l-radio>
 				</l-radio-group>
 			</div>
@@ -48,7 +48,7 @@ const input = ref('');
 const isShow = ref<boolean>(false);
 const isDisabled = ref<boolean>(false);
 
-const radio = ref<string>('1');
+const radio = ref<string>('2');
 
 const radioChange = (val: string) => {
 	console.log('change func ');

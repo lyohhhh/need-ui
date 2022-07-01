@@ -11,6 +11,8 @@ export default defineComponent({
 		const injectValue = inject<Ref<string | number>>(ProvideRadioKey);
 
 		const radioChange = (e: MouseEvent) => {
+			if (props.disabled) return;
+
 			emit('change', props.label);
 			emit('update:modelValue', props.label);
 			if (injectValue !== undefined && props.label) {
@@ -25,10 +27,22 @@ export default defineComponent({
 			return props.label === model ? 'is-checked' : null;
 		});
 
+		const classs = computed<string>(() => {
+			const classList = [];
+			if (props.disabled) classList.push('is-disabled');
+			if (props.border) classList.push('is-border');
+			return classList.join(' ');
+		});
+
 		return () => (
 			<>
 				<label
-					class={['l-radio', isCheckedClass.value, 'inline-flex items-center mr-6 leading-none']}
+					class={[
+						'l-radio',
+						isCheckedClass.value,
+						classs.value,
+						'inline-flex cursor-pointer select-none items-center mr-6 leading-none px-3 py-1.5 rounded',
+					]}
 					onClick={radioChange}
 					area-checked={!!isCheckedClass.value}
 				>
