@@ -30,8 +30,6 @@ export default defineComponent({
 		});
 
 		const classs = computed<string>(() => {
-			console.log(groupDisabled);
-
 			const classList = [];
 			if (props.disabled || groupDisabled) classList.push('is-disabled');
 			if (props.border) classList.push('is-border');
