@@ -1,6 +1,6 @@
 .l-radio {
 	&.is-border {
-		@apply border border-gray-200;
+		@apply border border-gray-200 px-3 py-1.5;
 	}
 	&.is-checked {
 		@apply border-themetextcolor-400;

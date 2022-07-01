@@ -1,5 +1,5 @@
 import { computed, defineComponent, inject, Ref, renderSlot } from 'vue';
-import { ProvideRadioKey } from './radio-group';
+import { ProvideRadioDisabled, ProvideRadioKey } from './radio-group';
 import { radioProps } from './radio-props';
 import '../styles/radio.scss';
 
@@ -10,8 +10,10 @@ export default defineComponent({
 	setup(props, { emit, slots }) {
 		const injectValue = inject<Ref<string | number>>(ProvideRadioKey);
 
+		const groupDisabled = inject<boolean>(ProvideRadioDisabled);
+
 		const radioChange = (e: MouseEvent) => {
-			if (props.disabled) return;
+			if (props.disabled || groupDisabled) return;
 
 			emit('change', props.label);
 			emit('update:modelValue', props.label);
@@ -28,8 +30,10 @@ export default defineComponent({
 		});
 
 		const classs = computed<string>(() => {
+			console.log(groupDisabled);
+
 			const classList = [];
-			if (props.disabled) classList.push('is-disabled');
+			if (props.disabled || groupDisabled) classList.push('is-disabled');
 			if (props.border) classList.push('is-border');
 			return classList.join(' ');
 		});
@@ -41,7 +45,7 @@ export default defineComponent({
 						'l-radio',
 						isCheckedClass.value,
 						classs.value,
-						'inline-flex cursor-pointer select-none items-center mr-6 leading-none px-3 py-1.5 rounded',
+						'inline-flex cursor-pointer select-none items-center mr-6 leading-none rounded',
 					]}
 					onClick={radioChange}
 					area-checked={!!isCheckedClass.value}

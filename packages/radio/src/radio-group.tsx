@@ -3,6 +3,8 @@ import { groupProps } from './radio-group-props';
 
 export const ProvideRadioKey = Symbol('radio');
 
+export const ProvideRadioDisabled = Symbol('disabled');
+
 /***
  * TODO: radio item change but group not change
  */
@@ -14,6 +16,7 @@ export default defineComponent({
 		const value = ref<string | number>(props.modelValue as string | number);
 
 		provide(ProvideRadioKey, value);
+		provide(ProvideRadioDisabled, props.disabled);
 
 		watch(value, val => {
 			emit('change', val);

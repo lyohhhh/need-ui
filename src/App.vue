@@ -17,10 +17,10 @@
 			<br />
 
 			<div class="px-4 py-4">
-				<l-radio-group v-model="radio" @change="radioChange">
+				<l-radio-group v-model="radio" disabled @change="radioChange">
 					<l-radio label="1" border>选项1</l-radio>
-					<l-radio label="2" disabled border>选项2</l-radio>
-					<l-radio label="3" border>选项3</l-radio>
+					<l-radio label="2">选项2</l-radio>
+					<l-radio label="3">选项3</l-radio>
 					<l-radio label="4">选项4</l-radio>
 				</l-radio-group>
 			</div>
