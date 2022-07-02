@@ -19,4 +19,6 @@ describe('radio', () => {
 		await radio.find('.l-radio').trigger('click');
 		expect(radioChecked.value).toContain('1');
 	});
+
+	it.todo(`radio 'disabled' props`, () => {});
 });
