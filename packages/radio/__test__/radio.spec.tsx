@@ -20,5 +20,18 @@ describe('radio', () => {
 		expect(radioChecked.value).toContain('1');
 	});
 
-	it.todo(`radio 'disabled' props`, () => {});
+	it(`radio 'disabled' props`, async () => {
+		const changeHandle = vi.fn();
+
+		const radio = mount(LRadio, {
+			props: {
+				disabled: true,
+				label: '1',
+				onChange: changeHandle,
+			},
+		});
+
+		await radio.find('.l-radio').trigger('click');
+		expect(changeHandle).not.toBeCalled();
+	});
 });
