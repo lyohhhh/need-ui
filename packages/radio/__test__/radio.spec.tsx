@@ -44,4 +44,13 @@ describe('radio', () => {
 
 		expect(radio.find('.is-border').exists()).toBe(true);
 	});
+
+	it(`radio 'name' props`, () => {
+		const radio = mount(LRadio, {
+			props: {
+				name: 'test',
+			},
+		});
+		expect(radio.find('input').attributes().name).toContain('test');
+	});
 });
