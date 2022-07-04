@@ -34,4 +34,14 @@ describe('radio', () => {
 		await radio.find('.l-radio').trigger('click');
 		expect(changeHandle).not.toBeCalled();
 	});
+
+	it(`radio 'border' props`, () => {
+		const radio = mount(LRadio, {
+			props: {
+				border: true,
+			},
+		});
+
+		expect(radio.find('.is-border').exists()).toBe(true);
+	});
 });
