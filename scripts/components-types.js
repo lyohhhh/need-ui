@@ -20,6 +20,8 @@ const globalComponents = [
 	'LLink',
 	'LRadio',
 	'LRadioGroup',
+	'LCheckbox',
+	'LCheckboxGroup',
 ];
 const ROOT = process.cwd();
 
