@@ -1,5 +1,5 @@
 import { computed, defineComponent, inject, Ref, renderSlot } from 'vue';
-import { ProvideRadioDisabled, ProvideRadioKey } from './radio-group';
+import { ProvideRadioBorder, ProvideRadioDisabled, ProvideRadioKey } from './radio-group';
 import { radioProps } from './radio-props';
 import '../styles/radio.scss';
 
@@ -11,6 +11,8 @@ export default defineComponent({
 		const injectValue = inject<Ref<string | number>>(ProvideRadioKey);
 
 		const groupDisabled = inject<boolean>(ProvideRadioDisabled);
+
+		const groupBorder = inject<boolean>(ProvideRadioBorder);
 
 		const radioChange = (e: MouseEvent) => {
 			if (props.disabled || groupDisabled) return;
@@ -31,7 +33,7 @@ export default defineComponent({
 		const classs = computed<string>(() => {
 			const classList = [];
 			if (props.disabled || groupDisabled) classList.push('is-disabled');
-			if (props.border) classList.push('is-border');
+			if (props.border || groupBorder) classList.push('is-border');
 			return classList.join(' ');
 		});
 

@@ -5,6 +5,8 @@ export const ProvideRadioKey = Symbol('radio');
 
 export const ProvideRadioDisabled = Symbol('disabled');
 
+export const ProvideRadioBorder = Symbol('border');
+
 /***
  * TODO: radio item change but group not change
  */
@@ -17,6 +19,7 @@ export default defineComponent({
 
 		provide(ProvideRadioKey, value);
 		provide(ProvideRadioDisabled, props.disabled);
+		provide(ProvideRadioBorder, props.border);
 
 		watch(value, val => {
 			emit('change', val);

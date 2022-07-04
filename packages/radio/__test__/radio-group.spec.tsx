@@ -66,4 +66,21 @@ describe('radio-group', () => {
 
 		expect(group.find('.is-disabled').exists()).toBe(true);
 	});
+
+	it(`group 'border' props`, () => {
+		const group = mount(LRadioGroup, {
+			props: {
+				border: true,
+			},
+			slots: {
+				default: (
+					<>
+						<LRadio label='1'></LRadio>
+					</>
+				),
+			},
+		});
+
+		expect(group.find('.is-border').exists()).toBe(true);
+	});
 });
