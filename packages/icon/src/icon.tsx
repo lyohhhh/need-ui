@@ -19,7 +19,7 @@ export default defineComponent({
 			emit('click', args);
 		};
 		return () => (
-			<i onClick={emitClick} class={['l-icon iconfont', `icon-${props.icon}`, props.styles]}></i>
+			<i onClick={emitClick} class={['l-icon iconfont', `l-${props.icon}`, props.styles]}></i>
 		);
 	},
 });
