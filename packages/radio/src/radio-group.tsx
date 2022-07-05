@@ -11,7 +11,7 @@ export const ProvideRadioBorder = Symbol('border');
  * TODO: radio item change but group not change
  */
 export default defineComponent({
-	name: 'LRadioGroup',
+	name: 'RadioGroup',
 	props: groupProps,
 	emits: ['update:modelValue', 'change'],
 	setup(props, { emit, slots }) {
