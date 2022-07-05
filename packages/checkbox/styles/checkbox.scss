@@ -16,6 +16,11 @@
 			@apply text-themetextcolor-400 transition-colors;
 		}
 	}
+	&.is-indeterminate {
+		.l-checkbox__inner {
+			@apply border-themetextcolor-400 transition-colors bg-themetextcolor-400;
+		}
+	}
 	&.is-disabled {
 		@apply cursor-not-allowed;
 		.l-checkbox__label {

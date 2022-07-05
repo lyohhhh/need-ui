@@ -27,6 +27,7 @@ export default defineComponent({
 			const classList = [];
 			if (props.disabled) classList.push('is-disabled');
 			if (props.border) classList.push('is-border');
+			if (props.indeterminate) classList.push('is-indeterminate');
 			return classList.join(' ');
 		});
 
@@ -50,7 +51,7 @@ export default defineComponent({
 							{isShowIcon.value ? (
 								<LIcon
 									icon={
-										props.modelValue ? 'queren' : props.indeterminate === false ? 'henggang' : ''
+										props.modelValue ? 'queren' : props.indeterminate === true ? 'henggang' : ''
 									}
 									class='absolute text-white inline-block box-border text-xs p-0.5 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'
 								></LIcon>
