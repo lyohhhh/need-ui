@@ -39,8 +39,9 @@
 			<br />
 			<l-checkbox-group v-model="checkGroup" @change="groupChange">
 				<l-checkbox
-					v-for="item in ['选项组单选1', '选项组单选2', '选项组单选3', '选项组单选4']"
+					v-for="(item, index) in ['选项组单选1', '选项组单选2', '选项组单选3', '选项组单选4']"
 					:label="item"
+					:key="index"
 					@change="changeCheckbox"
 					>{{ item }}</l-checkbox
 				>

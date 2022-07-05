@@ -34,7 +34,7 @@
 		"build:dts": "api-extractor run --local --verbose",
 		"component:dts": "esbuild scripts/components-types.js --bundle --platform=node | node",
 		"release": "npm publish",
-		"verify": "npm run prettier && npm run lint && npm run test"
+		"verify": "npm run prettier && npm run lint"
 	},
 	"dependencies": {
 		"async-validator": "^4.0.7",
