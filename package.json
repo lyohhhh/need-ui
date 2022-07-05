@@ -33,7 +33,8 @@
 		"build:clean": "rimraf ./dist",
 		"build:dts": "api-extractor run --local --verbose",
 		"component:dts": "esbuild scripts/components-types.js --bundle --platform=node | node",
-		"release": "npm publish"
+		"release": "npm publish",
+		"verify": "npm run prettier && npm run lint && npm run test"
 	},
 	"dependencies": {
 		"async-validator": "^4.0.7",
