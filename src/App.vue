@@ -1,6 +1,6 @@
 <template>
 	<l-scroll>
-		<div style="height: 10000px">
+		<div style="height: 10000px" class="p-4">
 			<l-button type="primary" size="xl">SUBMIT</l-button>
 			<l-button type="default" size="lg">RESET</l-button>
 			<l-button type="danger" size="base">DANGER</l-button>
@@ -16,24 +16,35 @@
 
 			<br />
 
-			<div class="px-4 py-4">
+			<div class="py-4">
 				<l-radio-group v-model="radio" border disabled @change="radioChange">
 					<l-radio label="1" border>选项1</l-radio>
 					<l-radio label="2">选项2</l-radio>
 					<l-radio label="3">选项3</l-radio>
 					<l-radio label="4">选项4</l-radio>
 				</l-radio-group>
-				<br />
-				<l-checkbox v-model="checkbox" border disabled>复选1</l-checkbox>
-				<l-checkbox v-model="checkbox" border>复选1 可选</l-checkbox>
-				<l-checkbox v-model="checkbox1" border disabled>复选2</l-checkbox>
-				<l-checkbox v-model="checkbox3" border>复选3</l-checkbox>
-			</div>
-			<!-- 
+				<!-- 
 			<l-radio v-model="radio" label="1">选项1</l-radio>
 			<l-radio v-model="radio" label="2">选项2</l-radio>
 			<l-radio v-model="radio" label="3">选项3</l-radio>
 			<l-radio v-model="radio" label="4">选项4</l-radio> -->
+			</div>
+
+			<div class="py-4">
+				<l-checkbox v-model="checkbox" border disabled>复选1</l-checkbox>
+				<l-checkbox v-model="checkbox" border>复选1 可选</l-checkbox>
+				<l-checkbox v-model="checkbox1" border disabled>复选2</l-checkbox>
+				<l-checkbox v-model="checkbox3" @change="changeCheckbox" border>复选3</l-checkbox>
+			</div>
+			<br />
+			<l-checkbox-group v-model="checkGroup" @change="groupChange">
+				<l-checkbox
+					v-for="item in ['选项组单选1', '选项组单选2', '选项组单选3', '选项组单选4']"
+					:label="item"
+					@change="changeCheckbox"
+					>{{ item }}</l-checkbox
+				>
+			</l-checkbox-group>
 		</div>
 		<l-dialog v-model="isShow">
 			<l-input v-model="input"></l-input>
@@ -51,8 +62,9 @@ import {
 	LRadio,
 	LRadioGroup,
 	LCheckbox,
+	LCheckboxGroup,
 } from '../packages/components';
-import { ref, watch } from 'vue';
+import { reactive, ref, watch } from 'vue';
 
 const input = ref('');
 
@@ -75,6 +87,18 @@ watch(radio, val => {
 const checkbox = ref<boolean>(false);
 const checkbox1 = ref<boolean>(true);
 const checkbox3 = ref<boolean>(false);
+const checkGroup = reactive<string[]>([]);
+
+watch(checkGroup, val => {
+	console.log(val);
+});
+const changeCheckbox = (flag: boolean) => {
+	console.log(flag);
+};
+
+const groupChange = (checkedList: string[]) => {
+	console.log(checkedList);
+};
 </script>
 
 <style></style>

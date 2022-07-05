@@ -9,7 +9,7 @@ export const checkboxProps = {
 		type: [] as PropType<string | number | boolean>,
 	},
 	label: {
-		type: [String, Number],
+		type: [] as PropType<string | number>,
 	},
 	border: {
 		type: Boolean,
