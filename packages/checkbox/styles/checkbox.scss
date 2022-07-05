@@ -26,11 +26,11 @@
 		.l-checkbox__label {
 			@apply text-gray-400 transition-colors;
 		}
-		.l-checkbox__inner::after {
-			@apply border-gray-100 bg-gray-400;
-		}
 		.l-checkbox__inner {
-			@apply border-gray-300;
+			@apply border-gray-300 bg-gray-100;
+			i {
+				@apply text-gray-800;
+			}
 		}
 		&.is-border {
 			@apply border border-gray-200;

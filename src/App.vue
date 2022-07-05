@@ -24,7 +24,10 @@
 					<l-radio label="4">选项4</l-radio>
 				</l-radio-group>
 				<br />
-				<l-checkbox v-model="checkbox">复选1</l-checkbox>
+				<l-checkbox v-model="checkbox" border disabled>复选1</l-checkbox>
+				<l-checkbox v-model="checkbox" border>复选1 可选</l-checkbox>
+				<l-checkbox v-model="checkbox1" border disabled>复选2</l-checkbox>
+				<l-checkbox v-model="checkbox3" border>复选3</l-checkbox>
 			</div>
 			<!-- 
 			<l-radio v-model="radio" label="1">选项1</l-radio>
@@ -70,6 +73,8 @@ watch(radio, val => {
 });
 
 const checkbox = ref<boolean>(false);
+const checkbox1 = ref<boolean>(true);
+const checkbox3 = ref<boolean>(false);
 </script>
 
 <style></style>
