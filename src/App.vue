@@ -23,6 +23,8 @@
 					<l-radio label="3">选项3</l-radio>
 					<l-radio label="4">选项4</l-radio>
 				</l-radio-group>
+				<br />
+				<l-checkbox v-model="checkbox">复选1</l-checkbox>
 			</div>
 			<!-- 
 			<l-radio v-model="radio" label="1">选项1</l-radio>
@@ -45,6 +47,7 @@ import {
 	LInput,
 	LRadio,
 	LRadioGroup,
+	LCheckbox,
 } from '../packages/components';
 import { ref, watch } from 'vue';
 
@@ -65,6 +68,8 @@ watch(radio, val => {
 	console.log('watch func ');
 	console.log(val);
 });
+
+const checkbox = ref<boolean>(false);
 </script>
 
 <style></style>

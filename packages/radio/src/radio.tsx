@@ -62,7 +62,7 @@ export default defineComponent({
 						/>
 					</span>
 
-					<span class='l-radio__label text-sm text-gray-700'>{renderSlot(slots, 'default')}</span>
+					<span class='l-radio__label text-sm text-gray-600'>{renderSlot(slots, 'default')}</span>
 				</label>
 			</>
 		);

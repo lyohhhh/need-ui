@@ -1,0 +1,37 @@
+.l-checkbox {
+	&.is-border {
+		@apply border border-gray-200 px-3 py-1.5;
+	}
+	&.is-checked {
+		@apply border-themetextcolor-400;
+		.l-checkbox__inner {
+			@apply border-themetextcolor-400 transition-colors bg-themetextcolor-400;
+		}
+		.l-checkbox__inner::after {
+			content: '';
+			// @apply absolute left-0 right-0 top-0 bottom-0 border-4 rounded-sm border-themetextcolor-400 bg-white;
+		}
+
+		.l-checkbox__label {
+			@apply text-themetextcolor-400 transition-colors;
+		}
+	}
+	&.is-disabled {
+		@apply cursor-not-allowed;
+		.l-checkbox__label {
+			@apply text-gray-400 transition-colors;
+		}
+		.l-checkbox__inner::after {
+			@apply border-gray-100 bg-gray-400;
+		}
+		.l-checkbox__inner {
+			@apply border-gray-300;
+		}
+		&.is-border {
+			@apply border border-gray-200;
+		}
+	}
+}
+.l-checkbox:last-child {
+	@apply mr-0;
+}
