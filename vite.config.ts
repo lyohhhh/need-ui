@@ -23,6 +23,7 @@ export default defineConfig({
 		open: true,
 		host: true,
 		port: 3008,
+		hmr: true,
 	},
 	css: {
 		preprocessorOptions: {
