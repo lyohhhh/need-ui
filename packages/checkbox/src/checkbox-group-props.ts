@@ -1,11 +1,11 @@
 import { PropType } from 'vue';
-
+export type ListType = (string | number)[];
 export const checkboxGroupProps = {
 	modelValue: {
-		type: [] as PropType<Array<string | number>>,
+		type: [] as PropType<ListType>,
 		required: true,
 	},
-	value: [] as PropType<Array<string | number>>,
+	value: [] as PropType<ListType>,
 	disabled: {
 		type: Boolean,
 		default: false,

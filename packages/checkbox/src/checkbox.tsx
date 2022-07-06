@@ -1,4 +1,4 @@
-import { computed, defineComponent, inject, Ref, renderSlot } from 'vue';
+import { computed, defineComponent, inject, Ref, renderSlot, watch } from 'vue';
 import { checkboxProps } from './checkbox-props';
 import '../styles/checkbox.scss';
 import { LIcon } from '../../components';
@@ -6,6 +6,7 @@ import {
 	ProvideCheckboxBorder,
 	ProvideCheckboxDisabled,
 	ProvideCheckboxKey,
+	type ModelValue,
 } from './checkbox-group';
 
 export default defineComponent({
@@ -13,7 +14,7 @@ export default defineComponent({
 	props: checkboxProps,
 	emits: ['update:modelValue', 'change'],
 	setup(props, { slots, emit }) {
-		const injectValue = inject<Ref<(string | number)[]>>(ProvideCheckboxKey);
+		const injectValue = inject<ModelValue>(ProvideCheckboxKey);
 
 		const groupDisabled = inject<boolean>(ProvideCheckboxDisabled);
 
@@ -24,7 +25,6 @@ export default defineComponent({
 			const isChecked = isCheckedByGroup();
 			emit('change', injectValue ? !isChecked : !props.modelValue);
 			emit('update:modelValue', injectValue ? !isChecked : !props.modelValue);
-
 			if (injectValue !== undefined && props.label) {
 				if (injectValue.value.includes(props.label)) {
 					let index = injectValue.value.findIndex(item => item === props.label);

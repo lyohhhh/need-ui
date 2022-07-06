@@ -1,5 +1,5 @@
-import { defineComponent, isRef, provide, ref, renderSlot, watch } from 'vue';
-import { checkboxGroupProps } from './checkbox-group-props';
+import { defineComponent, isRef, provide, type Ref, ref, renderSlot, watch } from 'vue';
+import { checkboxGroupProps, type ListType } from './checkbox-group-props';
 
 export const ProvideCheckboxKey = Symbol('checkbox');
 
@@ -7,19 +7,17 @@ export const ProvideCheckboxDisabled = Symbol('disabled');
 
 export const ProvideCheckboxBorder = Symbol('border');
 
+export type ModelValue<T = ListType> = Ref<T>;
+
 export default defineComponent({
 	name: 'CheckboxGroup',
 	props: checkboxGroupProps,
 	emits: ['update:modelValue', 'change'],
 	setup(props, { slots, emit }) {
-		const provideValue = (props.modelValue || props.value) as (string | number)[];
-		const value = ref<(string | number)[]>(provideValue);
+		let provideValue = (props.modelValue || props.value) as ListType;
+		const value = ref<ListType>(provideValue);
 
-		const injectValue = () => {
-			provide(ProvideCheckboxKey, value);
-		};
-
-		injectValue();
+		provide(ProvideCheckboxKey, value);
 
 		provide(ProvideCheckboxDisabled, props.disabled);
 
@@ -27,17 +25,38 @@ export default defineComponent({
 
 		watch(
 			() => props.modelValue,
-			() => {
-				value.value = props.modelValue as (string | number)[];
-				injectValue();
+			val => {
+				/**
+				 * 不改变元素组地址 去重
+				 * 使用 set 去重会导致 watch 监听不到
+				 */
+
+				if (val && val.length) {
+					val.forEach(item => {
+						if (!value.value.includes(item)) {
+							value.value.push(item);
+						}
+					});
+				} else {
+					value.value.length = 0;
+				}
+			},
+			{
+				deep: true,
 			}
 		);
 
-		watch(provideValue, list => {
-			const checkedList = isRef(list) ? list.value : list;
-			emit('change', checkedList);
-			emit('update:modelValue', checkedList);
-		});
+		watch(
+			value.value,
+			list => {
+				const checkedList = isRef(list) ? list.value : list;
+				emit('change', checkedList);
+				emit('update:modelValue', checkedList);
+			},
+			{
+				deep: true,
+			}
+		);
 
 		return () => (
 			<>

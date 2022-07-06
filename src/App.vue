@@ -74,7 +74,6 @@ import {
 	LCheckboxGroup,
 } from '../packages/components';
 import { ref, watch } from 'vue';
-import { computed } from '@vue/reactivity';
 
 const input = ref('');
 
@@ -100,25 +99,26 @@ const checkbox3 = ref<boolean>(false);
 
 let checkGroup = ref<string[]>([]);
 const groupList = ref(['选项组单选1', '选项组单选2', '选项组单选3', '选项组单选4']);
-const groupChange = (checkedList: string[]) => {
-	allChecked.value = checkedList.length == groupList.value.length;
-	console.log(checkedList);
-};
-watch(checkGroup, val => {
-	console.log(val);
-});
-const changeCheckbox = (flag: boolean) => {
-	console.log(flag);
-};
+const indeterminate = ref<boolean>(false);
 const allChecked = ref<boolean>(false);
 
-const indeterminate = computed(() => {
-	return checkGroup.value.length < groupList.value.length && checkGroup.value.length > 0;
+const groupChange = (checkedList: string[]) => {
+	console.log(' ----------------- 777 ');
+
+	console.log(checkGroup.value);
+
+	indeterminate.value =
+		checkGroup.value.length < groupList.value.length && checkGroup.value.length > 0;
+	allChecked.value = checkedList.length == groupList.value.length;
+};
+watch(checkGroup.value, val => {
+	console.log(val);
 });
+const changeCheckbox = () => {};
 
 const handleCheckedAll = (isCheckedAll: boolean) => {
 	checkGroup.value = isCheckedAll ? [...groupList.value] : [];
-	console.log(checkGroup.value);
+	indeterminate.value = false;
 };
 </script>
 
