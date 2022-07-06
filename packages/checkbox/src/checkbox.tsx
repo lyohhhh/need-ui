@@ -1,4 +1,4 @@
-import { computed, defineComponent, inject, Ref, renderSlot, watch } from 'vue';
+import { computed, defineComponent, inject, renderSlot } from 'vue';
 import { checkboxProps } from './checkbox-props';
 import '../styles/checkbox.scss';
 import { LIcon } from '../../components';
