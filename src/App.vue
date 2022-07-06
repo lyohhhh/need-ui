@@ -37,9 +37,17 @@
 				<l-checkbox v-model="checkbox3" @change="changeCheckbox" border>复选3</l-checkbox>
 			</div>
 			<br />
+
+			<l-checkbox
+				v-model="allChecked"
+				:indeterminate="indeterminate"
+				border
+				@change="handleCheckedAll"
+				>全选</l-checkbox
+			>
 			<l-checkbox-group v-model="checkGroup" @change="groupChange">
 				<l-checkbox
-					v-for="(item, index) in ['选项组单选1', '选项组单选2', '选项组单选3', '选项组单选4']"
+					v-for="(item, index) in groupList"
 					:label="item"
 					:key="index"
 					@change="changeCheckbox"
@@ -65,7 +73,8 @@ import {
 	LCheckbox,
 	LCheckboxGroup,
 } from '../packages/components';
-import { reactive, ref, watch } from 'vue';
+import { ref, watch } from 'vue';
+import { computed } from '@vue/reactivity';
 
 const input = ref('');
 
@@ -88,17 +97,28 @@ watch(radio, val => {
 const checkbox = ref<boolean>(false);
 const checkbox1 = ref<boolean>(true);
 const checkbox3 = ref<boolean>(false);
-const checkGroup = reactive<string[]>([]);
 
+let checkGroup = ref<string[]>([]);
+const groupList = ref(['选项组单选1', '选项组单选2', '选项组单选3', '选项组单选4']);
+const groupChange = (checkedList: string[]) => {
+	allChecked.value = checkedList.length == groupList.value.length;
+	console.log(checkedList);
+};
 watch(checkGroup, val => {
 	console.log(val);
 });
 const changeCheckbox = (flag: boolean) => {
 	console.log(flag);
 };
+const allChecked = ref<boolean>(false);
 
-const groupChange = (checkedList: string[]) => {
-	console.log(checkedList);
+const indeterminate = computed(() => {
+	return checkGroup.value.length < groupList.value.length && checkGroup.value.length > 0;
+});
+
+const handleCheckedAll = (isCheckedAll: boolean) => {
+	checkGroup.value = isCheckedAll ? [...groupList.value] : [];
+	console.log(checkGroup.value);
 };
 </script>
 

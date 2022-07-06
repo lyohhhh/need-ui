@@ -15,9 +15,23 @@ export default defineComponent({
 		const provideValue = (props.modelValue || props.value) as (string | number)[];
 		const value = ref<(string | number)[]>(provideValue);
 
-		provide(ProvideCheckboxKey, value);
+		const injectValue = () => {
+			provide(ProvideCheckboxKey, value);
+		};
+
+		injectValue();
+
 		provide(ProvideCheckboxDisabled, props.disabled);
+
 		provide(ProvideCheckboxBorder, props.border);
+
+		watch(
+			() => props.modelValue,
+			() => {
+				value.value = props.modelValue as (string | number)[];
+				injectValue();
+			}
+		);
 
 		watch(provideValue, list => {
 			const checkedList = isRef(list) ? list.value : list;
