@@ -23,8 +23,9 @@ export default defineComponent({
 		const checkboxChange = (e: MouseEvent) => {
 			if (props.disabled || groupDisabled) return;
 			const isChecked = isCheckedByGroup();
-			emit('change', injectValue ? !isChecked : !props.modelValue);
-			emit('update:modelValue', injectValue ? !isChecked : !props.modelValue);
+			const emitArguments = injectValue ? !isChecked : !props.modelValue;
+			emit('change', emitArguments);
+			emit('update:modelValue', emitArguments);
 			if (injectValue !== undefined && props.label) {
 				if (injectValue.value.includes(props.label)) {
 					let index = injectValue.value.findIndex(item => item === props.label);
