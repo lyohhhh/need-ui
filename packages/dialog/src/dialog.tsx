@@ -8,7 +8,7 @@ export default defineComponent({
 	name: 'Dialog',
 	props: dialogProps,
 	emits: ['confirm', 'cancel', 'update:modelValue'],
-	setup(props, { emit }) {
+	setup(_props, { emit }) {
 		const hideDialog = () => {
 			emit('update:modelValue', false);
 		};
