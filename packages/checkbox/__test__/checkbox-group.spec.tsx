@@ -7,7 +7,9 @@ describe('checkbox-group', () => {
 	});
 
 	
-	it.todo(`checkbox 'disabled' props` ,() => {})
+	it.todo(`checkbox 'disabled' props` ,() => {
+		mount(LCheckboxGroup)
+	})
 	it.todo(`checkbox 'border' props` ,() => {})
 	it.todo(`checkbox 'change' func` ,() => {})
 });
