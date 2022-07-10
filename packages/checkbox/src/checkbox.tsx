@@ -51,7 +51,7 @@ export default defineComponent({
 		});
 
 		const isCheckedByGroup = (): boolean => {
-			return !!(injectValue && injectValue.value.includes(props.label || ''));
+			return !!(injectValue && injectValue?.value?.includes(props.label || ''));
 		};
 
 		const isShowIcon = computed<boolean>(() => {
