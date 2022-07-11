@@ -1,4 +1,6 @@
 import { mount } from '@vue/test-utils';
+import { ref } from 'vue';
+import { vi } from 'vitest';
 import { LCheckbox } from '..';
 
 describe('checkbox', () => {
@@ -6,10 +8,26 @@ describe('checkbox', () => {
 		mount(LCheckbox);
 	});
 
-	it.todo(`checkbox 'disabled' props` ,() => {})
-	it.todo(`checkbox 'border' props` ,() => {})
-	it.todo(`checkbox 'min' props` ,() => {})
-	it.todo(`checkbox 'max' props` ,() => {})
-	it.todo(`checkbox 'change' func` ,() => {})
+	it(`checkbox 'disabled' props`, async () => {
+		const checkedValue = ref<boolean>(false);
+		const changeFn = vi.fn();
 
+		const wrapper = mount(LCheckbox, {
+			props: {
+				disabled: true,
+				modelValue: checkedValue as any,
+				onChange: changeFn,
+			},
+		});
+
+		expect(changeFn).not.toBeCalled();
+		await wrapper.find('.l-checkbox').trigger('click');
+
+		expect(changeFn).not.toBeCalled();
+		expect(checkedValue.value).toBe(false);
+	});
+	it.todo(`checkbox 'border' props`, () => {});
+	it.todo(`checkbox 'min' props`, () => {});
+	it.todo(`checkbox 'max' props`, () => {});
+	it.todo(`checkbox 'change' func`, () => {});
 });
