@@ -27,7 +27,7 @@ describe('checkbox-group', () => {
 		expect(changeFn).not.toBeCalled();
 	});
 
-	it.todo(`checkbox group 'border' props`, () => {
+	it(`checkbox group 'border' props`, () => {
 		const wrapper = mount(LCheckboxGroup, {
 			slots: {
 				default: <LCheckbox label={1}></LCheckbox>,
@@ -39,9 +39,9 @@ describe('checkbox-group', () => {
 		expect(wrapper.find('.is-border').exists()).toBe(true);
 	});
 
-	it.todo(`checkbox group 'change' func`, async () => {
+	it(`checkbox group 'change' func`, async () => {
 		const changeFn = vi.fn();
-		const checkedValue = ref<number>(0);
+		const checkedValue = ref<number[]>([]);
 		const wrapper = mount(LCheckboxGroup, {
 			slots: {
 				default: (
@@ -68,5 +68,7 @@ describe('checkbox-group', () => {
 		await wrapper.findAllComponents(LCheckbox)[1].find('.l-radio').trigger('click');
 		expect(changeFn).toBeCalledTimes(2);
 		expect(checkedValue.value).toContain(1);
+		expect(checkedValue.value).toContain(2);
+		expect(checkedValue.value).not.toContain(2);
 	});
 });
