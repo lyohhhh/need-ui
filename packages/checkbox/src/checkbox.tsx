@@ -24,6 +24,7 @@ export default defineComponent({
 			if (props.disabled || groupDisabled) return;
 			const isChecked = isCheckedByGroup();
 			const emitArguments = injectValue ? !isChecked : !props.modelValue;
+
 			emit('change', emitArguments);
 			emit('update:modelValue', emitArguments);
 			if (injectValue !== undefined && props.label) {
