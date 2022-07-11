@@ -26,7 +26,7 @@ describe('checkbox', () => {
 		expect(changeFn).not.toBeCalled();
 		expect(checkedValue.value).toBe(false);
 	});
-	it.todo(`checkbox 'border' props`, () => {
+	it(`checkbox 'border' props`, () => {
 		const wrapper = mount(LCheckbox, {
 			props: {
 				border: true,
