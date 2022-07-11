@@ -34,7 +34,5 @@ describe('checkbox', () => {
 		});
 		expect(wrapper.find('.is-border').exists()).toBe(true);
 	});
-	it.todo(`checkbox 'min' props`, () => {});
-	it.todo(`checkbox 'max' props`, () => {});
 	it.todo(`checkbox 'change' func`, () => {});
 });

@@ -70,4 +70,7 @@ describe('checkbox-group', () => {
 		expect(checkedValue.value).toContain(2);
 		expect(checkedValue.value).not.toContain(1);
 	});
+
+	it.todo(`checkbox 'min' props`, () => {});
+	it.todo(`checkbox 'max' props`, () => {});
 });
