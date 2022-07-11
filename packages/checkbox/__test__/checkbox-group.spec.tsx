@@ -53,22 +53,21 @@ describe('checkbox-group', () => {
 				),
 			},
 			props: {
-				disabled: true,
 				onChange: changeFn,
-				modelValue: checkedValue as any,
+				modelValue: checkedValue.value,
 			},
 		});
 
 		expect(changeFn).not.toBeCalled();
-		await wrapper.findAllComponents(LCheckbox)[2].find('.l-radio').trigger('click');
+		await wrapper.findAllComponents(LCheckbox)[2].find('.l-checkbox').trigger('click');
 
 		expect(changeFn).toBeCalled();
-		expect(checkedValue.value).toContain(2);
+		expect(checkedValue.value).toContain(3);
 
-		await wrapper.findAllComponents(LCheckbox)[1].find('.l-radio').trigger('click');
+		await wrapper.findAllComponents(LCheckbox)[1].find('.l-checkbox').trigger('click');
 		expect(changeFn).toBeCalledTimes(2);
-		expect(checkedValue.value).toContain(1);
+		expect(checkedValue.value).toContain(3);
 		expect(checkedValue.value).toContain(2);
-		expect(checkedValue.value).not.toContain(2);
+		expect(checkedValue.value).not.toContain(1);
 	});
 });
