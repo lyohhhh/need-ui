@@ -7,7 +7,7 @@ describe('checkbox-group', () => {
 		mount(LCheckboxGroup);
 	});
 
-	it.only(`checkbox-group 'disabled' props`, async () => {
+	it(`checkbox-group 'disabled' props`, async () => {
 		const changeFn = vi.fn();
 
 		const wrapper = mount(LCheckboxGroup, {
