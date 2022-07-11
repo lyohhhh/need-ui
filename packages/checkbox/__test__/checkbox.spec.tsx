@@ -26,7 +26,14 @@ describe('checkbox', () => {
 		expect(changeFn).not.toBeCalled();
 		expect(checkedValue.value).toBe(false);
 	});
-	it.todo(`checkbox 'border' props`, () => {});
+	it.todo(`checkbox 'border' props`, () => {
+		const wrapper = mount(LCheckbox, {
+			props: {
+				border: true,
+			},
+		});
+		expect(wrapper.find('.is-border').exists()).toBe(true);
+	});
 	it.todo(`checkbox 'min' props`, () => {});
 	it.todo(`checkbox 'max' props`, () => {});
 	it.todo(`checkbox 'change' func`, () => {});
