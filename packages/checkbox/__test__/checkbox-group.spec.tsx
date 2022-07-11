@@ -25,6 +25,7 @@ describe('checkbox-group', () => {
 
 		await wrapper.find('.l-checkbox').trigger('click');
 		expect(changeFn).not.toBeCalled();
+		wrapper.unmount();
 	});
 
 	it(`checkbox group 'border' props`, () => {
@@ -37,6 +38,7 @@ describe('checkbox-group', () => {
 			},
 		});
 		expect(wrapper.find('.is-border').exists()).toBe(true);
+		wrapper.unmount();
 	});
 
 	it(`checkbox group 'change' func`, async () => {
@@ -69,6 +71,8 @@ describe('checkbox-group', () => {
 		expect(checkedValue.value).toContain(3);
 		expect(checkedValue.value).toContain(2);
 		expect(checkedValue.value).not.toContain(1);
+
+		wrapper.unmount();
 	});
 
 	it.todo(`checkbox 'min' props`, () => {});
