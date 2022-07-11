@@ -34,5 +34,21 @@ describe('checkbox', () => {
 		});
 		expect(wrapper.find('.is-border').exists()).toBe(true);
 	});
-	it.todo(`checkbox 'change' func`, () => {});
+	it.todo(`checkbox 'change' func`, async () => {
+		const checkedValue = ref<boolean>(false);
+		const changeFn = vi.fn();
+
+		const wrapper = mount(LCheckbox, {
+			props: {
+				modelValue: checkedValue as any,
+				onChange: changeFn,
+			},
+		});
+
+		expect(changeFn).not.toBeCalled();
+		await wrapper.find('.l-checkbox').trigger('click');
+
+		expect(changeFn).toBeCalled();
+		expect(checkedValue.value).toBe(true);
+	});
 });
