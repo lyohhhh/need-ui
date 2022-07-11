@@ -25,6 +25,18 @@ describe('checkbox-group', () => {
 		await wrapper.find('.l-checkbox').trigger('click');
 		expect(changeFn).not.toBeCalled();
 	});
-	it.todo(`checkbox group 'border' props`, () => {});
+
+	it.todo(`checkbox group 'border' props`, () => {
+		const wrapper = mount(LCheckboxGroup, {
+			slots: {
+				default: <LCheckbox label={1}></LCheckbox>,
+			},
+			props: {
+				border: true,
+			},
+		});
+		expect(wrapper.find('.is-border').exists()).toBe(true);
+	});
+
 	it.todo(`checkbox group 'change' func`, () => {});
 });
