@@ -34,7 +34,7 @@ describe('checkbox', () => {
 		});
 		expect(wrapper.find('.is-border').exists()).toBe(true);
 	});
-	it.only(`checkbox 'change' func`, async () => {
+	it(`checkbox 'change' func`, async () => {
 		const checkedValue = ref<boolean>(false);
 		const changeFn = vi.fn((isChecked: boolean) => {
 			checkedValue.value = isChecked;
