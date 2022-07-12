@@ -7,6 +7,10 @@ export const ProvideCheckboxDisabled = Symbol('disabled');
 
 export const ProvideCheckboxBorder = Symbol('border');
 
+export const ProvideCheckboxMin = Symbol('min');
+
+export const ProvideCheckboxMax = Symbol('max');
+
 export type ModelValue<T = ListType> = Ref<T>;
 
 export default defineComponent({
@@ -22,6 +26,10 @@ export default defineComponent({
 		provide(ProvideCheckboxDisabled, props.disabled);
 
 		provide(ProvideCheckboxBorder, props.border);
+
+		provide(ProvideCheckboxMin, props.min);
+
+		provide(ProvideCheckboxMax, props.max);
 
 		watch(
 			() => props.modelValue,

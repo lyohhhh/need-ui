@@ -45,7 +45,7 @@
 				@change="handleCheckedAll"
 				>全选</l-checkbox
 			>
-			<l-checkbox-group v-model="checkGroup" @change="groupChange">
+			<l-checkbox-group v-model="checkGroup" :min="1" :max="2" @change="groupChange">
 				<l-checkbox
 					v-for="(item, index) in groupList"
 					:label="item"

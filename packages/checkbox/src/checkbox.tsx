@@ -6,6 +6,8 @@ import {
 	ProvideCheckboxBorder,
 	ProvideCheckboxDisabled,
 	ProvideCheckboxKey,
+	ProvideCheckboxMin,
+	ProvideCheckboxMax,
 	type ModelValue,
 } from './checkbox-group';
 
@@ -20,8 +22,12 @@ export default defineComponent({
 
 		const groupBorder = inject<boolean>(ProvideCheckboxBorder);
 
+		const min = inject<number>(ProvideCheckboxMin) || -Infinity;
+
+		const max = inject<number>(ProvideCheckboxMax) || Infinity;
+
 		const checkboxChange = (e: MouseEvent) => {
-			if (props.disabled || groupDisabled) return;
+			if (props.disabled || groupDisabled || disabledByMinOrMax.value) return;
 			const isChecked = isCheckedByGroup();
 			const emitArguments = injectValue ? !isChecked : !props.modelValue;
 
@@ -43,9 +49,34 @@ export default defineComponent({
 			return model ? 'is-checked' : null;
 		});
 
+		const disabledByMinOrMax = computed<boolean>(() => {
+			let disabledByMinOrMaxFlag = false;
+			if (injectValue && injectValue.value) {
+				const isChecked = !!isCheckedClass.value;
+				if (isChecked) {
+					if (injectValue.value.length >= max) {
+						disabledByMinOrMaxFlag = false;
+					}
+					if (injectValue.value.length <= min) {
+						disabledByMinOrMaxFlag = true;
+					}
+				} else {
+					if (injectValue.value.length >= max) {
+						disabledByMinOrMaxFlag = true;
+					}
+					if (injectValue.value.length <= min) {
+						disabledByMinOrMaxFlag = false;
+					}
+				}
+			}
+			return disabledByMinOrMaxFlag;
+		});
+
 		const classs = computed<string>(() => {
 			const classList = [];
-			if (props.disabled || groupDisabled) classList.push('is-disabled');
+
+			if (props.disabled || groupDisabled || disabledByMinOrMax.value)
+				classList.push('is-disabled');
 			if (props.border || groupBorder) classList.push('is-border');
 			if (props.indeterminate) classList.push('is-indeterminate');
 			return classList.join(' ');
