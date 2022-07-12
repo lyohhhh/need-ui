@@ -62,12 +62,18 @@ describe('checkbox', () => {
 		expect(checkedValue.value).toBe(false);
 	});
 
-	it(`checkbox 'indeterminate' props`, () => {
+	it(`checkbox 'indeterminate' props`, async () => {
 		const wrapper = mount(LCheckbox, {
 			props: {
 				indeterminate: true,
 			},
 		});
 		expect(wrapper.find('.is-indeterminate').exists()).toBe(true);
+
+		await wrapper.setProps({
+			indeterminate: false,
+		});
+
+		expect(wrapper.find('.is-indeterminate').exists()).toBe(false);
 	});
 });
