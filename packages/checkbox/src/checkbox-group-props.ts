@@ -14,6 +14,12 @@ export const checkboxGroupProps = {
 		type: Boolean,
 		default: false,
 	},
-	min: Number,
-	max: Number,
+	min: {
+		type: Number,
+		default: -Infinity,
+	},
+	max: {
+		type: Number,
+		default: Infinity,
+	},
 };
