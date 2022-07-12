@@ -26,6 +26,7 @@ describe('checkbox', () => {
 		expect(changeFn).not.toBeCalled();
 		expect(checkedValue.value).toBe(false);
 	});
+
 	it(`checkbox 'border' props`, () => {
 		const wrapper = mount(LCheckbox, {
 			props: {
@@ -34,6 +35,7 @@ describe('checkbox', () => {
 		});
 		expect(wrapper.find('.is-border').exists()).toBe(true);
 	});
+
 	it(`checkbox 'change' func`, async () => {
 		const checkedValue = ref<boolean>(false);
 		const changeFn = vi.fn((isChecked: boolean) => {
