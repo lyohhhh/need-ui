@@ -61,4 +61,13 @@ describe('checkbox', () => {
 		expect(changeFn).toBeCalledTimes(2);
 		expect(checkedValue.value).toBe(false);
 	});
+
+	it(`checkbox 'indeterminate' props`, () => {
+		const wrapper = mount(LCheckbox, {
+			props: {
+				indeterminate: true,
+			},
+		});
+		expect(wrapper.find('.is-indeterminate').exists()).toBe(true);
+	});
 });
