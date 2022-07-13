@@ -12,3 +12,4 @@ export * from './scroll';
 export * from './link';
 export * from './radio';
 export * from './checkbox';
+export * from './input-number';
