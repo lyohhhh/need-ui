@@ -11,6 +11,6 @@ export const radioProps = {
 	border: Boolean,
 	label: {
 		type: [String, Number],
-		required: true,
+		required: false,
 	},
 };

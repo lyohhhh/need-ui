@@ -5,7 +5,7 @@ export const groupProps = {
 	},
 	modelValue: {
 		type: [String, Number],
-		required: true,
+		required: false,
 	},
 	border: Boolean,
 	textColor: String,

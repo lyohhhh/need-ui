@@ -4,7 +4,7 @@ import { PropType } from 'vue';
 export default {
 	model: {
 		type: Object as PropType<{ [key: string]: any }>,
-		required: true,
+		required: false,
 	},
 	rules: {
 		type: Object as PropType<Rules>,

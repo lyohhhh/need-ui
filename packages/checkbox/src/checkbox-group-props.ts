@@ -3,7 +3,7 @@ export type ListType = (string | number)[];
 export const checkboxGroupProps = {
 	modelValue: {
 		type: [] as PropType<ListType>,
-		required: true,
+		// required: true,
 	},
 	value: [] as PropType<ListType>,
 	disabled: {

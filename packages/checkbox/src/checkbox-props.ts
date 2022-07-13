@@ -3,7 +3,7 @@ import { PropType } from 'vue';
 export const checkboxProps = {
 	modelValue: {
 		type: Boolean,
-		required: true,
+		// required: true,
 	},
 	value: {
 		type: [] as PropType<string | number | boolean>,

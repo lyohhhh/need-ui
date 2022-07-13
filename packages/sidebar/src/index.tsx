@@ -21,7 +21,7 @@ const Sidebar = defineComponent({
 		},
 	},
 	emits: ['update:modelValue'],
-	setup(props, { emit }) {
+	setup(_props, { emit }) {
 		const activedIndex = ref<number>(-1);
 
 		const changeCollapse = (flag: boolean) => {
