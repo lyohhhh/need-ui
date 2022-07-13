@@ -75,6 +75,44 @@ describe('checkbox-group', () => {
 		wrapper.unmount();
 	});
 
-	it.todo(`checkbox 'min' props`, () => {});
-	it.todo(`checkbox 'max' props`, () => {});
+	it(`checkbox 'min & max' props`, async () => {
+		const changeFn = vi.fn();
+
+		const checkedValue = ref<number[]>([1]);
+		const wrapper = mount(LCheckboxGroup, {
+			slots: {
+				default: (
+					<>
+						<LCheckbox label={1}></LCheckbox>
+						<LCheckbox label={2}></LCheckbox>
+						<LCheckbox label={3}></LCheckbox>
+						<LCheckbox label={4}></LCheckbox>
+						<LCheckbox label={5}></LCheckbox>
+						<LCheckbox label={6}></LCheckbox>
+					</>
+				),
+			},
+			props: {
+				modelValue: checkedValue.value,
+				min: 1,
+				max: 2,
+				onChange: changeFn,
+			},
+		});
+		await wrapper.findAllComponents(LCheckbox)[0].find('.l-checkbox').trigger('click');
+		expect(changeFn).not.toBeCalled();
+		expect(checkedValue.value.join('')).toBe('1');
+
+		await wrapper.findAllComponents(LCheckbox)[1].find('.l-checkbox').trigger('click');
+		expect(changeFn).toBeCalledTimes(1);
+		expect(checkedValue.value.join(',')).toBe('1,2');
+
+		await wrapper.findAllComponents(LCheckbox)[2].find('.l-checkbox').trigger('click');
+		expect(changeFn).toBeCalledTimes(1);
+		expect(checkedValue.value.join(',')).toBe('1,2');
+
+		await wrapper.findAllComponents(LCheckbox)[1].find('.l-checkbox').trigger('click');
+		expect(changeFn).toBeCalledTimes(2);
+		expect(checkedValue.value.join(',')).toBe('1');
+	});
 });
