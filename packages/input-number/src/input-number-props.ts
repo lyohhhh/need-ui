@@ -37,4 +37,4 @@ export const InputNumberProps = {
 	name: String,
 	label: String,
 	placeholder: String,
-};
+} as const;
