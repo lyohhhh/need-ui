@@ -14,7 +14,7 @@ import inputStyles from '../styles/input.module.scss';
 export default defineComponent({
 	name: 'Input',
 	props,
-	emits: ['update:modelValue'],
+	emits: ['update:modelValue', 'focus', 'blur', 'change'],
 	setup(props, { slots, emit }) {
 		const inputEl = ref<HTMLElement>();
 		const show = ref<boolean>();
@@ -90,6 +90,7 @@ export default defineComponent({
 			(e: Event) => {
 				const target = e.target as InputHTMLAttributes;
 				emit('update:modelValue', target.value);
+				emit('change', target.value);
 				triggerFormItemValidate();
 			},
 			100,
@@ -130,6 +131,7 @@ export default defineComponent({
 		 * 获取 input 获取焦点事件
 		 */
 		const inputFocus = () => {
+			emit('focus');
 			isFocus.value = true;
 		};
 
@@ -141,6 +143,7 @@ export default defineComponent({
 			// 调用 wrapperLeave 事件
 			wrapperLeave();
 			triggerFormItemValidate();
+			emit('blur');
 		};
 
 		return () => (

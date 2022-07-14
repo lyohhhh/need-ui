@@ -10,7 +10,7 @@ export default defineComponent({
 		return () => (
 			<>
 				<div class='l-input-number'>
-					<LInput></LInput>
+					<LInput type='number'></LInput>
 				</div>
 			</>
 		);
