@@ -1,3 +1,4 @@
+import { LInput } from '../../components';
 import { defineComponent } from 'vue';
 import { InputNumberProps } from './input-number-props';
 
@@ -6,6 +7,12 @@ export default defineComponent({
 	props: InputNumberProps,
 	emits: ['update:modelValue', 'focus', 'blur', 'change'],
 	setup() {
-		return () => 1;
+		return () => (
+			<>
+				<div class='l-input-number'>
+					<LInput></LInput>
+				</div>
+			</>
+		);
 	},
 });
