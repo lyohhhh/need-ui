@@ -7,7 +7,7 @@ describe('input-number', () => {
 		mount(LInputNumber);
 	});
 
-	it.todo(`input-number 'disabled' props`, () => {
+	it.todo(`input-number 'disabled' props`, async () => {
 		const changeFn = vi.fn();
 		const wrapper = mount(LInputNumber, {
 			props: {
@@ -15,5 +15,8 @@ describe('input-number', () => {
 				onChange: changeFn,
 			},
 		});
+
+		await wrapper.find('.l-input-number__up').trigger('click');
+		expect(changeFn).not.toBeCalled();
 	});
 });
