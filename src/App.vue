@@ -54,6 +54,9 @@
 					>{{ item }}</l-checkbox
 				>
 			</l-checkbox-group>
+
+			<br />
+			<l-input-number v-model="inputNumber"> </l-input-number>
 		</div>
 		<l-dialog v-model="isShow">
 			<l-input v-model="input"></l-input>
@@ -72,6 +75,7 @@ import {
 	LRadioGroup,
 	LCheckbox,
 	LCheckboxGroup,
+	LInputNumber,
 } from '../packages/components';
 import { ref, watch } from 'vue';
 
@@ -120,6 +124,8 @@ const handleCheckedAll = (isCheckedAll: boolean) => {
 	checkGroup.value = isCheckedAll ? [...groupList.value] : [];
 	indeterminate.value = false;
 };
+
+const inputNumber = ref<number>(0);
 </script>
 
 <style></style>
