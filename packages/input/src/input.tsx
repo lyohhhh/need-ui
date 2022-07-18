@@ -29,7 +29,7 @@ export default defineComponent({
 			formItem && formItem.emitter.emit('validate');
 		};
 
-		// 渲染 尾部
+		// 渲染头部
 		const renderPrefixIcon = () => {
 			const prefixClass =
 				'bottom-0 left-0.5 top-0 absolute w-8 flex justify-center items-center text-gray-400';
@@ -44,7 +44,7 @@ export default defineComponent({
 			return null;
 		};
 
-		// 渲染头部
+		// 渲染尾部
 		const renderSuffix = () => {
 			if (props.clearable)
 				return (
