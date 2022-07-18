@@ -1,0 +1,10 @@
+.l-input-number {
+	@apply w-44;
+	.l-input__inner[type='number'] {
+		-moz-appearance: textfield;
+	}
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		-webkit-appearance: none !important;
+	}
+}
