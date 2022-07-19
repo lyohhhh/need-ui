@@ -1,5 +1,5 @@
-import { LInput } from '../../components';
-import { defineComponent, renderSlot } from 'vue';
+import { LIcon, LInput } from '../../components';
+import { defineComponent } from 'vue';
 import { InputNumberProps } from './input-number-props';
 import '../styles/input-number.scss';
 export default defineComponent({
@@ -20,16 +20,18 @@ export default defineComponent({
 		return () => (
 			<>
 				<div class='l-input-number'>
+					<span class='l-input-number__prefix'>
+						<LIcon icon='henggang'></LIcon>
+					</span>
+					<span class='l-input-number__suffix'>
+						<LIcon icon='jiahao'></LIcon>
+					</span>
 					<LInput
 						type='number'
 						onChange={emitChange}
 						onFocus={emitFocus}
 						onBlur={emitBlur}
 						clearable={false}
-						v-slots={{
-							suffix: () => 1,
-							prefix: () => 2,
-						}}
 					></LInput>
 				</div>
 			</>

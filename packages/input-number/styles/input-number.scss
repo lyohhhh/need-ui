@@ -1,10 +1,33 @@
 .l-input-number {
-	@apply w-44;
+	@apply w-44 relative;
 	.l-input__inner[type='number'] {
 		-moz-appearance: textfield;
 	}
 	input::-webkit-outer-spin-button,
 	input::-webkit-inner-spin-button {
 		-webkit-appearance: none !important;
+	}
+
+	.l-input-number__prefix,
+	.l-input-number__suffix {
+		@apply absolute rounded z-10 px-2 flex justify-center items-center w-8 box-border bg-gray-100 text-gray-500 cursor-pointer;
+		top: 1px;
+		bottom: 1px;
+		&:hover {
+			@apply text-themetextcolor-400;
+		}
+	}
+	.l-input__inner {
+		@apply px-10;
+	}
+	.l-input-number__prefix {
+		@apply rounded-tr-none rounded-br-none border-gray-200;
+		border-right-width: 1px;
+		left: 1px;
+	}
+	.l-input-number__suffix {
+		@apply rounded-tl-none rounded-bl-none border-gray-200;
+		border-left-width: 1px;
+		right: 1px;
 	}
 }
