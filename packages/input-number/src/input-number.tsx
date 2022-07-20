@@ -17,14 +17,18 @@ export default defineComponent({
 			emit('focus', args);
 		};
 
+		// 减
+		const minusHandle = () => {};
+		// 加
+		const addHandle = () => {};
 		return () => (
 			<>
 				<div class='l-input-number'>
 					<span class='l-input-number__prefix'>
-						<LIcon icon='henggang'></LIcon>
+						<LIcon icon='henggang' onClick={minusHandle}></LIcon>
 					</span>
 					<span class='l-input-number__suffix'>
-						<LIcon icon='jiahao'></LIcon>
+						<LIcon icon='jiahao' onClick={addHandle}></LIcon>
 					</span>
 					<LInput
 						type='number'
