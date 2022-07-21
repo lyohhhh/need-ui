@@ -2,6 +2,7 @@ import { LIcon, LInput } from '../../components';
 import { defineComponent } from 'vue';
 import { InputNumberProps } from './input-number-props';
 import '../styles/input-number.scss';
+import { throttle } from '@/_utils';
 export default defineComponent({
 	name: 'InputNumber',
 	props: InputNumberProps,
@@ -18,9 +19,9 @@ export default defineComponent({
 		};
 
 		// 减
-		const minusHandle = () => {};
+		const minusHandle = throttle(() => {});
 		// 加
-		const addHandle = () => {};
+		const addHandle = throttle(() => {});
 		return () => (
 			<>
 				<div class='l-input-number'>
