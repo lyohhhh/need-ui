@@ -19,9 +19,9 @@ export default defineComponent({
 		};
 
 		// 减
-		const minusHandle = throttle(() => {});
+		const minusHandle = throttle(() => {}, 100);
 		// 加
-		const addHandle = throttle(() => {});
+		const addHandle = throttle(() => {}, 100);
 		return () => (
 			<>
 				<div class='l-input-number'>
