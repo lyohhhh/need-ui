@@ -7,7 +7,7 @@ export default defineComponent({
 	name: 'InputNumber',
 	props: InputNumberProps,
 	emits: ['update:modelValue', 'focus', 'blur', 'change'],
-	setup(_props, { emit }) {
+	setup(props, { emit }) {
 		const emitChange = (args: number) => {
 			emit('change', args);
 		};
@@ -19,9 +19,13 @@ export default defineComponent({
 		};
 
 		// 减
-		const minusHandle = throttle(() => {}, 100);
+		const minusHandle = throttle(() => {
+			emit('update:modelValue', props.modelValue + 1);
+		}, 100);
 		// 加
-		const addHandle = throttle(() => {}, 100);
+		const addHandle = throttle(() => {
+			emit('update:modelValue', props.modelValue - 1);
+		}, 100);
 		return () => (
 			<>
 				<div class='l-input-number'>
