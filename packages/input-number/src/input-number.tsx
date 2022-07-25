@@ -3,6 +3,9 @@ import { computed, defineComponent } from 'vue';
 import { InputNumberProps } from './input-number-props';
 import '../styles/input-number.scss';
 import { throttle } from '@/_utils';
+
+// 长按增加间隔
+const MOUSE_DELAY = 200;
 export default defineComponent({
 	name: 'InputNumber',
 	props: InputNumberProps,
@@ -40,6 +43,13 @@ export default defineComponent({
 		const addHandle = throttle(() => {
 			emit('update:modelValue', num.value + 1);
 		}, 100);
+
+		// 长按操作
+		const mouseDownHandle = (func: Function) => {
+			const timer = setInterval(() => {
+				console.log(1);
+			}, MOUSE_DELAY);
+		};
 
 		return () => (
 			<>
