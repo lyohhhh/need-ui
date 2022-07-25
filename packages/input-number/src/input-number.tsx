@@ -4,6 +4,7 @@ import { InputNumberProps } from './input-number-props';
 import '../styles/input-number.scss';
 import { throttle } from '@/_utils';
 import { isNumber } from '@/[shared]/number';
+import { stopDefault } from '@/[shared]/mouse';
 
 // 长按增加间隔
 const MOUSE_DELAY = 100;
@@ -58,15 +59,13 @@ export default defineComponent({
 
 		// 删除长按
 		const minusMouseDownHandle = (e: MouseEvent) => {
-			e.stopPropagation();
-			e.preventDefault();
+			stopDefault(e);
 			mouseDownHandle(minusHandle);
 		};
 
 		// 增加长按
 		const addMouseDownHandle = (e: MouseEvent) => {
-			e.stopPropagation();
-			e.preventDefault();
+			stopDefault(e);
 			mouseDownHandle(addHandle);
 		};
 
