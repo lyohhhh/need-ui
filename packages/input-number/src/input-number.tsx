@@ -1,5 +1,5 @@
 import { LIcon, LInput } from '../../components';
-import { defineComponent } from 'vue';
+import { computed, defineComponent } from 'vue';
 import { InputNumberProps } from './input-number-props';
 import '../styles/input-number.scss';
 import { throttle } from '@/_utils';
@@ -8,8 +8,11 @@ export default defineComponent({
 	props: InputNumberProps,
 	emits: ['update:modelValue', 'focus', 'blur', 'change'],
 	setup(props, { emit }) {
-		const emitChange = (args: number) => {
-			emit('change', args);
+		const defaultNumber = props.modelValue;
+
+		const emitChange = (num: number) => {
+			emit('update:modelValue', num);
+			emit('change', num);
 		};
 		const emitFocus = (args: number) => {
 			emit('focus', args);
@@ -18,13 +21,22 @@ export default defineComponent({
 			emit('focus', args);
 		};
 
+		const num = computed<number>(() => {
+			return isNumber.value ? +props.modelValue : defaultNumber;
+		});
+
+		const isNumber = computed<boolean>(() => {
+			return !isNaN(+props.modelValue);
+		});
+
 		// 减
 		const minusHandle = throttle(() => {
-			emit('update:modelValue', props.modelValue - 1);
+			emit('update:modelValue', num.value - 1);
 		}, 100);
+
 		// 加
 		const addHandle = throttle(() => {
-			emit('update:modelValue', props.modelValue + 1);
+			emit('update:modelValue', num.value + 1);
 		}, 100);
 		return () => (
 			<>
@@ -37,7 +49,7 @@ export default defineComponent({
 					</span>
 					<LInput
 						type='number'
-						modelValue={props.modelValue}
+						v-model={props.modelValue}
 						onChange={emitChange}
 						onFocus={emitFocus}
 						onBlur={emitBlur}
