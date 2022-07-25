@@ -20,11 +20,11 @@ export default defineComponent({
 
 		// 减
 		const minusHandle = throttle(() => {
-			emit('update:modelValue', props.modelValue + 1);
+			emit('update:modelValue', props.modelValue - 1);
 		}, 100);
 		// 加
 		const addHandle = throttle(() => {
-			emit('update:modelValue', props.modelValue - 1);
+			emit('update:modelValue', props.modelValue + 1);
 		}, 100);
 		return () => (
 			<>
@@ -37,6 +37,7 @@ export default defineComponent({
 					</span>
 					<LInput
 						type='number'
+						modelValue={props.modelValue}
 						onChange={emitChange}
 						onFocus={emitFocus}
 						onBlur={emitBlur}
