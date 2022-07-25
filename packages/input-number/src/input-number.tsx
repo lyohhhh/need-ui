@@ -5,12 +5,14 @@ import '../styles/input-number.scss';
 import { throttle } from '@/_utils';
 
 // 长按增加间隔
-const MOUSE_DELAY = 200;
+const MOUSE_DELAY = 100;
+
 export default defineComponent({
 	name: 'InputNumber',
 	props: InputNumberProps,
 	emits: ['update:modelValue', 'focus', 'blur', 'change'],
 	setup(props, { emit }) {
+		let timer: undefined | NodeJS.Timer = undefined;
 		const defaultNumber = props.modelValue;
 		// number 改变
 		const emitChange = (num: number) => {
@@ -35,30 +37,59 @@ export default defineComponent({
 		});
 
 		// 减
-		const minusHandle = throttle(() => {
+		const minusHandle = () => {
 			emit('update:modelValue', num.value - 1);
-		}, 100);
+		};
 
 		// 加
-		const addHandle = throttle(() => {
+		const addHandle = () => {
 			emit('update:modelValue', num.value + 1);
-		}, 100);
+		};
 
 		// 长按操作
 		const mouseDownHandle = (func: Function) => {
-			const timer = setInterval(() => {
-				console.log(1);
+			timer = setInterval(() => {
+				func();
 			}, MOUSE_DELAY);
+		};
+
+		// 删除长按
+		const minusMouseDownHandle = (e: MouseEvent) => {
+			e.stopPropagation();
+			e.preventDefault();
+			mouseDownHandle(minusHandle);
+		};
+
+		// 增加长按
+		const addMouseDownHandle = (e: MouseEvent) => {
+			e.stopPropagation();
+			e.preventDefault();
+			mouseDownHandle(addHandle);
+		};
+
+		// 清除定时器
+		const clearTimer = () => {
+			if (timer) {
+				clearInterval(timer);
+			}
 		};
 
 		return () => (
 			<>
 				<div class='l-input-number'>
-					<span class='l-input-number__prefix'>
-						<LIcon icon='henggang' onClick={minusHandle}></LIcon>
+					<span
+						class='l-input-number__prefix'
+						onMousedown={minusMouseDownHandle}
+						onMouseup={clearTimer}
+					>
+						<LIcon icon='henggang' onClick={throttle(minusHandle, MOUSE_DELAY)}></LIcon>
 					</span>
-					<span class='l-input-number__suffix'>
-						<LIcon icon='jiahao' onClick={addHandle}></LIcon>
+					<span
+						class='l-input-number__suffix'
+						onMousedown={addMouseDownHandle}
+						onMouseup={clearTimer}
+					>
+						<LIcon icon='jiahao' onClick={throttle(addHandle, MOUSE_DELAY)}></LIcon>
 					</span>
 					<LInput
 						type='number'
