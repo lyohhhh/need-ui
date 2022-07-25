@@ -65,14 +65,18 @@ export default defineComponent({
 
 		// 删除长按
 		const minusMouseDownHandle = (e: MouseEvent) => {
-			stopDefault(e);
-			mouseDownHandle(minusHandle);
+			if (e.button == 0) {
+				stopDefault(e);
+				mouseDownHandle(minusHandle);
+			}
 		};
 
 		// 增加长按
 		const addMouseDownHandle = (e: MouseEvent) => {
-			stopDefault(e);
-			mouseDownHandle(addHandle);
+			if (e.button == 0) {
+				stopDefault(e);
+				mouseDownHandle(addHandle);
+			}
 		};
 
 		// 清除定时器
@@ -86,7 +90,7 @@ export default defineComponent({
 			<>
 				<div class='l-input-number'>
 					<span
-						class='l-input-number__prefix'
+						class={['l-input-number__prefix', num.value < props.min ? 'is-disabled' : null]}
 						onMousedown={minusMouseDownHandle}
 						onMouseup={clearTimer}
 					>
