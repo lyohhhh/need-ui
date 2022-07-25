@@ -3,6 +3,7 @@ import { computed, defineComponent } from 'vue';
 import { InputNumberProps } from './input-number-props';
 import '../styles/input-number.scss';
 import { throttle } from '@/_utils';
+import { isNumber } from '@/[shared]/number';
 
 // 长按增加间隔
 const MOUSE_DELAY = 100;
@@ -29,16 +30,16 @@ export default defineComponent({
 		};
 		// 使用 computed 获取 modelValue
 		const num = computed<number>(() => {
-			return isNumber.value ? +props.modelValue : defaultNumber;
+			return isNumberComputed.value ? +props.modelValue : defaultNumber;
 		});
 		// 判断 modelValue 是否是数字
-		const isNumber = computed<boolean>(() => {
-			return !isNaN(+props.modelValue);
+		const isNumberComputed = computed<boolean>(() => {
+			return isNumber(props.modelValue);
 		});
 
 		// 减
 		const minusHandle = () => {
-			if (num.value <= props.max) return;
+			if (num.value <= props.min) return;
 			emit('update:modelValue', num.value - 1);
 		};
 
