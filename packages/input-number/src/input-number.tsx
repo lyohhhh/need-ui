@@ -41,13 +41,19 @@ export default defineComponent({
 		// 减
 		const minusHandle = () => {
 			if (num.value <= props.min) return;
-			emit('update:modelValue', num.value - 1);
+			emit(
+				'update:modelValue',
+				num.value - (props.stepStrictly ? (isNumber(props.step) ? props.step : 1) : 1)
+			);
 		};
 
 		// 加
 		const addHandle = () => {
 			if (num.value >= props.max) return;
-			emit('update:modelValue', num.value + 1);
+			emit(
+				'update:modelValue',
+				num.value + (props.stepStrictly ? (isNumber(props.step) ? props.step : 1) : 1)
+			);
 		};
 
 		// 长按操作
