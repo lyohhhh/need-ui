@@ -9,22 +9,24 @@ export default defineComponent({
 	emits: ['update:modelValue', 'focus', 'blur', 'change'],
 	setup(props, { emit }) {
 		const defaultNumber = props.modelValue;
-
+		// number 改变
 		const emitChange = (num: number) => {
 			emit('update:modelValue', num);
 			emit('change', num);
 		};
-		const emitFocus = (args: number) => {
-			emit('focus', args);
+		// 获取焦点
+		const emitFocus = (num: number) => {
+			emit('focus', num);
 		};
-		const emitBlur = (args: number) => {
-			emit('focus', args);
+		// 失去焦点
+		const emitBlur = (num: number) => {
+			emit('focus', num);
 		};
-
+		// 使用 computed 获取 modelValue
 		const num = computed<number>(() => {
 			return isNumber.value ? +props.modelValue : defaultNumber;
 		});
-
+		// 判断 modelValue 是否是数字
 		const isNumber = computed<boolean>(() => {
 			return !isNaN(+props.modelValue);
 		});
@@ -38,6 +40,7 @@ export default defineComponent({
 		const addHandle = throttle(() => {
 			emit('update:modelValue', num.value + 1);
 		}, 100);
+
 		return () => (
 			<>
 				<div class='l-input-number'>
