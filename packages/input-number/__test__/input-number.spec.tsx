@@ -7,7 +7,7 @@ describe('input-number', () => {
 		mount(LInputNumber);
 	});
 
-	it.todo(`input-number 'disabled' props`, async () => {
+	it(`input-number 'disabled' props`, async () => {
 		const changeFn = vi.fn();
 		const wrapper = mount(LInputNumber, {
 			props: {
