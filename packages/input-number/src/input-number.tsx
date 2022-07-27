@@ -16,6 +16,11 @@ export default defineComponent({
 	setup(props, { emit }) {
 		let timer: undefined | NodeJS.Timer = undefined;
 		const defaultNumber = props.modelValue;
+
+		const classes = computed<string>(() => {
+			return `is-` + props.controlsPosition;
+		});
+
 		// number 改变
 		const emitChange = (num: number) => {
 			emit('update:modelValue', num);
@@ -88,7 +93,7 @@ export default defineComponent({
 
 		return () => (
 			<>
-				<div class='l-input-number'>
+				<div class={['l-input-number', classes]}>
 					<span
 						class={['l-input-number__prefix', num.value < props.min ? 'is-disabled' : null]}
 						onMousedown={minusMouseDownHandle}
