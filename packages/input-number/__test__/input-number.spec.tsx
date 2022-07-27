@@ -19,4 +19,8 @@ describe('input-number', () => {
 		await wrapper.find('.l-input-number__up').trigger('click');
 		expect(changeFn).not.toBeCalled();
 	});
+
+	it.todo(`input-number 'add' func`, () => {});
+	it.todo(`input-number 'minus' func`, () => {});
+	it.todo(`input-number 'long mouse down' func`, () => {});
 });
