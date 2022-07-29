@@ -23,6 +23,8 @@ describe('input-number', () => {
 	it.todo(`input-number 'add' func`, () => {
 		const wrapper = mount(LInputNumber);
 	});
-	it.todo(`input-number 'minus' func`, () => {});
+	it.todo(`input-number 'minus' func`, () => {
+		const wrapper = mount(LInputNumber);
+	});
 	it.todo(`input-number 'long mouse down' func`, () => {});
 });
