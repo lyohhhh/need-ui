@@ -26,7 +26,7 @@ describe('input-number', () => {
 	it.todo(`input-number 'minus' func`, () => {
 		const wrapper = mount(LInputNumber);
 	});
-	it.todo(`input-number 'long mouse down' func`, () => {
+	it(`input-number 'long mouse down' func`, () => {
 		const wrapper = mount(LInputNumber);
 	});
 });
