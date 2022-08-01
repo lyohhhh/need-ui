@@ -25,7 +25,7 @@ export default defineComponent({
 
 		// number 改变
 		const emitChange = (num: number) => {
-			emit('update:modelValue', num);
+			emit('update:modelValue', Number(num).toFixed(props.precision));
 			emit('change', num);
 		};
 		// 获取焦点
@@ -45,7 +45,7 @@ export default defineComponent({
 				emit('blur', props.min);
 				return;
 			}
-			emit('blur', num);
+			emit('blur', Number(num).toFixed(props.precision));
 		};
 		// 使用 computed 获取 modelValue
 		const num = computed<number>(() => {
@@ -59,19 +59,13 @@ export default defineComponent({
 		// 减
 		const minusHandle = () => {
 			if (num.value <= props.min) return;
-			emit(
-				'update:modelValue',
-				num.value - (props.stepStrictly ? (isNumber(props.step) ? props.step : 1) : 1)
-			);
+			emitChange(num.value - (props.stepStrictly ? (isNumber(props.step) ? props.step : 1) : 1));
 		};
 
 		// 加
 		const addHandle = () => {
 			if (num.value >= props.max) return;
-			emit(
-				'update:modelValue',
-				num.value + (props.stepStrictly ? (isNumber(props.step) ? props.step : 1) : 1)
-			);
+			emitChange(num.value + (props.stepStrictly ? (isNumber(props.step) ? props.step : 1) : 1));
 		};
 
 		// 长按操作
