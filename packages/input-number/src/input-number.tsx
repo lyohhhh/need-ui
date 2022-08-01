@@ -34,7 +34,18 @@ export default defineComponent({
 		};
 		// 失去焦点
 		const emitBlur = (num: number) => {
-			emit('focus', num);
+			if (+num > +props.max) {
+				num = props.max;
+				emitChange(props.max);
+				emit('blur', props.max);
+				return;
+			} else if (+num < +props.min) {
+				num = props.min;
+				emitChange(props.min);
+				emit('blur', props.min);
+				return;
+			}
+			emit('blur', num);
 		};
 		// 使用 computed 获取 modelValue
 		const num = computed<number>(() => {
