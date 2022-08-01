@@ -131,7 +131,7 @@ export default defineComponent({
 		 * 获取 input 获取焦点事件
 		 */
 		const inputFocus = () => {
-			emit('focus');
+			emit('focus', props.modelValue);
 			isFocus.value = true;
 		};
 
@@ -143,7 +143,7 @@ export default defineComponent({
 			// 调用 wrapperLeave 事件
 			wrapperLeave();
 			triggerFormItemValidate();
-			emit('blur');
+			emit('blur', props.modelValue);
 		};
 
 		return () => (
