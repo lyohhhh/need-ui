@@ -1,10 +1,10 @@
 import { LIcon, LInput } from '../../components';
 import { computed, defineComponent } from 'vue';
 import { InputNumberProps } from './input-number-props';
-import '../styles/input-number.scss';
 import { throttle } from '@/_utils';
 import { isNumber } from '@/[shared]/number';
 import { stopDefault } from '@/[shared]/mouse';
+import '../styles/input-number.scss';
 
 // 长按增加间隔
 const MOUSE_DELAY = 150;
