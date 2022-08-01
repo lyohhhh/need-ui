@@ -95,7 +95,7 @@ export default defineComponent({
 
 		return () => (
 			<>
-				<div class={['l-input-number', classes]}>
+				<div class={['l-input-number', classes.value]}>
 					<span
 						class={['l-input-number__prefix', num.value < props.min ? 'is-disabled' : null]}
 						onMousedown={minusMouseDownHandle}
