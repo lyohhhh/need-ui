@@ -6,6 +6,12 @@
 		@apply absolute rounded z-10 flex justify-center items-center w-8 box-border border-gray-200 text-gray-500 bg-gray-100 cursor-pointer;
 		top: 1px;
 		bottom: 1px;
+		&.is-disabled {
+			@apply opacity-70 cursor-not-allowed text-gray-300;
+			&:hover {
+				@apply text-gray-300;
+			}
+		}
 		&:hover {
 			@apply text-themetextcolor-400;
 		}

@@ -97,14 +97,14 @@ export default defineComponent({
 			<>
 				<div class={['l-input-number', classes.value]}>
 					<span
-						class={['l-input-number__prefix', num.value < props.min ? 'is-disabled' : null]}
+						class={['l-input-number__prefix', num.value <= props.min ? 'is-disabled' : null]}
 						onMousedown={minusMouseDownHandle}
 						onMouseup={clearTimer}
 					>
 						<LIcon icon='henggang' onClick={throttle(minusHandle, THROTTLE_TIME)}></LIcon>
 					</span>
 					<span
-						class='l-input-number__suffix'
+						class={['l-input-number__suffix', num.value >= props.max ? 'is-disabled' : null]}
 						onMousedown={addMouseDownHandle}
 						onMouseup={clearTimer}
 					>

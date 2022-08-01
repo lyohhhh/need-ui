@@ -56,9 +56,7 @@
 			</l-checkbox-group>
 
 			<br />
-			<l-input-number v-model="inputNumber" controlsPosition="right"> </l-input-number>
-			<br />
-			<l-input-number v-model="inputNumber"> </l-input-number>
+			<l-input-number v-model="inputNumber" min="1" max="20"> </l-input-number>
 		</div>
 		<l-dialog v-model="isShow">
 			<l-input v-model="input"></l-input>
