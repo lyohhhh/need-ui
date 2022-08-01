@@ -1,22 +1,58 @@
 .l-input-number {
 	@apply w-44 relative;
-	&,
-	&.is-default {
-		.l-input-number__prefix,
-		.l-input-number__suffix {
-			@apply absolute rounded z-10 flex justify-center items-center w-8 box-border bg-gray-100 text-gray-500 cursor-pointer;
-			top: 1px;
-			bottom: 1px;
-			&:hover {
-				@apply text-themetextcolor-400;
-			}
-		}
-		.l-icon {
-			@apply w-8 h-full px-2 inline-flex items-center justify-center;
+
+	.l-input-number__prefix,
+	.l-input-number__suffix {
+		@apply absolute rounded z-10 flex justify-center items-center w-8 box-border border-gray-200 text-gray-500 bg-gray-100 cursor-pointer;
+		top: 1px;
+		bottom: 1px;
+		&:hover {
+			@apply text-themetextcolor-400;
 		}
 	}
 
-	&.is-left {
+	.l-icon {
+		@apply w-8 h-full px-2 inline-flex items-center justify-center;
+	}
+
+	&,
+	&.is-default {
+		.l-input__inner {
+			@apply px-10;
+		}
+
+		.l-input-number__prefix {
+			@apply rounded-tr-none rounded-br-none;
+			border-right-width: 1px;
+			left: 1px;
+		}
+		.l-input-number__suffix {
+			@apply rounded-tl-none rounded-bl-none;
+			border-left-width: 1px;
+			right: 1px;
+		}
+	}
+
+	&.is-right {
+		.l-input__inner {
+			@apply pr-10 pl-4;
+		}
+		.l-input-number__prefix,
+		.l-input-number__suffix {
+			right: 1px;
+			left: auto;
+			border-left-width: 1px;
+			border-top-width: 1px;
+		}
+		.l-input-number__prefix {
+			@apply rounded-tl-none rounded-bl-none rounded-br;
+			border-right-width: 0;
+			top: 49%;
+		}
+		.l-input-number__suffix {
+			@apply rounded-tl-none rounded-bl-none rounded-br-none;
+			bottom: 49%;
+		}
 	}
 	.l-input__inner[type='number'] {
 		-moz-appearance: textfield;
@@ -24,19 +60,5 @@
 	input::-webkit-outer-spin-button,
 	input::-webkit-inner-spin-button {
 		-webkit-appearance: none !important;
-	}
-
-	.l-input__inner {
-		@apply px-10;
-	}
-	.l-input-number__prefix {
-		@apply rounded-tr-none rounded-br-none border-gray-200;
-		border-right-width: 1px;
-		left: 1px;
-	}
-	.l-input-number__suffix {
-		@apply rounded-tl-none rounded-bl-none border-gray-200;
-		border-left-width: 1px;
-		right: 1px;
 	}
 }
