@@ -7,7 +7,9 @@ import { isNumber } from '@/[shared]/number';
 import { stopDefault } from '@/[shared]/mouse';
 
 // 长按增加间隔
-const MOUSE_DELAY = 100;
+const MOUSE_DELAY = 150;
+// 节流时间
+const THROTTLE_TIME = 250;
 
 export default defineComponent({
 	name: 'InputNumber',
@@ -99,14 +101,14 @@ export default defineComponent({
 						onMousedown={minusMouseDownHandle}
 						onMouseup={clearTimer}
 					>
-						<LIcon icon='henggang' onClick={throttle(minusHandle, MOUSE_DELAY)}></LIcon>
+						<LIcon icon='henggang' onClick={throttle(minusHandle, THROTTLE_TIME)}></LIcon>
 					</span>
 					<span
 						class='l-input-number__suffix'
 						onMousedown={addMouseDownHandle}
 						onMouseup={clearTimer}
 					>
-						<LIcon icon='jiahao' onClick={throttle(addHandle, MOUSE_DELAY)}></LIcon>
+						<LIcon icon='jiahao' onClick={throttle(addHandle, THROTTLE_TIME)}></LIcon>
 					</span>
 					<LInput
 						type='number'
