@@ -34,6 +34,7 @@ export default defineComponent({
 		};
 		// 失去焦点
 		const emitBlur = (num: number) => {
+			// 边界情况
 			if (+num > +props.max) {
 				num = props.max;
 				emitChange(props.max);
