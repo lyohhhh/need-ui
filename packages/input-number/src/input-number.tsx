@@ -35,11 +35,13 @@ export default defineComponent({
 		// 失去焦点
 		const emitBlur = (num: number) => {
 			// 边界情况
+			// max
 			if (+num > +props.max) {
 				num = props.max;
 				emitChange(props.max);
 				emit('blur', props.max);
 				return;
+				// min
 			} else if (+num < +props.min) {
 				num = props.min;
 				emitChange(props.min);
