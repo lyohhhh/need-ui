@@ -62,12 +62,14 @@ export default defineComponent({
 		// 减
 		const minusHandle = () => {
 			if (num.value <= props.min) return;
+			// 严格步长
 			emitChange(num.value - (props.stepStrictly ? (isNumber(props.step) ? props.step : 1) : 1));
 		};
 
 		// 加
 		const addHandle = () => {
 			if (num.value >= props.max) return;
+			// 严格步长
 			emitChange(num.value + (props.stepStrictly ? (isNumber(props.step) ? props.step : 1) : 1));
 		};
 
