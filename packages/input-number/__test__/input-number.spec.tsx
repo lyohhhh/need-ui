@@ -53,7 +53,4 @@ describe('input-number', () => {
 		expect(changeFn).toBeCalledTimes(2);
 		expect(model.value).toEqual(0);
 	});
-	it.todo(`input-number 'long mouse down' func`, () => {
-		const wrapper = mount(LInputNumber);
-	});
 });
