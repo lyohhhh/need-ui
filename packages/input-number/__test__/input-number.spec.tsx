@@ -21,7 +21,7 @@ describe('input-number', () => {
 		expect(changeFn).not.toBeCalled();
 	});
 
-	it.todo(`input-number 'add' func`, async () => {
+	it(`input-number 'add' func`, async () => {
 		const model = ref<number>(0);
 		const changeFn = vi.fn();
 		const wrapper = mount(LInputNumber, {
@@ -36,7 +36,7 @@ describe('input-number', () => {
 	it.todo(`input-number 'minus' func`, () => {
 		const wrapper = mount(LInputNumber);
 	});
-	it(`input-number 'long mouse down' func`, () => {
+	it.todo(`input-number 'long mouse down' func`, () => {
 		const wrapper = mount(LInputNumber);
 	});
 });
