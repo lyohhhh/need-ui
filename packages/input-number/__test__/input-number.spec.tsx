@@ -27,7 +27,7 @@ describe('input-number', () => {
 		expect(changeFn).toBeCalled();
 	});
 
-	it(`input-number 'add' func`, async () => {
+	it(`input-number 'change' func`, async () => {
 		const model = ref<number>(0);
 		const modelFn = (num: number) => (model.value = +num);
 		const changeFn = vi.fn();
@@ -42,9 +42,6 @@ describe('input-number', () => {
 		await wrapper.find('.l-input-number__up').trigger('click');
 		expect(changeFn).toBeCalledTimes(1);
 		expect(model.value).toEqual(1);
-	});
-	it.todo(`input-number 'minus' func`, () => {
-		const wrapper = mount(LInputNumber);
 	});
 	it.todo(`input-number 'long mouse down' func`, () => {
 		const wrapper = mount(LInputNumber);
