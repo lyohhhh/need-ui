@@ -113,7 +113,7 @@ export default defineComponent({
 					>
 						<LIcon
 							icon='henggang'
-							class={'l-input-number__down'}
+							styles={'l-input-number__down'}
 							onClick={throttle(minusHandle, THROTTLE_TIME)}
 						></LIcon>
 					</span>
@@ -124,7 +124,7 @@ export default defineComponent({
 					>
 						<LIcon
 							icon='jiahao'
-							class={'l-input-number__up'}
+							styles={'l-input-number__up'}
 							onClick={throttle(addHandle, THROTTLE_TIME)}
 						></LIcon>
 					</span>
