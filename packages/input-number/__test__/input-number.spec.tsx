@@ -54,5 +54,23 @@ describe('input-number', () => {
 		expect(model.value).toEqual(0);
 	});
 
-	it.todo(`input-number 'step' props`, () => {});
+	it.todo(`input-number 'step' props`, async () => {
+		const model = ref<number>(0);
+		const modelFn = async (num: number) => {
+			model.value = +num;
+			await wrapper.setProps({
+				modelValue: model.value,
+			});
+		};
+		const wrapper = mount(LInputNumber, {
+			props: {
+				modelValue: model.value,
+				step: 5,
+				stepStrictly: true,
+				'onUpdate:modelValue': modelFn,
+			},
+		});
+		await wrapper.find('.l-input-number__up').trigger('click');
+		expect(model.value).toEqual(5);
+	});
 });
