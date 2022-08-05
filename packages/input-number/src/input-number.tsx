@@ -111,14 +111,22 @@ export default defineComponent({
 						onMousedown={minusMouseDownHandle}
 						onMouseup={clearTimer}
 					>
-						<LIcon icon='henggang' onClick={throttle(minusHandle, THROTTLE_TIME)}></LIcon>
+						<LIcon
+							icon='henggang'
+							class={'l-input-number__down'}
+							onClick={throttle(minusHandle, THROTTLE_TIME)}
+						></LIcon>
 					</span>
 					<span
 						class={['l-input-number__suffix', num.value >= props.max ? 'is-disabled' : null]}
 						onMousedown={addMouseDownHandle}
 						onMouseup={clearTimer}
 					>
-						<LIcon icon='jiahao' onClick={throttle(addHandle, THROTTLE_TIME)}></LIcon>
+						<LIcon
+							icon='jiahao'
+							class={'l-input-number__up'}
+							onClick={throttle(addHandle, THROTTLE_TIME)}
+						></LIcon>
 					</span>
 					<LInput
 						type='number'
