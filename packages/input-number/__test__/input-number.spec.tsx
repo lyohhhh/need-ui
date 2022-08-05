@@ -28,9 +28,14 @@ describe('input-number', () => {
 	});
 
 	it(`input-number 'change' func`, async () => {
-		const model = ref<number>(0);
-		const modelFn = (num: number) => (model.value = +num);
 		const changeFn = vi.fn();
+		const model = ref<number>(0);
+		const modelFn = async (num: number) => {
+			model.value = +num;
+			await wrapper.setProps({
+				modelValue: model.value,
+			});
+		};
 		const wrapper = mount(LInputNumber, {
 			props: {
 				modelValue: model.value,
@@ -39,9 +44,14 @@ describe('input-number', () => {
 			},
 		});
 		expect(changeFn).not.toBeCalled();
+
 		await wrapper.find('.l-input-number__up').trigger('click');
 		expect(changeFn).toBeCalledTimes(1);
 		expect(model.value).toEqual(1);
+
+		await wrapper.find('.l-input-number__down').trigger('click');
+		expect(changeFn).toBeCalledTimes(2);
+		expect(model.value).toEqual(0);
 	});
 	it.todo(`input-number 'long mouse down' func`, () => {
 		const wrapper = mount(LInputNumber);
