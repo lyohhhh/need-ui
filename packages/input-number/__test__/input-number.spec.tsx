@@ -54,7 +54,7 @@ describe('input-number', () => {
 		expect(model.value).toEqual(0);
 	});
 
-	it.todo(`input-number 'step' props`, async () => {
+	it(`input-number 'step' props`, async () => {
 		const model = ref<number>(0);
 		const modelFn = async (num: number) => {
 			model.value = +num;
