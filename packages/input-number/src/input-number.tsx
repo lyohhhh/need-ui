@@ -61,14 +61,14 @@ export default defineComponent({
 
 		// 减
 		const minusHandle = () => {
-			if (num.value <= props.min) return;
+			if (num.value <= props.min || props.disabled) return;
 			// 严格步长
 			emitChange(num.value - (props.stepStrictly ? (isNumber(props.step) ? props.step : 1) : 1));
 		};
 
 		// 加
 		const addHandle = () => {
-			if (num.value >= props.max) return;
+			if (num.value >= props.max || props.disabled) return;
 			// 严格步长
 			emitChange(num.value + (props.stepStrictly ? (isNumber(props.step) ? props.step : 1) : 1));
 		};
