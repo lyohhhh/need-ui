@@ -27,17 +27,21 @@ describe('input-number', () => {
 		expect(changeFn).toBeCalled();
 	});
 
-	it.todo(`input-number 'add' func`, async () => {
+	it(`input-number 'add' func`, async () => {
 		const model = ref<number>(0);
+		const modelFn = (num: number) => (model.value = +num);
 		const changeFn = vi.fn();
 		const wrapper = mount(LInputNumber, {
 			props: {
-				modelValue: model as any,
+				modelValue: model.value,
 				onChange: changeFn,
+				'onUpdate:modelValue': modelFn,
 			},
 		});
 		expect(changeFn).not.toBeCalled();
-		await wrapper.find('.l-input-number__suffix').trigger('click');
+		await wrapper.find('.l-input-number__up').trigger('click');
+		expect(changeFn).toBeCalledTimes(1);
+		expect(model.value).toEqual(1);
 	});
 	it.todo(`input-number 'minus' func`, () => {
 		const wrapper = mount(LInputNumber);
