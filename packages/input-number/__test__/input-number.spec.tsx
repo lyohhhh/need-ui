@@ -73,4 +73,6 @@ describe('input-number', () => {
 		await wrapper.find('.l-input-number__up').trigger('click');
 		expect(model.value).toEqual(5);
 	});
+
+	it.todo(`input-number 'precision' props`, () => {});
 });
