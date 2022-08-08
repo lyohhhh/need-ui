@@ -74,5 +74,5 @@ describe('input-number', () => {
 		expect(model.value).toEqual(5);
 	});
 
-	it(`input-number 'precision' props`, () => {});
+	it.todo(`input-number 'precision' props`, () => {});
 });
