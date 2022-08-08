@@ -24,6 +24,7 @@ const globalComponents = [
 	'LCheckboxGroup',
 	'LInputNumber',
 	'LSelect',
+	'LSelectItem',
 ];
 const ROOT = process.cwd();
 
