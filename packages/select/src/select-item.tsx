@@ -4,6 +4,6 @@ export default defineComponent({
 	name: 'SelectItem',
 	setup(_props) {},
 	render() {
-		return <div>select</div>;
+		return <div>selectItem</div>;
 	},
 });
