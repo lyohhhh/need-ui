@@ -5,4 +5,6 @@ describe('select', () => {
 	it('select mount', () => {
 		mount(LSelect);
 	});
+
+	it.todo('select disabled', () => {});
 });
