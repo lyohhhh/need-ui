@@ -6,5 +6,11 @@ describe('select', () => {
 		mount(LSelect);
 	});
 
-	it.todo('select disabled', () => {});
+	it.todo('select disabled', async () => {
+		const wrapper = mount(LSelect, {
+			props: {
+				disabled: true,
+			},
+		});
+	});
 });
