@@ -16,4 +16,5 @@ describe('select', () => {
 
 	it.todo(`select 'filterable' props`, () => {});
 	it.todo(`select 'clearable' props`, () => {});
+	it.todo(`select 'mutilute' props`, () => {});
 });
