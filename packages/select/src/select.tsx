@@ -1,4 +1,4 @@
-import { defineComponent } from 'vue';
+import { defineComponent, renderSlot } from 'vue';
 import { SelectProps } from './select.props';
 
 export default defineComponent({
@@ -6,6 +6,11 @@ export default defineComponent({
 	props: SelectProps,
 	setup(_props) {},
 	render() {
-		return <div>select</div>;
+		const slots = this.$slots;
+		return (
+			<div class='l-select'>
+				<div class='l-select__inner'>{renderSlot(slots, 'default')}</div>
+			</div>
+		);
 	},
 });
