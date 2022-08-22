@@ -32,7 +32,7 @@ export default defineComponent({
 			<>
 				<a href={props.href} class={['l-link', cls.value]}>
 					{props.icon ? <LIcon icon={props.icon}></LIcon> : null}
-					<span class='l-link--inner'>{renderSlot(slots, 'default')}</span>
+					<span class='l-link__inner'>{renderSlot(slots, 'default')}</span>
 				</a>
 			</>
 		);
