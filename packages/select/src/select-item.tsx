@@ -6,6 +6,6 @@ export default defineComponent({
 	props: SelectItemProps,
 	setup(_props) {},
 	render() {
-		return <div>selectItem</div>;
+		return <div class='l-select-item'></div>;
 	},
 });
