@@ -16,7 +16,7 @@ export default defineComponent({
 	},
 	render() {
 		return (
-			<li class='l-select-item'>
+			<li class={['l-select-item', this.classes]}>
 				<span class='l-select-item__inner'></span>
 			</li>
 		);
