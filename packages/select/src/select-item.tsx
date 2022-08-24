@@ -15,6 +15,10 @@ export default defineComponent({
 		};
 	},
 	render() {
-		return <div class='l-select-item'></div>;
+		return (
+			<li class='l-select-item'>
+				<span class='l-select-item__inner'></span>
+			</li>
+		);
 	},
 });
