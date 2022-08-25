@@ -1,4 +1,4 @@
-import { computed, defineComponent } from 'vue';
+import { computed, defineComponent, renderSlot } from 'vue';
 import { SelectItemProps } from './select-item-props';
 
 export default defineComponent({
@@ -17,7 +17,7 @@ export default defineComponent({
 	render() {
 		return (
 			<li class={['l-select-item', this.classes]}>
-				<span class='l-select-item__inner'></span>
+				<span class='l-select-item__inner'>{renderSlot(this.$slots, 'default')}</span>
 			</li>
 		);
 	},
