@@ -46,4 +46,4 @@ export const SelectProps = {
 		type: String,
 		default: '暂无数据',
 	},
-} as const;
+};

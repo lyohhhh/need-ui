@@ -10,4 +10,4 @@ export default {
 		default: '正在加载中...',
 	},
 	onLoad: Function,
-} as const;
+};
