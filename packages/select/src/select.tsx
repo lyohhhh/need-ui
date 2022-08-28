@@ -1,6 +1,8 @@
 import { defineComponent, renderSlot } from 'vue';
 import { SelectProps } from './select.props';
 
+export const ProvideSelectDisabled = Symbol('select-disabled');
+
 export default defineComponent({
 	name: 'Select',
 	props: SelectProps,
