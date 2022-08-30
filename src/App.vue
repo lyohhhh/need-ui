@@ -61,6 +61,10 @@
 		<l-dialog v-model="isShow">
 			<l-input v-model="input"></l-input>
 		</l-dialog>
+		<br />
+		<l-select>
+			<l-select-item></l-select-item>
+		</l-select>
 	</l-scroll>
 </template>
 
@@ -76,6 +80,8 @@ import {
 	LCheckbox,
 	LCheckboxGroup,
 	LInputNumber,
+	LSelect,
+	LSelectItem,
 } from '../packages/components';
 import { ref, watch } from 'vue';
 
