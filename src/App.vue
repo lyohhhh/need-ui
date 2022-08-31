@@ -63,7 +63,7 @@
 		</l-dialog>
 		<br />
 		<l-select>
-			<l-select-item></l-select-item>
+			<l-select-item v-for="(item, key) in [1, 2, 3, 4]" :label="item" :key="key"></l-select-item>
 		</l-select>
 	</l-scroll>
 </template>
