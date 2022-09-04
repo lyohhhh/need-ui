@@ -1,4 +1,7 @@
 .l-select {
+	@apply relative;
+	max-height: 300px;
 	.l-select__inner {
+		@apply absolute;
 	}
 }
