@@ -1,5 +1,5 @@
 .l-select {
-	@apply relative;
+	@apply relative rounded-md shadow-md shadow-trueGray-200 bg-gray-100;
 	max-height: 300px;
 	.l-select__inner {
 		@apply absolute;
