@@ -1,5 +1,5 @@
 .l-select-item {
-	@apply flex justify-between text-gray-400 bg-white;
+	@apply inline-flex justify-between text-gray-400 bg-white;
 	&:hover {
 		@apply text-themetextcolor-500 bg-themetextcolor-200;
 	}
