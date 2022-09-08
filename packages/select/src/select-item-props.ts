@@ -8,4 +8,4 @@ export const SelectItemProps = {
 	disabled: {
 		type: Boolean,
 	},
-} as const;
+};
