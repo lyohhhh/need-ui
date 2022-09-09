@@ -1,8 +1,8 @@
 <template>
 	<l-scroll>
 		<div style="height: 10000px" class="p-4">
-			<l-button type="primary" size="xl">SUBMIT</l-button>
-			<l-button type="default" size="lg">RESET</l-button>
+			<l-button type="primary" size="xl">PRIMARY</l-button>
+			<l-button type="default" size="lg">DEFAULT</l-button>
 			<l-button type="danger" size="base">DANGER</l-button>
 			<l-button type="warning" size="sm">WARNING</l-button>
 			<l-button type="success" size="xs" @click="isDisabled = !isDisabled">SUCCESS</l-button>
@@ -17,7 +17,7 @@
 			<br />
 
 			<div class="py-4">
-				<l-radio-group v-model="radio" border disabled @change="radioChange">
+				<l-radio-group v-model="radio" border @change="radioChange">
 					<l-radio label="1" border>选项1</l-radio>
 					<l-radio label="2">选项2</l-radio>
 					<l-radio label="3">选项3</l-radio>
