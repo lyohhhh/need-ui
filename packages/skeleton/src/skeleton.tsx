@@ -47,7 +47,7 @@ export default defineComponent({
 		const renderContent = () => {
 			return new Array(props.rows)
 				.fill(1)
-				.map((r, index) => (
+				.map((_r, index) => (
 					<div
 						class='l-skeletion--item bg-gray-100 h-3 mb-4 md:h-4 md:mb-4 dark:bg-themebgcolor-500'
 						style={{ width: getPropsWidth(props.rowWidth, index) }}

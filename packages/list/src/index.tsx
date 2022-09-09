@@ -19,7 +19,7 @@ export default defineComponent({
 			default: () => [],
 		},
 	},
-	setup(props, { emit }) {
+	setup(_props, { emit }) {
 		const click = (...args: any[]) => {
 			emit('click', args);
 		};
