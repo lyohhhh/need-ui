@@ -31,9 +31,8 @@ declare const _default: import("vue").DefineComponent<{
     suffixIcon: StringConstructor;
     modelValue: {
         type: (StringConstructor | NumberConstructor)[];
-        required: boolean;
     };
-}, () => JSX.Element, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "update:modelValue"[], "update:modelValue", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+}, () => JSX.Element, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("update:modelValue" | "focus" | "blur" | "change")[], "update:modelValue" | "focus" | "blur" | "change", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     placeholder: {
         type: StringConstructor;
         default: string;
@@ -66,10 +65,12 @@ declare const _default: import("vue").DefineComponent<{
     suffixIcon: StringConstructor;
     modelValue: {
         type: (StringConstructor | NumberConstructor)[];
-        required: boolean;
     };
 }>> & {
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+    onFocus?: ((...args: any[]) => any) | undefined;
+    onBlur?: ((...args: any[]) => any) | undefined;
+    onChange?: ((...args: any[]) => any) | undefined;
 }, {
     placeholder: string;
     clearable: boolean;

@@ -1,5 +1,6 @@
 import type { Type } from '@/[shared]';
 import { PropType } from 'vue';
+import '../styles/link.scss';
 declare const _default: import("vue").DefineComponent<{
     type: {
         type: PropType<Type>;

@@ -1,4 +1,4 @@
-import { FormItem } from '../form/src/shared';
+import { FormItem } from '.';
 export declare type Events = {
     validate?: boolean;
     formItem: FormItem;

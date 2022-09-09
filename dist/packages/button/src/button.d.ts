@@ -1,4 +1,5 @@
 import { PropType } from 'vue';
+import '../styles/button.scss';
 import type { Type, Size } from '@/[shared]';
 declare const _default: import("vue").DefineComponent<{
     size: {

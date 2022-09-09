@@ -31,7 +31,6 @@ declare const _default: {
     suffixIcon: StringConstructor;
     modelValue: {
         type: (StringConstructor | NumberConstructor)[];
-        required: boolean;
     };
 };
 export default _default;
