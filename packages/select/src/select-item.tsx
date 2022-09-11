@@ -1,10 +1,14 @@
-import { computed, defineComponent, renderSlot } from 'vue';
+import { computed, defineComponent, inject, renderSlot } from 'vue';
 import { SelectItemProps } from './select-item-props';
+import { ProvideSelectDisabled } from './select';
 
 export default defineComponent({
 	name: 'SelectItem',
 	props: SelectItemProps,
 	setup(_props) {
+		const injectSelectDisabled = inject(ProvideSelectDisabled);
+		console.log(injectSelectDisabled);
+
 		const classes = computed<string>(() => {
 			let classStr: string[] = [];
 			return classStr.join(' ');
