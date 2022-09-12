@@ -7,7 +7,6 @@ export default defineComponent({
 	props: SelectItemProps,
 	setup(_props) {
 		const injectSelectDisabled = inject(ProvideSelectDisabled);
-		console.log(injectSelectDisabled);
 
 		const classes = computed<string>(() => {
 			let classStr: string[] = [];
