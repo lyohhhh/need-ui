@@ -5,8 +5,12 @@ import { ProvideSelectDisabled } from './select';
 export default defineComponent({
 	name: 'SelectItem',
 	props: SelectItemProps,
-	setup(_props) {
-		const injectSelectDisabled = inject(ProvideSelectDisabled);
+	setup(props) {
+		const injectSelectDisabled = inject<boolean>(ProvideSelectDisabled);
+
+		const isDisabled = computed<boolean>(() => {
+			return props.disabled || !!injectSelectDisabled;
+		});
 
 		const classes = computed<string>(() => {
 			let classStr: string[] = [];
