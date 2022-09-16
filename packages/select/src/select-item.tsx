@@ -18,7 +18,6 @@ export default defineComponent({
 
 		const classes = computed<string>(() => {
 			let classStr: string[] = [];
-
 			if (isDisabled.value) classStr.push('is-disabled');
 			if (isSelected.value) classStr.push('is-selected');
 			return classStr.join(' ');
