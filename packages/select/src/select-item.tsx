@@ -6,16 +6,20 @@ export default defineComponent({
 	name: 'SelectItem',
 	props: SelectItemProps,
 	setup(props) {
+		// 父组件 disabled
 		const injectSelectDisabled = inject<boolean>(ProvideSelectDisabled);
 
+		// 判断是否禁用
 		const isDisabled = computed<boolean>(() => {
 			return props.disabled || !!injectSelectDisabled;
 		});
 
+		// 判断是否选中
 		const isSelected = computed<boolean>(() => {
 			return false;
 		});
 
+		// 获取 样式
 		const classes = computed<string>(() => {
 			let classStr: string[] = [];
 			if (isDisabled.value) classStr.push('is-disabled');
