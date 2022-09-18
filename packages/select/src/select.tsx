@@ -1,6 +1,7 @@
 import { defineComponent, renderSlot } from 'vue';
 import { SelectProps } from './select.props';
 
+// 全局 disabled
 export const ProvideSelectDisabled = Symbol('select-disabled');
 
 export default defineComponent({
