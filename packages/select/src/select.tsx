@@ -9,6 +9,7 @@ export default defineComponent({
 	props: SelectProps,
 	setup(_props) {},
 	render() {
+		// 设置插槽
 		const slots = this.$slots;
 		return (
 			<div class='l-select'>
